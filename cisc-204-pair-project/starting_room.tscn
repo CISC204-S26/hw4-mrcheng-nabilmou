@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cen7mkk3uwk44"]
+
+[node name="StaringRoom" type="Node2D" unique_id=242163522]
+
+[node name="Walls" type="TileMapLayer" parent="." unique_id=572821149]
+
+[node name="Floors" type="TileMapLayer" parent="." unique_id=221750182]
