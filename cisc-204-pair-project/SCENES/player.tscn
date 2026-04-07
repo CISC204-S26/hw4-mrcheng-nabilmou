@@ -1,67 +1,7 @@
 [gd_scene format=3 uid="uid://cjnupoa8ge5n4"]
 
 [ext_resource type="Texture2D" uid="uid://utogh7nbqc5c" path="res://ASSETS/PLAYER/Bob_32x32.png" id="1_85nbx"]
-
-[sub_resource type="GDScript" id="GDScript_85nbx"]
-resource_name = "Player"
-script/source = "extends CharacterBody2D
-
-var SPEED := 100.0
-@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
-var last_direction := Vector2.DOWN
-
-func _physics_process(delta: float) -> void:
-	var input_vector = Vector2.ZERO
-	if input_vector != Vector2.ZERO:
-		last_direction = input_vector
-	
-	var input_direction = Vector2(
-		Input.get_action_strength(\"Right\") - Input.get_action_strength(\"Left\"),
-		Input.get_action_strength(\"Down\") - Input.get_action_strength(\"Up\")
-	)
-	
-	#THIS IS THE SAME THING AS ABOVE
-	# Horizontal
-	'''if Input.is_action_pressed(\"Left\"):
-		input_vector.x -= 1
-	if Input.is_action_pressed(\"Right\"):
-		input_vector.x += 1
-	# Vertical
-	if Input.is_action_pressed(\"Up\"):
-		input_vector.y -= 1
-	if Input.is_action_pressed(\"Down\"):
-		input_vector.y += 1'''
-	
-	# Normalize so diagonal movement isn't faster
-	input_vector = input_vector.normalized()
-	
-	velocity = input_direction * SPEED
-	#velocity = input_vector * SPEED
-	move_and_slide()
-
-
-func update_animation(input_vector: Vector2) -> void:
-	if input_vector == Vector2.ZERO:
-	# IDLE animations
-		if last_direction.x < 0:
-			sprite.play(\"Idle_Left\")
-		elif last_direction.x > 0:
-			sprite.play(\"Idle_Right\")
-		elif last_direction.y < 0:
-			sprite.play(\"Idle_Foward\")
-		else:
-			sprite.play(\"Idle_Backward\")
-	#else:
-	# WALK animations
-		'''if input_vector.x < 0:
-			sprite.play(\"walk_left\")
-		elif input_vector.x > 0:
-			sprite.play(\"walk_right\")
-		elif input_vector.y < 0:
-			sprite.play(\"walk_up\")
-		else:
-			sprite.play(\"walk_down\")'''
-"
+[ext_resource type="Script" uid="uid://bejwuf2tmfplp" path="res://SCRIPTS/player.gd" id="1_ai16o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dxdai"]
 atlas = ExtResource("1_85nbx")
@@ -259,7 +199,7 @@ radius = 15.0
 height = 46.0
 
 [node name="Player" type="CharacterBody2D" unique_id=220904025]
-script = SubResource("GDScript_85nbx")
+script = ExtResource("1_ai16o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1847273026]
 position = Vector2(0, -32)
