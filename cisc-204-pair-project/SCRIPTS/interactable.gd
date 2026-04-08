@@ -20,7 +20,7 @@ func interact():
 			print("Interacted with NOTE")
 			toggle_note()
 		"door":
-			pass
+			add_key()
 		"npc":
 			pass
 		"drive":
@@ -48,3 +48,10 @@ func _on_note_area_2d_body_entered(body: Node):
 func _on_note_area_2d_body_exited(body: Node):
 	if body.name == "Player":
 		envelope.play("Closed")
+
+func add_key():
+	var player = get_tree().get_first_node_in_group("player")
+	if player:
+		player.num_keys += 1
+		print("Picked up a key! Total keys:", player.num_keys)
+		queue_free()
