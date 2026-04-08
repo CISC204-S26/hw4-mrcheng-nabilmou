@@ -397,7 +397,7 @@ script = ExtResource("1_ai16o")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1847273026]
 position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_dxdai")
-animation = &"Walk_Backward"
+animation = &"Idle_Foward"
 autoplay = "Idle_Foward"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=777894705]

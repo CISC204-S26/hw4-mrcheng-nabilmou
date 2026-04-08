@@ -16,34 +16,21 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 		return
 	
-	var input_vector = Vector2.ZERO
-	if input_vector != Vector2.ZERO:
-		last_direction = input_vector
-	
 	var input_direction = Vector2(
 		Input.get_action_strength("Right") - Input.get_action_strength("Left"),
 		Input.get_action_strength("Down") - Input.get_action_strength("Up")
-	)
+		)
 	
-	#THIS IS THE SAME THING AS ABOVE
-	# Horizontal
-	'''if Input.is_action_pressed("Left"):
-		input_vector.x -= 1
-	if Input.is_action_pressed("Right"):
-		input_vector.x += 1
-	# Vertical
-	if Input.is_action_pressed("Up"):
-		input_vector.y -= 1
-	if Input.is_action_pressed("Down"):
-		input_vector.y += 1'''
+	# Save last direction for idle animations
+	if input_direction != Vector2.ZERO:
+		last_direction = input_direction
 	
-	# Normalize so diagonal movement isn't faster
-	input_vector = input_vector.normalized()
-	
-	velocity = input_direction * SPEED
-	#velocity = input_vector * SPEED
+	# Movement
+	velocity = input_direction.normalized() * SPEED
 	move_and_slide()
-
+	# NEW: update animations
+	update_animation(input_direction)
+	
 
 func _process(delta):
 	if Input.is_action_just_pressed("Interact"):
@@ -71,16 +58,16 @@ func update_animation(input_vector: Vector2) -> void:
 		elif last_direction.x > 0:
 			sprite.play("Idle_Right")
 		elif last_direction.y < 0:
-			sprite.play("Idle_Foward")
-		else:
 			sprite.play("Idle_Backward")
-	#else:
-	# WALK animations
-		'''if input_vector.x < 0:
-			sprite.play("walk_left")
-		elif input_vector.x > 0:
-			sprite.play("walk_right")
-		elif input_vector.y < 0:
-			sprite.play("walk_up")
 		else:
-			sprite.play("walk_down")'''
+			sprite.play("Idle_Foward")
+	else:
+	# WALK animations
+		if input_vector.x < 0:
+			sprite.play("Walk_Left")
+		elif input_vector.x > 0:
+			sprite.play("Walk_Right")
+		elif input_vector.y < 0:
+			sprite.play("Walk_Backward")
+		else:
+			sprite.play("Walk_Foward")
