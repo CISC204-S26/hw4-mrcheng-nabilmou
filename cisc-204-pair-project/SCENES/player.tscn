@@ -99,6 +99,30 @@ region = Rect2(128, 64, 32, 64)
 atlas = ExtResource("1_85nbx")
 region = Rect2(160, 64, 32, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_v81ul"]
+atlas = ExtResource("1_85nbx")
+region = Rect2(0, 144, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2f1gb"]
+atlas = ExtResource("1_85nbx")
+region = Rect2(32, 144, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_asx7o"]
+atlas = ExtResource("1_85nbx")
+region = Rect2(64, 144, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qt6p"]
+atlas = ExtResource("1_85nbx")
+region = Rect2(96, 144, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3kmkx"]
+atlas = ExtResource("1_85nbx")
+region = Rect2(128, 144, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_03a2u"]
+atlas = ExtResource("1_85nbx")
+region = Rect2(160, 144, 32, 48)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_dxdai"]
 animations = [{
 "frames": [{
@@ -192,6 +216,29 @@ animations = [{
 "loop": true,
 "name": &"Idle_Right",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v81ul")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2f1gb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_asx7o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1qt6p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3kmkx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_03a2u")
+}],
+"loop": true,
+"name": &"Walk_Right",
+"speed": 10.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ragqx"]
@@ -202,13 +249,15 @@ height = 46.0
 radius = 39.012817
 
 [node name="Player" type="CharacterBody2D" unique_id=220904025]
+position = Vector2(0, 8)
 script = ExtResource("1_ai16o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1847273026]
 position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_dxdai")
-animation = &"Idle_Foward"
+animation = &"Idle_Right"
 autoplay = "Idle_Foward"
+frame_progress = 0.3850549
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=777894705]
 position = Vector2(0, -23)
