@@ -198,6 +198,9 @@ animations = [{
 radius = 15.0
 height = 46.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_667t4"]
+radius = 39.012817
+
 [node name="Player" type="CharacterBody2D" unique_id=220904025]
 script = ExtResource("1_ai16o")
 
@@ -210,3 +213,9 @@ autoplay = "Idle_Foward"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=777894705]
 position = Vector2(0, -23)
 shape = SubResource("CapsuleShape2D_ragqx")
+
+[node name="InteractionArea2D" type="Area2D" parent="." unique_id=1493574799]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea2D" unique_id=2071174942]
+position = Vector2(0, -21)
+shape = SubResource("CircleShape2D_667t4")

@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@onready var interaction_area = $InteractionArea2D
+
 var SPEED := 100.0
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 var last_direction := Vector2.DOWN
@@ -32,6 +34,12 @@ func _physics_process(delta: float) -> void:
 	velocity = input_direction * SPEED
 	#velocity = input_vector * SPEED
 	move_and_slide()
+
+	if Input.is_action_just_pressed("Interact"):
+		var areas = interaction_area.get_overlapping_areas()
+		for area in areas:
+			if area is Interactable:
+				area.interact()
 
 
 func update_animation(input_vector: Vector2) -> void:
