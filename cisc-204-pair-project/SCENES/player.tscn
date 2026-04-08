@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dsmk14thxpucc"]
+[gd_scene format=3 uid="uid://bn67onos3vkvd"]
 
 [ext_resource type="Texture2D" uid="uid://utogh7nbqc5c" path="res://ASSETS/PLAYER/Bob_32x32.png" id="1_85nbx"]
 [ext_resource type="Script" uid="uid://bejwuf2tmfplp" path="res://SCRIPTS/player.gd" id="1_ai16o"]
@@ -246,7 +246,7 @@ radius = 15.0
 height = 46.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_667t4"]
-radius = 39.012817
+radius = 44.04543
 
 [node name="Player" type="CharacterBody2D" unique_id=220904025]
 position = Vector2(0, 8)
