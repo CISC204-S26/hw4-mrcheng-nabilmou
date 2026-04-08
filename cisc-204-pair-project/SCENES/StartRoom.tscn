@@ -5026,7 +5026,7 @@ sources/3 = SubResource("TileSetAtlasSource_dms2v")
 
 [node name="StartRoom" type="Node2D" unique_id=242163522]
 
-[node name="Walls" type="TileMapLayer" parent="." unique_id=572821149]
+[node name="Building" type="TileMapLayer" parent="." unique_id=572821149]
 tile_set = SubResource("TileSet_87e3c")
 
-[node name="Floors" type="TileMapLayer" parent="." unique_id=221750182]
+[node name="Furniture" type="TileMapLayer" parent="." unique_id=221750182]
