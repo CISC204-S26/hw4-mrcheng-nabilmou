@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cjnupoa8ge5n4"]
+[gd_scene format=3 uid="uid://dsmk14thxpucc"]
 
 [ext_resource type="Texture2D" uid="uid://utogh7nbqc5c" path="res://ASSETS/PLAYER/Bob_32x32.png" id="1_85nbx"]
 [ext_resource type="Script" uid="uid://bejwuf2tmfplp" path="res://SCRIPTS/player.gd" id="1_ai16o"]
