@@ -6,15 +6,19 @@ class_name Interactable extends Area2D
 
 @onready var envelope = $LetterSprite
 @onready var note_ui = $NoteUI
-@onready var note_label = $NoteUI/NoteLabel
-@onready var tilemap = $NoteUI/NoteTileMapLayer
+@onready var note_label = $NoteUI/NoteTexture/NoteLabel
+@onready var note_texture = $NoteUI/NoteTexture
+
+
+func _ready():
+	note_ui.visible = false
 
 
 func interact():
 	match interaction_type:
 		"note":
 			print("Interacted with NOTE")
-			show_note()
+			toggle_note()
 		"door":
 			pass
 		"npc":
@@ -24,20 +28,22 @@ func interact():
 
 
 # ---- CODE FOR NOTES # CODE FOR NOTES # CODE FOR NOTES # CODE FOR NOTES ----- #
-func show_note():
+func toggle_note():
+	var player = get_tree().get_first_node_in_group("player")
+	
 	if note_ui.visible:
 		note_ui.visible = false
-		get_tree().paused = false # unpause player while note closed
+		if player:
+			player.can_move = true
 	else:
+		note_label.text = interact_note_text
 		note_ui.visible = true
-		get_tree().paused = true # pause player while note open
-
-
+		if player:
+			player.can_move = false
 
 func _on_note_area_2d_body_entered(body: Node):
 	if body.name == "Player":
 		envelope.play("Open")
-
 
 func _on_note_area_2d_body_exited(body: Node):
 	if body.name == "Player":

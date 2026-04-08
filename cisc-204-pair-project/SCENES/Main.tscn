@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://lyohcym3ff0x"]
 
-[ext_resource type="PackedScene" uid="uid://cjnupoa8ge5n4" path="res://SCENES/Player.tscn" id="1_hb4iv"]
+[ext_resource type="PackedScene" uid="uid://bn67onos3vkvd" path="res://SCENES/Player.tscn" id="1_hb4iv"]
 [ext_resource type="PackedScene" uid="uid://op6b3eew8oca" path="res://SCENES/Note.tscn" id="2_lbci5"]
 
 [node name="Main" type="Node2D" unique_id=1726648279]
 
 [node name="Player" parent="." unique_id=220904025 instance=ExtResource("1_hb4iv")]
-position = Vector2(341, 168)
+position = Vector2(466, 153)
 
 [node name="Note" parent="." unique_id=21484423 instance=ExtResource("2_lbci5")]
-position = Vector2(477, 172)
+position = Vector2(508, 182)
+interact_note_text = "Yo they figured us out get to scrubbin"

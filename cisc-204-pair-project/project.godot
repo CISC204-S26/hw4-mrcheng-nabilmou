@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="CISC204 Pair Project"
-run/main_scene="uid://c1l2ylctq4ydm"
+run/main_scene="uid://lyohcym3ff0x"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -23,6 +23,7 @@ GameManager="*uid://cd251iuwbe62t"
 
 window/size/viewport_width=960
 window/size/viewport_height=540
+window/stretch/scale=2.0
 window/stretch/scale_mode="integer"
 
 [input]

@@ -1,12 +1,21 @@
 extends CharacterBody2D
 
+
 @onready var interaction_area = $InteractionArea2D
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+
 
 var SPEED := 100.0
-@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 var last_direction := Vector2.DOWN
+var reading_note: bool = false
+var can_move: bool = true
 
 func _physics_process(delta: float) -> void:
+	if not can_move:
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
+	
 	var input_vector = Vector2.ZERO
 	if input_vector != Vector2.ZERO:
 		last_direction = input_vector
@@ -35,11 +44,23 @@ func _physics_process(delta: float) -> void:
 	#velocity = input_vector * SPEED
 	move_and_slide()
 
+
+func _process(delta):
 	if Input.is_action_just_pressed("Interact"):
-		var areas = interaction_area.get_overlapping_areas()
-		for area in areas:
-			if area is Interactable:
-				area.interact()
+		if not reading_note:
+			var areas = interaction_area.get_overlapping_areas()
+			for area in areas:
+				if area is Interactable:
+					area.interact()
+					if area.interaction_type == "note":
+							reading_note = true
+							can_move = false
+		else: 
+			for area in interaction_area.get_overlapping_areas():
+				if area is Interactable and area.interaction_type == "note":
+					area.toggle_note()
+			reading_note = false
+			can_move = true
 
 
 func update_animation(input_vector: Vector2) -> void:

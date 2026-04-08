@@ -249,8 +249,9 @@ height = 46.0
 radius = 44.04543
 
 [node name="Player" type="CharacterBody2D" unique_id=220904025]
-position = Vector2(0, 8)
 script = ExtResource("1_ai16o")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1228000612]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1847273026]
 position = Vector2(0, -32)
