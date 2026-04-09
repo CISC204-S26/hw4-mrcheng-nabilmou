@@ -61,7 +61,7 @@ func update_animation(input_vector: Vector2) -> void:
 		elif last_direction.y < 0:
 			sprite.play("Idle_Backward")
 		else:
-			sprite.play("Idle_Foward")
+			sprite.play("Idle_Forward")
 	else:
 	# WALK animations
 		if input_vector.x < 0:
@@ -71,4 +71,4 @@ func update_animation(input_vector: Vector2) -> void:
 		elif input_vector.y < 0:
 			sprite.play("Walk_Backward")
 		else:
-			sprite.play("Walk_Foward")
+			sprite.play("Walk_Forward")

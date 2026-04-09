@@ -9,7 +9,7 @@
 [node name="StartRoom" parent="." unique_id=242163522 instance=ExtResource("1_30eqk")]
 
 [node name="Player" parent="." unique_id=220904025 instance=ExtResource("2_ve7oe")]
-position = Vector2(16, 160)
+position = Vector2(15, 159)
 
 [node name="Note" parent="." unique_id=1528998479 instance=ExtResource("3_ve7oe")]
 position = Vector2(-66, -114)

@@ -195,6 +195,30 @@ region = Rect2(128, 144, 32, 48)
 atlas = ExtResource("1_85nbx")
 region = Rect2(160, 144, 32, 48)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_667t4"]
+atlas = ExtResource("1_85nbx")
+region = Rect2(384, 128, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4cgft"]
+atlas = ExtResource("1_85nbx")
+region = Rect2(416, 128, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5lg6"]
+atlas = ExtResource("1_85nbx")
+region = Rect2(448, 128, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5p5y6"]
+atlas = ExtResource("1_85nbx")
+region = Rect2(480, 128, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2awq0"]
+atlas = ExtResource("1_85nbx")
+region = Rect2(512, 128, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wlgo"]
+atlas = ExtResource("1_85nbx")
+region = Rect2(544, 128, 32, 64)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_dxdai"]
 animations = [{
 "frames": [{
@@ -380,6 +404,29 @@ animations = [{
 "loop": true,
 "name": &"Walk_Right",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_667t4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4cgft")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g5lg6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5p5y6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2awq0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3wlgo")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_667t4"]
@@ -396,15 +443,21 @@ script = ExtResource("1_667t4")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1847273026]
 position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_dxdai")
-animation = &"Walk_Forward"
+animation = &"Walk_Left"
 autoplay = "Idle_Forward"
+frame_progress = 0.106312364
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=777894705]
+visible = false
 position = Vector2(0, -22)
 shape = SubResource("RectangleShape2D_667t4")
 
 [node name="InteractionArea2D" type="Area2D" parent="." unique_id=1493574799]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea2D" unique_id=2071174942]
 position = Vector2(0, -21)
 shape = SubResource("CircleShape2D_667t4")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=441582169]
+target_position = Vector2(32, 0)
