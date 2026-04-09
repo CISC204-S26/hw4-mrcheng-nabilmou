@@ -171,29 +171,29 @@ region = Rect2(512, 128, 32, 64)
 atlas = ExtResource("1_85nbx")
 region = Rect2(544, 128, 32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_v81ul"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_pgj1e"]
 atlas = ExtResource("1_85nbx")
-region = Rect2(0, 144, 32, 48)
+region = Rect2(0, 128, 32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2f1gb"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_osye7"]
 atlas = ExtResource("1_85nbx")
-region = Rect2(32, 144, 32, 48)
+region = Rect2(32, 128, 32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_asx7o"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_d281k"]
 atlas = ExtResource("1_85nbx")
-region = Rect2(64, 144, 32, 48)
+region = Rect2(64, 128, 32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1qt6p"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_s6lax"]
 atlas = ExtResource("1_85nbx")
-region = Rect2(96, 144, 32, 48)
+region = Rect2(96, 128, 32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3kmkx"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tc1e"]
 atlas = ExtResource("1_85nbx")
-region = Rect2(128, 144, 32, 48)
+region = Rect2(128, 128, 32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_03a2u"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_tfriy"]
 atlas = ExtResource("1_85nbx")
-region = Rect2(160, 144, 32, 48)
+region = Rect2(160, 128, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_667t4"]
 atlas = ExtResource("1_85nbx")
@@ -384,22 +384,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_v81ul")
+"texture": SubResource("AtlasTexture_pgj1e")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2f1gb")
+"texture": SubResource("AtlasTexture_osye7")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_asx7o")
+"texture": SubResource("AtlasTexture_d281k")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1qt6p")
+"texture": SubResource("AtlasTexture_s6lax")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3kmkx")
+"texture": SubResource("AtlasTexture_8tc1e")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_03a2u")
+"texture": SubResource("AtlasTexture_tfriy")
 }],
 "loop": true,
 "name": &"Walk_Right",
@@ -443,9 +443,9 @@ script = ExtResource("1_667t4")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1847273026]
 position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_dxdai")
-animation = &"Walk_Left"
+animation = &"Walk_Right"
 autoplay = "Idle_Forward"
-frame_progress = 0.106312364
+frame_progress = 0.6459395
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=777894705]
 visible = false
