@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bn67onos3vkvd"]
 
 [ext_resource type="Texture2D" uid="uid://utogh7nbqc5c" path="res://ASSETS/PLAYER/Bob_32x32.png" id="1_85nbx"]
-[ext_resource type="Script" uid="uid://bejwuf2tmfplp" path="res://SCRIPTS/player.gd" id="1_ai16o"]
+[ext_resource type="Script" uid="uid://clojjpg0s7miv" path="res://SCRIPTS/player_test.gd" id="1_667t4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dxdai"]
 atlas = ExtResource("1_85nbx")
@@ -240,7 +240,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_pod2e")
 }],
 "loop": true,
-"name": &"Idle_Foward",
+"name": &"Idle_Forward",
 "speed": 10.0
 }, {
 "frames": [{
@@ -332,7 +332,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_dktmf")
 }],
 "loop": true,
-"name": &"Walk_Foward",
+"name": &"Walk_Forward",
 "speed": 10.0
 }, {
 "frames": [{
@@ -389,15 +389,15 @@ size = Vector2(25, 44)
 radius = 44.04543
 
 [node name="Player" type="CharacterBody2D" unique_id=220904025]
-script = ExtResource("1_ai16o")
+script = ExtResource("1_667t4")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1228000612]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1847273026]
 position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_dxdai")
-animation = &"Idle_Foward"
-autoplay = "Idle_Foward"
+animation = &"Walk_Forward"
+autoplay = "Idle_Forward"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=777894705]
 position = Vector2(0, -22)

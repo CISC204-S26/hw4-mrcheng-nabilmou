@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://dh5n7jcgq8slb" path="res://ASSETS/UI/font/BoldPixels.otf" id="3_87umw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8dbsn"]
-radius = 22.022715
+radius = 35.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_87umw"]
 atlas = ExtResource("2_8dbsn")

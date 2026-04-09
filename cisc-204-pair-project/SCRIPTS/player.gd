@@ -10,6 +10,7 @@ var last_direction := Vector2.DOWN
 var reading_note: bool = false
 var can_move: bool = true
 
+
 func _physics_process(delta: float) -> void:
 	if not can_move:
 		velocity = Vector2.ZERO
@@ -28,7 +29,7 @@ func _physics_process(delta: float) -> void:
 	# Movement
 	velocity = input_direction.normalized() * SPEED
 	move_and_slide()
-	# NEW: update animations
+	# Update animations
 	update_animation(input_direction)
 	
 
