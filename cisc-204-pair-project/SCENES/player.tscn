@@ -382,9 +382,8 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ragqx"]
-radius = 15.0
-height = 46.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_667t4"]
+size = Vector2(25, 44)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_667t4"]
 radius = 44.04543
@@ -401,8 +400,8 @@ animation = &"Idle_Foward"
 autoplay = "Idle_Foward"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=777894705]
-position = Vector2(0, -23)
-shape = SubResource("CapsuleShape2D_ragqx")
+position = Vector2(0, -22)
+shape = SubResource("RectangleShape2D_667t4")
 
 [node name="InteractionArea2D" type="Area2D" parent="." unique_id=1493574799]
 

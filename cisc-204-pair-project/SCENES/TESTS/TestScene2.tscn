@@ -1,3 +1,15 @@
 [gd_scene format=3 uid="uid://m1hfx401y7fn"]
 
+[ext_resource type="PackedScene" uid="uid://c1l2ylctq4ydm" path="res://SCENES/ROOMS/StartRoom.tscn" id="1_30eqk"]
+[ext_resource type="PackedScene" uid="uid://bn67onos3vkvd" path="res://SCENES/Player.tscn" id="2_ve7oe"]
+[ext_resource type="PackedScene" uid="uid://op6b3eew8oca" path="res://SCENES/INTERACTABLES/Note.tscn" id="3_ve7oe"]
+
 [node name="TestScene2" type="Node2D" unique_id=617962878]
+
+[node name="StartRoom" parent="." unique_id=242163522 instance=ExtResource("1_30eqk")]
+
+[node name="Player" parent="." unique_id=220904025 instance=ExtResource("2_ve7oe")]
+position = Vector2(16, 160)
+
+[node name="Note" parent="." unique_id=1528998479 instance=ExtResource("3_ve7oe")]
+position = Vector2(-54, -278)

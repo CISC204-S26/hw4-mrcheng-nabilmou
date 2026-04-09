@@ -10872,8 +10872,7 @@ tile_set = SubResource("TileSet_brlca")
 tile_set = SubResource("TileSet_w6aes")
 
 [node name="ElevatorDoor" type="AnimatedSprite2D" parent="." unique_id=2066664465]
-position = Vector2(16.5, -288.5)
-scale = Vector2(1.171875, 0.9843748)
+position = Vector2(17, -288.4375)
+scale = Vector2(1.171875, 0.98632824)
 sprite_frames = SubResource("SpriteFrames_710nr")
 animation = &"Elevator"
-autoplay = "Elevator"
