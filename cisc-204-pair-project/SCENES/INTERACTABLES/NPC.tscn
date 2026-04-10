@@ -7,10 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://bahlmgs282sye" path="res://ASSETS/NPCs/Doctor_1_idle_32x32.png" id="5_ohl54"]
 [ext_resource type="Texture2D" uid="uid://dcpks7vbkdjnl" path="res://ASSETS/NPCs/Doctor_2_idle_32x32.png" id="6_x3wvd"]
 [ext_resource type="Texture2D" uid="uid://dic5f5suqw72b" path="res://ASSETS/NPCs/Bouncer_idle_32x32.png" id="7_opm7d"]
-[ext_resource type="PackedScene" path="res://SCENES/INTERACTABLES/Dialogue.tscn" id="8_kxsrj"]
+[ext_resource type="PackedScene" uid="uid://dsx84d3v50a1" path="res://SCENES/INTERACTABLES/Dialogue.tscn" id="8_kxsrj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u4hbk"]
-radius = 22.022715
+radius = 38.052597
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yh37d"]
 atlas = ExtResource("2_71pyx")
@@ -91,18 +91,6 @@ region = Rect2(64, 0, 32, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_2m6mj"]
 atlas = ExtResource("6_x3wvd")
 region = Rect2(96, 0, 32, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u30yj"]
-atlas = ExtResource("7_opm7d")
-region = Rect2(0, 0, 32, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f31wh"]
-atlas = ExtResource("7_opm7d")
-region = Rect2(32, 0, 32, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wapoa"]
-atlas = ExtResource("7_opm7d")
-region = Rect2(64, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l7ia6"]
 atlas = ExtResource("7_opm7d")
@@ -197,15 +185,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_u30yj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_f31wh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wapoa")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_l7ia6")
 }],
 "loop": false,
@@ -215,16 +194,15 @@ animations = [{
 
 [node name="Npc" type="Area2D" unique_id=888581163]
 script = ExtResource("1_u4hbk")
-interact_note_text = null
-interaction_type = null
-dialogue_text = null
 metadata/_custom_type_script = "uid://dd848bpvpffrx"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1375722058]
+position = Vector2(0, -21)
 shape = SubResource("CircleShape2D_u4hbk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1788361974]
+position = Vector2(1, -32)
 sprite_frames = SubResource("SpriteFrames_7xbsy")
 animation = &"Guard"
 
-[node name="SpeechBubble" parent="." unique_id=292361673 instance=ExtResource("8_kxsrj")]
+[node name="Dialogue" parent="." unique_id=292361673 instance=ExtResource("8_kxsrj")]

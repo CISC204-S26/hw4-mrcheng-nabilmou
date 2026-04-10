@@ -61,7 +61,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Door open",
-"speed": 2.0
+"speed": 6.0
 }]
 
 [node name="Door" type="Area2D" unique_id=1158038630]

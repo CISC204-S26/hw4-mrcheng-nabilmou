@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://dkr8lte5k2sx4" path="res://ASSETS/ANIMATEDSTUFF/animated_elevator_door_entrance_1_32x32.png" id="5_brlca"]
 [ext_resource type="Texture2D" uid="uid://j0ljjth67eb8" path="res://ASSETS/ROOMS/22_Museum_32x32.png" id="5_orpgw"]
 [ext_resource type="Texture2D" uid="uid://cj7sltiwnebhk" path="res://ASSETS/ROOMS/7_Art_32x32.png" id="6_fvcal"]
+[ext_resource type="PackedScene" uid="uid://cbi68oekbamj5" path="res://SCENES/INTERACTABLES/Door.tscn" id="8_fvcal"]
+[ext_resource type="PackedScene" uid="uid://bk8qbs7k6m5te" path="res://SCENES/INTERACTABLES/Key.tscn" id="9_osygj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_837px"]
 texture = ExtResource("1_w6aes")
@@ -10282,7 +10284,9 @@ texture_region_size = Vector2i(32, 32)
 1:15/0 = 0
 2:15/0 = 0
 3:15/0 = 0
+3:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 4:15/0 = 0
+4:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 5:15/0 = 0
 6:15/0 = 0
 7:15/0 = 0
@@ -10298,7 +10302,9 @@ texture_region_size = Vector2i(32, 32)
 1:16/0 = 0
 2:16/0 = 0
 3:16/0 = 0
+3:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 4:16/0 = 0
+4:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 5:16/0 = 0
 6:16/0 = 0
 7:16/0 = 0
@@ -17160,7 +17166,7 @@ tile_map_data = PackedByteArray("AAD7/wYAAAA2ADsAAAACAAYAAAA3ADsAAAADAAYAAAA4ADs
 tile_set = SubResource("TileSet_brlca")
 
 [node name="BigFurniture" type="TileMapLayer" parent="." unique_id=221750182]
-tile_map_data = PackedByteArray("AAD+//z/AQAAACIAAAD+//3/AQAAACMAAAD+//7/AQAAACQAAAD///z/AQABACIAAAD///3/AQABACMAAAD///7/AQABACQAAAAAAPz/AQAEACIAAAAAAP3/AQAEACMAAAAAAP7/AQAEACQAAAABAPz/AQACACIAAAABAP3/AQACACMAAAABAP7/AQACACQAAAACAPz/AQADACIAAAACAP3/AQADACMAAAACAP7/AQADACQAAAABAAIAAQAOAD8AAAABAAMAAQAOAEAAAAD//wIAAQAOAD8AAAD//wMAAQAOAEAAAAAFAPj/AAAMABsAAAAFAPn/AAAMABwAAAAFAPr/AAAMAB0AAAAGAPj/AAANABsAAAAGAPn/AAANABwAAAAGAPr/AAANAB0AAAD6//v/AQABAAMAAAD7//v/AQAGAAEAAAD8//v/AQACAAMAAAD7//r/AQAGAAAAAAD8//r/AQACAAIAAAD3//v/AQAKAAIAAAD3//z/AQAKAAMAAAAJAPv/AQALAAIAAAAJAPz/AQALAAMAAAAEAAEAAAALAAsAAAAEAAIAAAALAAwAAAAEAAMAAAAMAA4AAAD8/wQAAQABAAMAAAD8/wUAAQABAAQAAAD9/wQAAQACAAMAAAD9/wUAAQACAAQAAAD9/wMAAQACAAIAAAACAPb/AAAPABUAAAACAPf/AAAPABYAAAACAPj/AAAPABcAAAD9//j/AAAPABUAAAD9//n/AAAPABYAAAD9//r/AAAPABcAAAA=")
+tile_map_data = PackedByteArray("AAD+//z/AQAAACIAAAD+//3/AQAAACMAAAD+//7/AQAAACQAAAD///z/AQABACIAAAD///3/AQABACMAAAD///7/AQABACQAAAAAAPz/AQAEACIAAAAAAP3/AQAEACMAAAAAAP7/AQAEACQAAAABAPz/AQACACIAAAABAP3/AQACACMAAAABAP7/AQACACQAAAACAPz/AQADACIAAAACAP3/AQADACMAAAACAP7/AQADACQAAAABAAIAAQAOAD8AAAABAAMAAQAOAEAAAAD//wIAAQAOAD8AAAD//wMAAQAOAEAAAAAFAPj/AAAMABsAAAAFAPn/AAAMABwAAAAFAPr/AAAMAB0AAAAGAPj/AAANABsAAAAGAPn/AAANABwAAAAGAPr/AAANAB0AAAD6//v/AQABAAMAAAD7//v/AQAGAAEAAAD8//v/AQACAAMAAAD7//r/AQAGAAAAAAD8//r/AQACAAIAAAD3//v/AQAKAAIAAAD3//z/AQAKAAMAAAAJAPv/AQALAAIAAAAJAPz/AQALAAMAAAD8/wQAAQABAAMAAAD8/wUAAQABAAQAAAD9/wQAAQACAAMAAAD9/wUAAQACAAQAAAD9/wMAAQACAAIAAAD9//j/AAAPABUAAAD9//n/AAAPABYAAAD9//r/AAAPABcAAAADAAIAAAADAAsAAAADAAMAAAADAAwAAAAEAAIAAAAEAAsAAAAEAAMAAAAEAAwAAAA=")
 tile_set = SubResource("TileSet_w6aes")
 
 [node name="SmallFurniture" type="TileMapLayer" parent="." unique_id=103196878]
@@ -17172,3 +17178,9 @@ position = Vector2(17, -288.4375)
 scale = Vector2(1.171875, 0.98632824)
 sprite_frames = SubResource("SpriteFrames_710nr")
 animation = &"Elevator"
+
+[node name="Door" parent="." unique_id=1158038630 instance=ExtResource("8_fvcal")]
+position = Vector2(16, 48)
+
+[node name="Key" parent="." unique_id=655332623 instance=ExtResource("9_osygj")]
+position = Vector2(139, 82)

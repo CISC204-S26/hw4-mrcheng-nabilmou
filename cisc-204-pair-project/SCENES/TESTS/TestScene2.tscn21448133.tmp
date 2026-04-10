@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://bn67onos3vkvd" path="res://SCENES/Player.tscn" id="2_ve7oe"]
 [ext_resource type="PackedScene" uid="uid://op6b3eew8oca" path="res://SCENES/INTERACTABLES/Note.tscn" id="3_ve7oe"]
 [ext_resource type="PackedScene" uid="uid://48lmgoukpa6t" path="res://SCENES/INTERACTABLES/StartingPhone.tscn" id="4_rwfuf"]
+[ext_resource type="PackedScene" uid="uid://cbi68oekbamj5" path="res://SCENES/INTERACTABLES/Door.tscn" id="5_iqneq"]
+[ext_resource type="PackedScene" uid="uid://bk8qbs7k6m5te" path="res://SCENES/INTERACTABLES/Key.tscn" id="6_tgpwn"]
 [ext_resource type="PackedScene" uid="uid://dwqnd2v5ervp4" path="res://SCENES/INTERACTABLES/HardDrive.tscn" id="7_tgpwn"]
 [ext_resource type="PackedScene" uid="uid://dllation0new5" path="res://SCENES/INTERACTABLES/NPC.tscn" id="8_uhm18"]
 
@@ -18,11 +20,19 @@ position = Vector2(-10, -76)
 position = Vector2(-114, 132)
 
 [node name="Player" parent="." unique_id=220904025 instance=ExtResource("2_ve7oe")]
-position = Vector2(16, 157)
+position = Vector2(15, 160)
+
+[node name="Door" parent="." unique_id=1158038630 instance=ExtResource("5_iqneq")]
+position = Vector2(16, 48)
+
+[node name="Key" parent="." unique_id=655332623 instance=ExtResource("6_tgpwn")]
+position = Vector2(123, 133)
 
 [node name="Npc" parent="." unique_id=888581163 instance=ExtResource("8_uhm18")]
-position = Vector2(77, -235)
+position = Vector2(78, -269)
+interact_note_text = ""
 interaction_type = "npc"
+dialogue_text = ""
 
 [node name="HardDrive" parent="." unique_id=764411796 instance=ExtResource("7_tgpwn")]
 position = Vector2(52, -78)

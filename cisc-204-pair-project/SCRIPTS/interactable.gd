@@ -11,11 +11,6 @@ class_name Interactable extends Area2D
 @onready var note_label = $NoteUI/NoteTexture/NoteLabel if has_node("NoteUI/NoteTexture/NoteLabel") else null
 @onready var note_texture = $NoteUI/NoteTexture if has_node("NoteUI/NoteTexture") else null
 
-@onready var NPC_UI = $"NPC UI"
-@onready var NPC_texture = $"NPC UI/NpcTexture"
-@onready var NPC_label = $"NPC UI/NpcTexture/NpcLabel"
-
-
 @onready var speech_bubble = $SpeechBubble
 
 func _ready():
@@ -25,7 +20,7 @@ func _ready():
 
 
 func interact():
-	# This cleans the string so " Door " becomes "door"
+	# This cleans the string so "Door" becomes "door"
 	var clean_type = interaction_type.strip_edges().to_lower()
 	print("INTERACT FUNCTION WAS CALLED ON: ", name)
 	match interaction_type:
@@ -38,7 +33,6 @@ func interact():
 			try_open_door()
 		"npc":
 			start_dialogue()
-			speech_bubble().visible = true
 		"harddrive":
 			add_hard_drive()
 

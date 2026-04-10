@@ -8,10 +8,11 @@
 atlas = ExtResource("2_mxu08")
 region = Rect2(720, 64, 48, 48)
 
-[node name="SpeechBubble" type="Node2D" unique_id=292361673]
+[node name="Dialogue" type="Node2D" unique_id=292361673]
 script = ExtResource("1_jxc7o")
 
 [node name="DialogueUI" type="CanvasLayer" parent="." unique_id=1921108910]
+visible = false
 
 [node name="DialogueBox" type="NinePatchRect" parent="DialogueUI" unique_id=1790231617]
 anchors_preset = 8
@@ -19,12 +20,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -292.0
-offset_top = 89.0
-offset_right = 292.0
-offset_bottom = 217.0
+offset_left = -161.0
+offset_top = 51.0
+offset_right = 423.0
+offset_bottom = 179.00043
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.55, 0.55)
 texture = SubResource("AtlasTexture_8w581")
 region_rect = Rect2(0, 0, 48, 48)
 patch_margin_left = 16
@@ -34,7 +36,10 @@ patch_margin_bottom = 16
 metadata/_edit_use_anchors_ = true
 
 [node name="DialogueText" type="Label" parent="DialogueUI/DialogueBox" unique_id=1354685174]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.008561644
+anchor_bottom = -0.024857437
 offset_left = 30.0
 offset_top = 26.0
 offset_right = 555.0
