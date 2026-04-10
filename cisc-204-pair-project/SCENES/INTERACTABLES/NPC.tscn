@@ -7,8 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://bahlmgs282sye" path="res://ASSETS/NPCs/Doctor_1_idle_32x32.png" id="5_ohl54"]
 [ext_resource type="Texture2D" uid="uid://dcpks7vbkdjnl" path="res://ASSETS/NPCs/Doctor_2_idle_32x32.png" id="6_x3wvd"]
 [ext_resource type="Texture2D" uid="uid://dic5f5suqw72b" path="res://ASSETS/NPCs/Bouncer_idle_32x32.png" id="7_opm7d"]
-[ext_resource type="Texture2D" uid="uid://dggb0bl2r3jsc" path="res://ASSETS/UI/UI books & more.png" id="8_kxsrj"]
-[ext_resource type="PackedScene" uid="uid://c81nmkp6cqtvh" path="res://SCENES/INTERACTABLES/Speech Bubble.tscn" id="9_5gdoy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u4hbk"]
 radius = 22.022715
@@ -224,20 +222,3 @@ shape = SubResource("CircleShape2D_u4hbk")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1788361974]
 sprite_frames = SubResource("SpriteFrames_7xbsy")
 animation = &"Guard"
-
-[node name="NPC UI" type="CanvasLayer" parent="." unique_id=1115649381]
-visible = false
-
-[node name="NpcTexture" type="TextureRect" parent="NPC UI" unique_id=499885762]
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("8_kxsrj")
-stretch_mode = 5
-
-[node name="NpcLabel" type="Label" parent="NPC UI/NpcTexture" unique_id=1832852894]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-
-[node name="SpeechBubble" parent="." unique_id=292361673 instance=ExtResource("9_5gdoy")]
-position = Vector2(-25, -63)
