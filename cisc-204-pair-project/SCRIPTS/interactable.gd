@@ -3,12 +3,14 @@ class_name Interactable extends Area2D
 # Would need to code for switches, buttons, NPC dialogue triggers.
 @export var interact_note_text: String = "" # for KEY or dialogue
 @export var interaction_type: String = "Basic" # can only be note, door, npc, or harddrive
+@export var dialouge_text: String = ""
 
 '''@onready var envelope = $LetterSprite
 @onready var note_ui = $NoteUI
 @onready var note_label = $NoteUI/NoteTexture/NoteLabel
 @onready var note_texture = $NoteUI/NoteTexture
 '''
+#I have no clue what this does ngl
 @onready var envelope = $LetterSprite if has_node("LetterSprite") else null
 @onready var note_ui = $NoteUI if has_node("NoteUI") else null
 @onready var note_label = $NoteUI/NoteTexture/NoteLabel if has_node("NoteUI/NoteTexture/NoteLabel") else null
@@ -36,7 +38,6 @@ func interact():
 			start_dialogue()
 		"harddrive":
 			add_harddrive()
-			#pass
 
 
 func toggle_note():
@@ -105,6 +106,7 @@ func try_open_door():
 		print("LOCKED: You have 0 keys in GameManager.")
 
 func start_dialogue():
+	print("started dialouge")
 	pass
 
 func add_harddrive():

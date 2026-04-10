@@ -66,6 +66,7 @@ animations = [{
 
 [node name="Door" type="Area2D" unique_id=1158038630]
 script = SubResource("GDScript_ussyc")
+interaction_type = "door"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1356880146]
 position = Vector2(3, 16)

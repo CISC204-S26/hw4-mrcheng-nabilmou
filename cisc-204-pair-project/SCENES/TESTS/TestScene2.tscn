@@ -3,9 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://c1l2ylctq4ydm" path="res://SCENES/ROOMS/StartRoom.tscn" id="1_30eqk"]
 [ext_resource type="PackedScene" uid="uid://bn67onos3vkvd" path="res://SCENES/player.tscn" id="2_ve7oe"]
 [ext_resource type="PackedScene" uid="uid://op6b3eew8oca" path="res://SCENES/INTERACTABLES/Note.tscn" id="3_ve7oe"]
-[ext_resource type="PackedScene" uid="uid://48lmgoukpa6t" path="res://SCENES/INTERACTABLES/StartingPhone.tscn" id="4_rwfuf"]
+[ext_resource type="PackedScene" path="res://SCENES/INTERACTABLES/StartingPhone.tscn" id="4_rwfuf"]
 [ext_resource type="PackedScene" uid="uid://cbi68oekbamj5" path="res://SCENES/INTERACTABLES/Door.tscn" id="5_iqneq"]
 [ext_resource type="PackedScene" uid="uid://bk8qbs7k6m5te" path="res://SCENES/INTERACTABLES/Key.tscn" id="6_tgpwn"]
+[ext_resource type="PackedScene" uid="uid://dwqnd2v5ervp4" path="res://SCENES/INTERACTABLES/HardDrive.tscn" id="7_tgpwn"]
 
 [node name="TestScene2" type="Node2D" unique_id=617962878]
 
@@ -26,3 +27,7 @@ interaction_type = "door"
 
 [node name="Key" parent="." unique_id=655332623 instance=ExtResource("6_tgpwn")]
 position = Vector2(123, 134)
+
+[node name="HardDrive" parent="." unique_id=764411796 instance=ExtResource("7_tgpwn")]
+position = Vector2(80, -42)
+interaction_type = "drive"

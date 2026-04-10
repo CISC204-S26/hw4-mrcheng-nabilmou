@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dqkiqo1v3m6f0"]
+[gd_scene format=3 uid="uid://dllation0new5"]
 
 [ext_resource type="Script" uid="uid://dd848bpvpffrx" path="res://SCRIPTS/interactable.gd" id="1_u4hbk"]
 [ext_resource type="Texture2D" uid="uid://de6jma4xl3ftb" path="res://ASSETS/NPCs/Adam_idle_32x32.png" id="2_71pyx"]
