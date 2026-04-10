@@ -32,4 +32,4 @@ position = Vector2(-67, -46)
 [node name="Npc" parent="." unique_id=888581163 instance=ExtResource("7_sc4sl")]
 position = Vector2(-9, 23)
 interaction_type = "npc"
-dialouge_text = "HI!"
+dialouge_text = "HI I AM NPC 1!"

@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cbi68oekbamj5" path="res://SCENES/INTERACTABLES/Door.tscn" id="5_iqneq"]
 [ext_resource type="PackedScene" uid="uid://bk8qbs7k6m5te" path="res://SCENES/INTERACTABLES/Key.tscn" id="6_tgpwn"]
 [ext_resource type="PackedScene" uid="uid://dwqnd2v5ervp4" path="res://SCENES/INTERACTABLES/HardDrive.tscn" id="7_tgpwn"]
+[ext_resource type="PackedScene" uid="uid://dllation0new5" path="res://SCENES/INTERACTABLES/NPC.tscn" id="8_uhm18"]
 
 [node name="TestScene2" type="Node2D" unique_id=617962878]
 
@@ -23,7 +24,6 @@ position = Vector2(15, 159)
 
 [node name="Door" parent="." unique_id=1158038630 instance=ExtResource("5_iqneq")]
 position = Vector2(17, 49)
-interaction_type = "door"
 
 [node name="Key" parent="." unique_id=655332623 instance=ExtResource("6_tgpwn")]
 position = Vector2(123, 134)
@@ -31,3 +31,8 @@ position = Vector2(123, 134)
 [node name="HardDrive" parent="." unique_id=764411796 instance=ExtResource("7_tgpwn")]
 position = Vector2(80, -42)
 interaction_type = "drive"
+
+[node name="Npc" parent="HardDrive" unique_id=888581163 instance=ExtResource("8_uhm18")]
+position = Vector2(-153, 22)
+interaction_type = "npc"
+dialouge_text = "YOOO Go find a key lol!"

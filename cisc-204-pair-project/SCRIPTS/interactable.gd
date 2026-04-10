@@ -20,6 +20,9 @@ class_name Interactable extends Area2D
 @onready var NPC_texture = $"NPC UI/NpcTexture"
 @onready var NPC_label = $"NPC UI/NpcTexture/NpcLabel"
 
+
+@onready var speech_bubble = $SpeechBubble
+
 func _ready():
 	if note_ui:
 		note_ui.visible = false
@@ -41,7 +44,7 @@ func interact():
 		"npc":
 			start_dialogue()
 		"harddrive":
-			add_harddrive()
+			add_hard_drive()
 
 
 func toggle_note():
@@ -109,6 +112,7 @@ func try_open_door():
 	else:
 		print("LOCKED: You have 0 keys in GameManager.")
 
+'''
 func start_dialogue():
 	print("started dialouge")
 	if NPC_UI == null:
@@ -125,9 +129,52 @@ func start_dialogue():
 		NPC_UI.visible = true
 		if player:
 			player.can_move = false
+		type_text(NPC_label, dialouge_text)
+'''
 
-func add_harddrive():
+func start_dialogue():
+	print("started dialogue")
+	if speech_bubble == null:
+		return
+	var player = get_tree().get_first_node_in_group("player")
+	
+	# If bubble is already visible
+	if speech_bubble.visible:
+		speech_bubble.skip_or_close()
+			# If it just closed, restore movement
+		if not speech_bubble.visible and player:
+			player.can_move = true
+		return
+		# Otherwise start new dialogue
+	speech_bubble.show_text(dialouge_text)
+	if player:
+		player.can_move = false
+
+
+var typing := false
+var full_text := ""
+var text_speed := 0.03  # seconds per character
+
+func type_text(label: Label, text: String) -> void:
+	typing = true
+	full_text = text
+	label.text = ""
+	for i in text.length():
+		label.text += text[i]
+		await get_tree().create_timer(text_speed).timeout
+		if not typing:
+			break
+	
+	# If typing was interrupted, instantly finish
+	label.text = full_text
+	typing = false
+
+
+
+func add_hard_drive():
 	print("Attempting to pick up hard drive")
 	GameManager.num_harddrive += 1
 	print("Picked up a hard drive!")
-	queue_free()
+	
+	if interaction_type == "harddrive":
+		queue_free()
