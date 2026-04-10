@@ -13560,14 +13560,17 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_5d7fg"]
 tile_size = Vector2i(32, 32)
-physics_layer_0/collision_layer = 2
-physics_layer_0/collision_mask = 2
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_svlqo")
 sources/1 = SubResource("TileSetAtlasSource_eouby")
 sources/2 = SubResource("TileSetAtlasSource_4675p")
 sources/3 = SubResource("TileSetAtlasSource_0u0ae")
 sources/4 = SubResource("TileSetAtlasSource_5r4xh")
 sources/5 = SubResource("TileSetAtlasSource_jqwev")
+
+[sub_resource type="TileSet" id="TileSet_7b08u"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
 
 [node name="OfficeRoom" type="Node2D" unique_id=486450647]
 
@@ -13577,5 +13580,8 @@ tile_set = SubResource("TileSet_ikuqg")
 [node name="Walls" type="TileMapLayer" parent="." unique_id=960265625]
 tile_set = SubResource("TileSet_4675p")
 
-[node name="Furniture" type="TileMapLayer" parent="." unique_id=452256603]
+[node name="BigFurniture" type="TileMapLayer" parent="." unique_id=452256603]
 tile_set = SubResource("TileSet_5d7fg")
+
+[node name="SmallFurniture" type="TileMapLayer" parent="." unique_id=1852207384]
+tile_set = SubResource("TileSet_7b08u")

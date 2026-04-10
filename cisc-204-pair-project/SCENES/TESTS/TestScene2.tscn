@@ -15,7 +15,7 @@
 position = Vector2(-10, -76)
 
 [node name="StartingPhone" parent="." unique_id=118944451 instance=ExtResource("4_rwfuf")]
-position = Vector2(-114, 132)
+position = Vector2(-87, 79)
 
 [node name="Player" parent="." unique_id=220904025 instance=ExtResource("2_ve7oe")]
 position = Vector2(16, 157)
