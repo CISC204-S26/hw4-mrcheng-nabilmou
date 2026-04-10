@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c81nmkp6cqtvh"]
 
-[ext_resource type="Script" uid="uid://rbt0wvfjm15r" path="res://SCRIPTS/speech_bubble.gd" id="1_jxc7o"]
+[ext_resource type="Script" uid="uid://rbt0wvfjm15r" path="res://SCRIPTS/dialogue.gd" id="1_jxc7o"]
 [ext_resource type="Texture2D" uid="uid://dggb0bl2r3jsc" path="res://ASSETS/UI/UI books & more.png" id="2_mxu08"]
 [ext_resource type="FontFile" uid="uid://dh5n7jcgq8slb" path="res://ASSETS/UI/font/BoldPixels.otf" id="3_ann5r"]
 
