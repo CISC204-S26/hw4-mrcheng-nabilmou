@@ -43,7 +43,6 @@ animation = &"Phone"
 [node name="PhoneRingSound" type="AudioStreamPlayer2D" parent="." unique_id=753166150]
 
 [node name="DialogueUI" type="CanvasLayer" parent="." unique_id=1799122654]
-visible = false
 
 [node name="DialogueBox" type="NinePatchRect" parent="DialogueUI" unique_id=1813793538]
 anchors_preset = 8
