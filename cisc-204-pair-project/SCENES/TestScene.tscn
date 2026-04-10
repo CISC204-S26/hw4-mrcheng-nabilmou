@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://bejwuf2tmfplp" path="res://SCRIPTS/player.gd" id="2_v2wxe"]
 [ext_resource type="PackedScene" uid="uid://cbi68oekbamj5" path="res://SCENES/INTERACTABLES/Door.tscn" id="4_5prqs"]
 [ext_resource type="PackedScene" uid="uid://op6b3eew8oca" path="res://SCENES/INTERACTABLES/Note.tscn" id="5_3tnmc"]
+[ext_resource type="PackedScene" uid="uid://dwqnd2v5ervp4" path="res://SCENES/INTERACTABLES/HardDrive.tscn" id="6_ap67e"]
 
 [node name="TestScene" type="Node2D" unique_id=614647021]
 
@@ -24,3 +25,6 @@ position = Vector2(-66, 20)
 
 [node name="Note" parent="." unique_id=1528998479 instance=ExtResource("5_3tnmc")]
 position = Vector2(65, -23)
+
+[node name="HardDrive" parent="." unique_id=764411796 instance=ExtResource("6_ap67e")]
+position = Vector2(-67, -46)

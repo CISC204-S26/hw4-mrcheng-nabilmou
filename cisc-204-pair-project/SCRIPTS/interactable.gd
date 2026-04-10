@@ -35,7 +35,8 @@ func interact():
 		"npc":
 			start_dialogue()
 		"harddrive":
-			pass
+			add_harddrive()
+			#pass
 
 
 func toggle_note():
@@ -105,3 +106,9 @@ func try_open_door():
 
 func start_dialogue():
 	pass
+
+func add_harddrive():
+	print("Attempting to pick up hard drive")
+	GameManager.num_harddrive += 1
+	print("Picked up a hard drive!")
+	queue_free()
