@@ -3,13 +3,8 @@ class_name Interactable extends Area2D
 # Would need to code for switches, buttons, NPC dialogue triggers.
 @export var interact_note_text: String = "" # for KEY or dialogue
 @export var interaction_type: String = "Basic" # can only be note, door, npc, or harddrive
-@export var dialouge_text: String = ""
+@export var dialogue_text: String = ""
 
-'''@onready var envelope = $LetterSprite
-@onready var note_ui = $NoteUI
-@onready var note_label = $NoteUI/NoteTexture/NoteLabel
-@onready var note_texture = $NoteUI/NoteTexture
-'''
 #I have no clue what this does ngl compared to the other
 @onready var envelope = $LetterSprite if has_node("LetterSprite") else null
 @onready var note_ui = $NoteUI if has_node("NoteUI") else null
@@ -63,21 +58,6 @@ func toggle_note():
 		if player:
 			player.can_move = false
 
-'''
-# ----- CODE FOR NOTE # CODE FOR NOTE # CODE FOR NOTE # CODE FOR NOTE ------ #
-func toggle_note():
-	var player = get_tree().get_first_node_in_group("player")
-	
-	if note_ui.visible:
-		note_ui.visible = false
-		if player:
-			player.can_move = true
-	else:
-		note_label.text = interact_note_text
-		note_ui.visible = true
-		if player:
-			player.can_move = false
-'''
 
 func _on_note_area_2d_body_entered(body: Node):
 	if body.name == "Player":
@@ -112,25 +92,6 @@ func try_open_door():
 	else:
 		print("LOCKED: You have 0 keys in GameManager.")
 
-'''
-func start_dialogue():
-	print("started dialouge")
-	if NPC_UI == null:
-		return  # Not a note-type interactable
-	
-	var player = get_tree().get_first_node_in_group("player")
-	
-	if NPC_UI.visible:
-		NPC_UI.visible = false
-		if player:
-			player.can_move = true
-	else:
-		NPC_label.text = interact_note_text
-		NPC_UI.visible = true
-		if player:
-			player.can_move = false
-		type_text(NPC_label, dialouge_text)
-'''
 
 func start_dialogue():
 	print("started dialogue")
@@ -146,7 +107,7 @@ func start_dialogue():
 			player.can_move = true
 		return
 		# Otherwise start new dialogue
-	speech_bubble.show_text(dialouge_text)
+	speech_bubble.show_text(dialogue_text)
 	if player:
 		player.can_move = false
 
@@ -168,7 +129,6 @@ func type_text(label: Label, text: String) -> void:
 	# If typing was interrupted, instantly finish
 	label.text = full_text
 	typing = false
-
 
 
 func add_hard_drive():

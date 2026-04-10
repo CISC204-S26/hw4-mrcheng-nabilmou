@@ -20,18 +20,17 @@ position = Vector2(-10, -76)
 position = Vector2(-114, 132)
 
 [node name="Player" parent="." unique_id=220904025 instance=ExtResource("2_ve7oe")]
-position = Vector2(15, 159)
+position = Vector2(15, 160)
 
 [node name="Door" parent="." unique_id=1158038630 instance=ExtResource("5_iqneq")]
-position = Vector2(-212, 61)
+position = Vector2(16, 48)
 
 [node name="Key" parent="." unique_id=655332623 instance=ExtResource("6_tgpwn")]
-position = Vector2(123, 134)
+position = Vector2(123, 133)
 
 [node name="Npc" parent="." unique_id=888581163 instance=ExtResource("8_uhm18")]
-position = Vector2(-101, -56)
+position = Vector2(78, -269)
 interaction_type = "npc"
-dialouge_text = "YOOO Go find a key lol!"
 
 [node name="HardDrive" parent="." unique_id=764411796 instance=ExtResource("7_tgpwn")]
 position = Vector2(52, -78)
