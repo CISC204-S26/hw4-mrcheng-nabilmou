@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dqkiqo1v3m6f0"]
+
+[ext_resource type="Script" uid="uid://dd848bpvpffrx" path="res://SCRIPTS/interactable.gd" id="1_u4hbk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u4hbk"]
+radius = 22.022715
+
+[node name="Npc" type="Area2D" unique_id=888581163]
+script = ExtResource("1_u4hbk")
+metadata/_custom_type_script = "uid://dd848bpvpffrx"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1375722058]
+shape = SubResource("CircleShape2D_u4hbk")

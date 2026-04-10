@@ -3,13 +3,17 @@
 [ext_resource type="PackedScene" uid="uid://c1l2ylctq4ydm" path="res://SCENES/ROOMS/StartRoom.tscn" id="1_30eqk"]
 [ext_resource type="PackedScene" uid="uid://bn67onos3vkvd" path="res://SCENES/Player.tscn" id="2_ve7oe"]
 [ext_resource type="PackedScene" uid="uid://op6b3eew8oca" path="res://SCENES/INTERACTABLES/Note.tscn" id="3_ve7oe"]
+[ext_resource type="PackedScene" uid="uid://48lmgoukpa6t" path="res://SCENES/INTERACTABLES/StartingPhone.tscn" id="4_rwfuf"]
 
 [node name="TestScene2" type="Node2D" unique_id=617962878]
 
 [node name="StartRoom" parent="." unique_id=242163522 instance=ExtResource("1_30eqk")]
 
+[node name="Note" parent="." unique_id=1528998479 instance=ExtResource("3_ve7oe")]
+position = Vector2(-10, -76)
+
+[node name="StartingPhone" parent="." unique_id=118944451 instance=ExtResource("4_rwfuf")]
+position = Vector2(-114, 132)
+
 [node name="Player" parent="." unique_id=220904025 instance=ExtResource("2_ve7oe")]
 position = Vector2(15, 159)
-
-[node name="Note" parent="." unique_id=1528998479 instance=ExtResource("3_ve7oe")]
-position = Vector2(-66, -114)

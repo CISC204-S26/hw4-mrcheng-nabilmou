@@ -443,9 +443,8 @@ script = ExtResource("1_667t4")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1847273026]
 position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_dxdai")
-animation = &"Walk_Right"
+animation = &"Idle_Forward"
 autoplay = "Idle_Forward"
-frame_progress = 0.6459395
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=777894705]
 visible = false

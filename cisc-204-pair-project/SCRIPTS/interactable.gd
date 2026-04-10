@@ -1,8 +1,8 @@
 class_name Interactable extends Area2D
 
 # Would need to code for switches, buttons, NPC dialogue triggers.
-@export var interact_note_text: String = "" # for notes or dialogue
-@export var interaction_type: String = "Basic" # can only be note, door, npc, or drive
+@export var interact_note_text: String = "" # for KEY or dialogue
+@export var interaction_type: String = "Basic" # can only be note, door, npc, or harddrive
 
 '''@onready var envelope = $LetterSprite
 @onready var note_ui = $NoteUI
@@ -31,8 +31,8 @@ func interact():
 		"door":
 			try_open_door()
 		"npc":
-			pass
-		"drive":
+			start_dialogue()
+		"harddrive":
 			pass
 
 
@@ -53,7 +53,7 @@ func toggle_note():
 			player.can_move = false
 
 '''
-# ---- CODE FOR NOTES # CODE FOR NOTES # CODE FOR NOTES # CODE FOR NOTES ----- #
+# ----- CODE FOR NOTE # CODE FOR NOTE # CODE FOR NOTE # CODE FOR NOTE ------ #
 func toggle_note():
 	var player = get_tree().get_first_node_in_group("player")
 	
@@ -76,6 +76,7 @@ func _on_note_area_2d_body_exited(body: Node):
 	if body.name == "Player":
 		envelope.play("Closed")
 
+# ------- CODE FOR KEY # CODE FOR KEY # CODE FOR KEY # CODE FOR KEY -------- #
 func add_key():
 	var player = get_tree().get_first_node_in_group("player")
 	if player:
@@ -83,7 +84,7 @@ func add_key():
 		print("Picked up a key! Total keys:", player.num_keys)
 		queue_free()
 
-
+# ------ CODE FOR DOOR # CODE FOR DOOR # CODE FOR DOOR # CODE FOR DOOR ----- #
 func try_open_door():
 	var player = get_tree().get_first_node_in_group("player")
 	if not player:
@@ -110,3 +111,8 @@ func try_open_door():
 			queue_free()
 	else:
 		print("Door is locked. You need a key.")
+		
+		
+# -------- CODE FOR DIALOGUE # CODE FOR DIALOGUE # CODE FOR DIALOGUE ------- #
+func start_dialogue():
+	pass
