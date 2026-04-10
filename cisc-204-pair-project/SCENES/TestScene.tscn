@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cbi68oekbamj5" path="res://SCENES/INTERACTABLES/Door.tscn" id="4_5prqs"]
 [ext_resource type="PackedScene" uid="uid://op6b3eew8oca" path="res://SCENES/INTERACTABLES/Note.tscn" id="5_3tnmc"]
 [ext_resource type="PackedScene" uid="uid://dwqnd2v5ervp4" path="res://SCENES/INTERACTABLES/HardDrive.tscn" id="6_ap67e"]
+[ext_resource type="PackedScene" uid="uid://dllation0new5" path="res://SCENES/INTERACTABLES/NPC.tscn" id="7_sc4sl"]
 
 [node name="TestScene" type="Node2D" unique_id=614647021]
 
@@ -18,7 +19,6 @@ zoom = Vector2(5, 5)
 
 [node name="Door" parent="." unique_id=1158038630 instance=ExtResource("4_5prqs")]
 position = Vector2(51, 18)
-interaction_type = "door"
 
 [node name="Key" parent="." unique_id=655332623 instance=ExtResource("2_rp8ow")]
 position = Vector2(-66, 20)
@@ -28,3 +28,8 @@ position = Vector2(65, -23)
 
 [node name="HardDrive" parent="." unique_id=764411796 instance=ExtResource("6_ap67e")]
 position = Vector2(-67, -46)
+
+[node name="Npc" parent="." unique_id=888581163 instance=ExtResource("7_sc4sl")]
+position = Vector2(-9, 23)
+interaction_type = "npc"
+dialouge_text = "HI!"

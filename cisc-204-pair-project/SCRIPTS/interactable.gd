@@ -10,11 +10,15 @@ class_name Interactable extends Area2D
 @onready var note_label = $NoteUI/NoteTexture/NoteLabel
 @onready var note_texture = $NoteUI/NoteTexture
 '''
-#I have no clue what this does ngl
+#I have no clue what this does ngl compared to the other
 @onready var envelope = $LetterSprite if has_node("LetterSprite") else null
 @onready var note_ui = $NoteUI if has_node("NoteUI") else null
 @onready var note_label = $NoteUI/NoteTexture/NoteLabel if has_node("NoteUI/NoteTexture/NoteLabel") else null
 @onready var note_texture = $NoteUI/NoteTexture if has_node("NoteUI/NoteTexture") else null
+
+@onready var NPC_UI = $"NPC UI"
+@onready var NPC_texture = $"NPC UI/NpcTexture"
+@onready var NPC_label = $"NPC UI/NpcTexture/NpcLabel"
 
 func _ready():
 	if note_ui:
@@ -107,7 +111,20 @@ func try_open_door():
 
 func start_dialogue():
 	print("started dialouge")
-	pass
+	if NPC_UI == null:
+		return  # Not a note-type interactable
+	
+	var player = get_tree().get_first_node_in_group("player")
+	
+	if NPC_UI.visible:
+		NPC_UI.visible = false
+		if player:
+			player.can_move = true
+	else:
+		NPC_label.text = interact_note_text
+		NPC_UI.visible = true
+		if player:
+			player.can_move = false
 
 func add_harddrive():
 	print("Attempting to pick up hard drive")
