@@ -37,6 +37,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("Interact"):
 		if not reading_note:
 			var areas = interaction_area.get_overlapping_areas()
+			print("Areas:", areas)
 			for area in areas:
 				if area is Interactable:
 					area.interact()
