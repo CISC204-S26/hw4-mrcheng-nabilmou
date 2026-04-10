@@ -1,10 +1,14 @@
 [gd_scene format=3 uid="uid://bk8qbs7k6m5te"]
 
 [ext_resource type="Script" uid="uid://dd848bpvpffrx" path="res://SCRIPTS/interactable.gd" id="1_kwl3c"]
-[ext_resource type="Texture2D" uid="uid://dsjxes4yvmlog" path="res://ASSETS/ANIMATEDSTUFF/animated_door_big_1_32x32.png" id="2_gfgkv"]
+[ext_resource type="Texture2D" uid="uid://8jx4q284aux3" path="res://ASSETS/ROOMS/1_Generic_32x32.png" id="3_02ycn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gfgkv"]
-radius = 30.066593
+radius = 16.124516
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_atu54"]
+atlas = ExtResource("3_02ycn")
+region = Rect2(94, 1622, 34, 18)
 
 [node name="Key" type="Area2D" unique_id=655332623]
 script = ExtResource("1_kwl3c")
@@ -14,7 +18,11 @@ metadata/_custom_type_script = "uid://dd848bpvpffrx"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1559352137]
 shape = SubResource("CircleShape2D_gfgkv")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1371538113]
-position = Vector2(-1, -19)
-texture = ExtResource("2_gfgkv")
-hframes = 8
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1159562324]
+offset_left = -15.0
+offset_top = -14.0
+offset_right = 25.0
+offset_bottom = 26.0
+scale = Vector2(0.75, 0.75)
+texture = SubResource("AtlasTexture_atu54")
+stretch_mode = 3
