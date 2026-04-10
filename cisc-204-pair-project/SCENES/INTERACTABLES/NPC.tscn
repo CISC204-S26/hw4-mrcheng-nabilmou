@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bahlmgs282sye" path="res://ASSETS/NPCs/Doctor_1_idle_32x32.png" id="5_ohl54"]
 [ext_resource type="Texture2D" uid="uid://dcpks7vbkdjnl" path="res://ASSETS/NPCs/Doctor_2_idle_32x32.png" id="6_x3wvd"]
 [ext_resource type="Texture2D" uid="uid://dic5f5suqw72b" path="res://ASSETS/NPCs/Bouncer_idle_32x32.png" id="7_opm7d"]
+[ext_resource type="PackedScene" path="res://SCENES/INTERACTABLES/Dialogue.tscn" id="8_kxsrj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u4hbk"]
 radius = 22.022715
@@ -214,6 +215,9 @@ animations = [{
 
 [node name="Npc" type="Area2D" unique_id=888581163]
 script = ExtResource("1_u4hbk")
+interact_note_text = null
+interaction_type = null
+dialogue_text = null
 metadata/_custom_type_script = "uid://dd848bpvpffrx"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1375722058]
@@ -222,3 +226,5 @@ shape = SubResource("CircleShape2D_u4hbk")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1788361974]
 sprite_frames = SubResource("SpriteFrames_7xbsy")
 animation = &"Guard"
+
+[node name="SpeechBubble" parent="." unique_id=292361673 instance=ExtResource("8_kxsrj")]

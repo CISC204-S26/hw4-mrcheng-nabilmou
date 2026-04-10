@@ -38,6 +38,7 @@ func interact():
 			try_open_door()
 		"npc":
 			start_dialogue()
+			speech_bubble().visible = true
 		"harddrive":
 			add_hard_drive()
 
