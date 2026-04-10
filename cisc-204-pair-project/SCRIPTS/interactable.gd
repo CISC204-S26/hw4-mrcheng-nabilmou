@@ -14,7 +14,6 @@ class_name Interactable extends Area2D
 @onready var note_label = $NoteUI/NoteTexture/NoteLabel if has_node("NoteUI/NoteTexture/NoteLabel") else null
 @onready var note_texture = $NoteUI/NoteTexture if has_node("NoteUI/NoteTexture") else null
 
-
 func _ready():
 	if note_ui:
 		note_ui.visible = false
@@ -22,6 +21,9 @@ func _ready():
 
 
 func interact():
+	# This cleans the string so " Door " becomes "door"
+	var clean_type = interaction_type.strip_edges().to_lower()
+	print("INTERACT FUNCTION WAS CALLED ON: ", name)
 	match interaction_type:
 		"note":
 			print("Interacted with NOTE")
@@ -76,43 +78,30 @@ func _on_note_area_2d_body_exited(body: Node):
 	if body.name == "Player":
 		envelope.play("Closed")
 
-# ------- CODE FOR KEY # CODE FOR KEY # CODE FOR KEY # CODE FOR KEY -------- #
 func add_key():
-	var player = get_tree().get_first_node_in_group("player")
-	if player:
-		player.num_keys += 1
-		print("Picked up a key! Total keys:", player.num_keys)
-		queue_free()
+	print("Add Key function started!") 
+	GameManager.num_keys += 1
+	print("Picked up a key! Global keys:", GameManager.num_keys)
+	queue_free()
 
-# ------ CODE FOR DOOR # CODE FOR DOOR # CODE FOR DOOR # CODE FOR DOOR ----- #
 func try_open_door():
-	var player = get_tree().get_first_node_in_group("player")
-	if not player:
-		return
+	print("Attempting to open door...")
 	
-	if player.num_keys > 0:
-		player.num_keys -= 1
-		print("Door opened! Keys left:", player.num_keys)
-	
-	# Play animation if this interactable has one
+	# Check the Global Manager instead of the Player node
+	if GameManager.num_keys > 0:
+		GameManager.num_keys -= 1
+		print("SUCCESS: Opening Door! Keys remaining: ", GameManager.num_keys)
+		
+		if has_node("StaticBody2D/CollisionShape2D"):
+			$StaticBody2D/CollisionShape2D.set_deferred("disabled", true)
+		
 		if has_node("AnimatedSprite2D"):
-			var anim = $AnimatedSprite2D
-			anim.play("Open")
+			$AnimatedSprite2D.play("Door open") 
+			await $AnimatedSprite2D.animation_finished
 		
-		# Disable collision so player can walk through
-			if has_node("CollisionShape2D"):
-				$CollisionShape2D.disabled = true
-	
-			# Wait for animation to finish, then remove door
-			await anim.animation_finished
-			queue_free()
-		else:
-			# Fallback if no animation exists
-			queue_free()
+		#queue_free()
 	else:
-		print("Door is locked. You need a key.")
-		
-		
-# -------- CODE FOR DIALOGUE # CODE FOR DIALOGUE # CODE FOR DIALOGUE ------- #
+		print("LOCKED: You have 0 keys in GameManager.")
+
 func start_dialogue():
 	pass

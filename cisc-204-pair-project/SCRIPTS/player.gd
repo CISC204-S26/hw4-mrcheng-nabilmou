@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 @onready var interaction_area = $InteractionArea2D
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
-
+var num_keys: int = 0
 
 var SPEED := 100.0
 var last_direction := Vector2.DOWN

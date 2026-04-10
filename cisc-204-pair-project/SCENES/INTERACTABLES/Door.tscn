@@ -2,16 +2,24 @@
 
 [ext_resource type="Texture2D" uid="uid://dsjxes4yvmlog" path="res://ASSETS/ANIMATEDSTUFF/animated_door_big_1_32x32.png" id="1_ussyc"]
 
-[sub_resource type="GDScript" id="GDScript_3uysv"]
-resource_name = "Door"
-script/source = "class_name Door
-extends Interactable
+[sub_resource type="GDScript" id="GDScript_ussyc"]
+resource_name = "Locked Door"
+script/source = "extends \"res://SCRIPTS/interactable.gd\"
+
+class_name Door
+#extends Interactable
 
 func _ready():
 	interaction_type = \"door\"
 "
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_t2oem"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ussyc"]
+size = Vector2(58, 74)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ussyc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_02dpm"]
+size = Vector2(37, 60)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_02dpm"]
 atlas = ExtResource("1_ussyc")
@@ -51,16 +59,24 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4coe6")
 }],
-"loop": true,
+"loop": false,
 "name": &"Door open",
-"speed": 5.0
+"speed": 2.0
 }]
 
 [node name="Door" type="Area2D" unique_id=1158038630]
-script = SubResource("GDScript_3uysv")
+script = SubResource("GDScript_ussyc")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=564913863]
-shape = SubResource("CircleShape2D_t2oem")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1356880146]
+position = Vector2(3, 16)
+shape = SubResource("RectangleShape2D_ussyc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=331589893]
+physics_material_override = SubResource("PhysicsMaterial_ussyc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=638324079]
+position = Vector2(0.5, 18)
+shape = SubResource("RectangleShape2D_02dpm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1077900769]
 sprite_frames = SubResource("SpriteFrames_i0na5")

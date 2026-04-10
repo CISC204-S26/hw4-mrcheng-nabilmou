@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://m1hfx401y7fn"]
 
 [ext_resource type="PackedScene" uid="uid://c1l2ylctq4ydm" path="res://SCENES/ROOMS/StartRoom.tscn" id="1_30eqk"]
-[ext_resource type="PackedScene" uid="uid://bn67onos3vkvd" path="res://SCENES/Player.tscn" id="2_ve7oe"]
+[ext_resource type="PackedScene" uid="uid://bn67onos3vkvd" path="res://SCENES/player.tscn" id="2_ve7oe"]
 [ext_resource type="PackedScene" uid="uid://op6b3eew8oca" path="res://SCENES/INTERACTABLES/Note.tscn" id="3_ve7oe"]
 [ext_resource type="PackedScene" uid="uid://48lmgoukpa6t" path="res://SCENES/INTERACTABLES/StartingPhone.tscn" id="4_rwfuf"]
+[ext_resource type="PackedScene" uid="uid://cbi68oekbamj5" path="res://SCENES/INTERACTABLES/Door.tscn" id="5_iqneq"]
+[ext_resource type="PackedScene" uid="uid://bk8qbs7k6m5te" path="res://SCENES/INTERACTABLES/Key.tscn" id="6_tgpwn"]
 
 [node name="TestScene2" type="Node2D" unique_id=617962878]
 
@@ -17,3 +19,10 @@ position = Vector2(-114, 132)
 
 [node name="Player" parent="." unique_id=220904025 instance=ExtResource("2_ve7oe")]
 position = Vector2(15, 159)
+
+[node name="Door" parent="." unique_id=1158038630 instance=ExtResource("5_iqneq")]
+position = Vector2(17, 49)
+interaction_type = "door"
+
+[node name="Key" parent="." unique_id=655332623 instance=ExtResource("6_tgpwn")]
+position = Vector2(123, 134)
