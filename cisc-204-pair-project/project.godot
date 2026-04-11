@@ -13,7 +13,6 @@ config_version=5
 config/name="CISC204 Pair Project"
 run/main_scene="uid://lyohcym3ff0x"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
 
 [autoload]
 

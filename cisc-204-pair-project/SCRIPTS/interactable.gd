@@ -2,28 +2,28 @@ class_name Interactable extends Area2D
 
 # Would need to code for switches, buttons, NPC dialogue triggers.
 @export var interaction_type: String = "Basic" # can only be note, door, npc, or harddrive
-@export var note_text: String = "" # for KEY or dialogue
-@export var dialogue_text: String = ""
+@export var note_text: String = "" # each note has its own text
+@export var dialogue_text: String = "" # each NPC has its own dialogue line
 
-#I have no clue what this does ngl compared to the other
+# Checks if node with specific name exists, otherwise ignore it
 @onready var envelope = $LetterSprite if has_node("LetterSprite") else null
 @onready var note_ui = $NoteUI if has_node("NoteUI") else null
 @onready var note_label = $NoteUI/NoteTexture/NoteLabel if has_node("NoteUI/NoteTexture/NoteLabel") else null
 @onready var note_texture = $NoteUI/NoteTexture if has_node("NoteUI/NoteTexture") else null
 
-@onready var speech_bubble = $SpeechBubble
+@onready var dialogue_ui = $DialogueUI if has_node("DialogueUI") else null
+
 
 func _ready():
 	if note_ui:
 		note_ui.visible = false
-	#note_ui.visible = false
 
 
 func interact():
 	# This cleans the string so "Door" becomes "door"
 	var clean_type = interaction_type.strip_edges().to_lower()
 	print("INTERACT FUNCTION WAS CALLED ON: ", name)
-	match interaction_type:
+	match clean_type:
 		"note":
 			print("Interacted with NOTE")
 			toggle_note()
@@ -90,19 +90,19 @@ func try_open_door():
 
 func start_dialogue():
 	print("started dialogue")
-	if speech_bubble == null:
+	if dialogue_ui == null:
 		return
 	var player = get_tree().get_first_node_in_group("player")
 	
 	# If bubble is already visible
-	if speech_bubble.visible:
-		speech_bubble.skip_or_close()
+	if dialogue_ui.visible:
+		dialogue_ui.skip_or_close()
 			# If it just closed, restore movement
-		if not speech_bubble.visible and player:
+		if not dialogue_ui.visible and player:
 			player.can_move = true
 		return
 		# Otherwise start new dialogue
-	speech_bubble.show_text(dialogue_text)
+	dialogue_ui.show_text(dialogue_text)
 	if player:
 		player.can_move = false
 

@@ -4,7 +4,7 @@ extends Node2D
 var full_text := ""
 var typing := false
 
-@onready var label := $NinePatchRect/Label
+@onready var label := $DialogueUI/DialogueBox/DialogueText
 
 func show_text(text: String):
 	visible = true

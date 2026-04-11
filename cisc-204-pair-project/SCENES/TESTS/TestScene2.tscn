@@ -17,12 +17,13 @@ position = Vector2(-10, -76)
 [node name="StartingPhone" parent="." unique_id=118944451 instance=ExtResource("4_rwfuf")]
 position = Vector2(-87, 79)
 
+[node name="Npc" parent="." unique_id=888581163 instance=ExtResource("8_uhm18")]
+position = Vector2(79, -228)
+interaction_type = "npc"
+dialogue_text = "Hey long time no see"
+
 [node name="Player" parent="." unique_id=220904025 instance=ExtResource("2_ve7oe")]
 position = Vector2(16, 157)
-
-[node name="Npc" parent="." unique_id=888581163 instance=ExtResource("8_uhm18")]
-position = Vector2(77, -235)
-interaction_type = "npc"
 
 [node name="HardDrive" parent="." unique_id=764411796 instance=ExtResource("7_tgpwn")]
 position = Vector2(52, -78)

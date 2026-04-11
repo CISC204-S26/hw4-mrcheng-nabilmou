@@ -61,7 +61,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Door open",
-"speed": 6.0
+"speed": 8.0
 }]
 
 [node name="Door" type="Area2D" unique_id=1158038630]
@@ -69,16 +69,15 @@ script = SubResource("GDScript_ussyc")
 interaction_type = "door"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1356880146]
-position = Vector2(3, 16)
 shape = SubResource("RectangleShape2D_ussyc")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=331589893]
 physics_material_override = SubResource("PhysicsMaterial_ussyc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=638324079]
-position = Vector2(0.5, 18)
 shape = SubResource("RectangleShape2D_02dpm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1077900769]
+position = Vector2(0, -17)
 sprite_frames = SubResource("SpriteFrames_i0na5")
 animation = &"Door open"
