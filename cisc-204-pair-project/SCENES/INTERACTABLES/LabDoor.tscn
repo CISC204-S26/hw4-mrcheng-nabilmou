@@ -1,3 +1,59 @@
 [gd_scene format=3 uid="uid://bm3104guine6y"]
 
-[node name="LabDoor" type="Node2D" unique_id=813268420]
+[ext_resource type="Script" uid="uid://dd848bpvpffrx" path="res://SCRIPTS/interactable.gd" id="1_qso1w"]
+[ext_resource type="Texture2D" uid="uid://dcju5nf0prmhn" path="res://ASSETS/ANIMATEDSTUFF/animated_door_vertical_left_1_32x32.png" id="2_10epw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_daelr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7g50e"]
+atlas = ExtResource("2_10epw")
+region = Rect2(0, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4nmsu"]
+atlas = ExtResource("2_10epw")
+region = Rect2(64, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_me4vy"]
+atlas = ExtResource("2_10epw")
+region = Rect2(128, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6lsrl"]
+atlas = ExtResource("2_10epw")
+region = Rect2(192, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwxbp"]
+atlas = ExtResource("2_10epw")
+region = Rect2(256, 0, 64, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0s50j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7g50e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4nmsu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_me4vy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6lsrl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwxbp")
+}],
+"loop": false,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="LabDoor" type="Area2D" unique_id=1642207630]
+script = ExtResource("1_qso1w")
+metadata/_custom_type_script = "uid://dd848bpvpffrx"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1321541498]
+shape = SubResource("CircleShape2D_daelr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1433287158]
+sprite_frames = SubResource("SpriteFrames_0s50j")
