@@ -17,7 +17,7 @@ position = Vector2(16, 11)
 
 [node name="Note" parent="." unique_id=1528998479 instance=ExtResource("3_uos08")]
 position = Vector2(-21, -110)
-note_text = "Lesley, remind me to change the safe combination. We need to keep the Lab under wraps"
+note_text = "Lesley, remind me to change the safe combination. We need to keep the Lab under wraps. "
 
 [node name="Note2" parent="." unique_id=1924517080 instance=ExtResource("3_uos08")]
 position = Vector2(460, 240)
