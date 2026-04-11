@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://ja2pilj8kmv6"]
+
+[ext_resource type="PackedScene" uid="uid://c3cmaqjf63taa" path="res://SCENES/ROOMS/OfficeRoom.tscn" id="1_us46u"]
+[ext_resource type="PackedScene" uid="uid://bn67onos3vkvd" path="res://SCENES/Player.tscn" id="2_uos08"]
+
+[node name="TestScene3" type="Node2D" unique_id=107810296]
+
+[node name="OfficeRoom" parent="." unique_id=486450647 instance=ExtResource("1_us46u")]
+
+[node name="Player" parent="." unique_id=220904025 instance=ExtResource("2_uos08")]
+position = Vector2(16, 27)
