@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bws8nq4cs6k8n"]
+
+[ext_resource type="Script" uid="uid://dd848bpvpffrx" path="res://SCRIPTS/interactable.gd" id="1_42u8b"]
+[ext_resource type="Texture2D" uid="uid://c2srugnvjx2n6" path="res://ASSETS/ROOMS/Room_Builder_32x32.png" id="2_p8m3p"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qn5p4"]
+radius = 35.128338
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uw7in"]
+atlas = ExtResource("2_p8m3p")
+region = Rect2(1760, 1792, 32, 64)
+
+[node name="FalseWall" type="Area2D" unique_id=1353587326]
+script = ExtResource("1_42u8b")
+metadata/_custom_type_script = "uid://dd848bpvpffrx"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2010392512]
+shape = SubResource("CircleShape2D_qn5p4")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1327498248]
+offset_left = -16.0
+offset_top = -32.0
+offset_right = 16.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_uw7in")

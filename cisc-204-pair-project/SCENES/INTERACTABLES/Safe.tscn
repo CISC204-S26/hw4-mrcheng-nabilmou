@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://r24y6ono1qty"]
+
+[ext_resource type="Script" uid="uid://dd848bpvpffrx" path="res://SCRIPTS/interactable.gd" id="1_rlvte"]
+[ext_resource type="Texture2D" uid="uid://b023yw8too5nl" path="res://ASSETS/ROOMS/11_Halloween_32x32.png" id="2_qdy50"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ox1wp"]
+radius = 28.01785
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhym5"]
+atlas = ExtResource("2_qdy50")
+region = Rect2(386, 1334, 28, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ghlew"]
+atlas = ExtResource("2_qdy50")
+region = Rect2(417.9733, 1334.019, 28.19223, 30.038208)
+
+[node name="Safe" type="Area2D" unique_id=1002522100]
+script = ExtResource("1_rlvte")
+metadata/_custom_type_script = "uid://dd848bpvpffrx"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=137951648]
+shape = SubResource("CircleShape2D_ox1wp")
+
+[node name="SafeClosed" type="TextureRect" parent="." unique_id=1279329803]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = SubResource("AtlasTexture_lhym5")
+stretch_mode = 3
+
+[node name="SafeOpen" type="TextureRect" parent="." unique_id=1320348242]
+visible = false
+offset_left = -23.0
+offset_top = -17.0
+offset_right = 23.0
+offset_bottom = 23.0
+texture = SubResource("AtlasTexture_ghlew")
+stretch_mode = 3

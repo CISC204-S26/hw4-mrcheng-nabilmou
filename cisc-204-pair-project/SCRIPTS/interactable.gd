@@ -1,8 +1,8 @@
 class_name Interactable extends Area2D
 
 # Would need to code for switches, buttons, NPC dialogue triggers.
-@export var interact_note_text: String = "" # for KEY or dialogue
 @export var interaction_type: String = "Basic" # can only be note, door, npc, or harddrive
+@export var note_text: String = "" # for KEY or dialogue
 @export var dialogue_text: String = ""
 
 #I have no clue what this does ngl compared to the other
@@ -48,7 +48,7 @@ func toggle_note():
 		if player:
 			player.can_move = true
 	else:
-		note_label.text = interact_note_text
+		note_label.text = note_text
 		note_ui.visible = true
 		if player:
 			player.can_move = false

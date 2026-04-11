@@ -1,11 +1,28 @@
 [gd_scene format=3 uid="uid://ja2pilj8kmv6"]
 
 [ext_resource type="PackedScene" uid="uid://c3cmaqjf63taa" path="res://SCENES/ROOMS/OfficeRoom.tscn" id="1_us46u"]
+[ext_resource type="PackedScene" uid="uid://bws8nq4cs6k8n" path="res://SCENES/INTERACTABLES/FalseWall.tscn" id="2_k2o3x"]
 [ext_resource type="PackedScene" uid="uid://bn67onos3vkvd" path="res://SCENES/Player.tscn" id="2_uos08"]
+[ext_resource type="PackedScene" uid="uid://op6b3eew8oca" path="res://SCENES/INTERACTABLES/Note.tscn" id="3_uos08"]
 
 [node name="TestScene3" type="Node2D" unique_id=107810296]
 
 [node name="OfficeRoom" parent="." unique_id=486450647 instance=ExtResource("1_us46u")]
 
+[node name="FalseWall" parent="." unique_id=938994860 instance=ExtResource("2_k2o3x")]
+position = Vector2(208, -224)
+
 [node name="Player" parent="." unique_id=220904025 instance=ExtResource("2_uos08")]
-position = Vector2(16, 27)
+position = Vector2(16, 11)
+
+[node name="Note" parent="." unique_id=1528998479 instance=ExtResource("3_uos08")]
+position = Vector2(-21, -110)
+note_text = "Lesley, remind me to change the safe combination. We need to keep the Lab under wraps"
+
+[node name="Note2" parent="." unique_id=1924517080 instance=ExtResource("3_uos08")]
+position = Vector2(460, 240)
+note_text = "I remember overhearing Bubba saying hiding it BETWEEN the sofas was genius. I wonder what that meant."
+
+[node name="Note3" parent="." unique_id=602075615 instance=ExtResource("3_uos08")]
+position = Vector2(670, 112)
+note_text = "The boss "
