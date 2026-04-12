@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dllation0new5"]
 
 [ext_resource type="Script" uid="uid://dd848bpvpffrx" path="res://SCRIPTS/interactable.gd" id="1_u4hbk"]
-[ext_resource type="Texture2D" uid="uid://de6jma4xl3ftb" path="res://ASSETS/NPCs/Adam_idle_32x32.png" id="2_71pyx"]
+[ext_resource type="Texture2D" uid="uid://cqj30jtwffkj1" path="res://ASSETS/NPCs/Adam_32x32.png" id="2_kxsrj"]
 [ext_resource type="Texture2D" uid="uid://b5eu3h7b3hx5v" path="res://ASSETS/NPCs/Alex_idle_32x32.png" id="3_kxsrj"]
 [ext_resource type="Texture2D" uid="uid://xg772hxlt7u4" path="res://ASSETS/NPCs/Amelia_idle_32x32.png" id="4_5gdoy"]
 [ext_resource type="Texture2D" uid="uid://bahlmgs282sye" path="res://ASSETS/NPCs/Doctor_1_idle_32x32.png" id="5_ohl54"]
@@ -12,21 +12,29 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_u4hbk"]
 radius = 38.052597
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5gdoy"]
+atlas = ExtResource("2_kxsrj")
+region = Rect2(576, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohl54"]
+atlas = ExtResource("2_kxsrj")
+region = Rect2(608, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3wvd"]
+atlas = ExtResource("2_kxsrj")
+region = Rect2(640, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opm7d"]
+atlas = ExtResource("2_kxsrj")
+region = Rect2(672, 64, 32, 64)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_yh37d"]
-atlas = ExtResource("2_71pyx")
-region = Rect2(0, 0, 32, 64)
+atlas = ExtResource("2_kxsrj")
+region = Rect2(704, 64, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vrdhd"]
-atlas = ExtResource("2_71pyx")
-region = Rect2(32, 0, 32, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gqelr"]
-atlas = ExtResource("2_71pyx")
-region = Rect2(64, 0, 32, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6d7db"]
-atlas = ExtResource("2_71pyx")
-region = Rect2(96, 0, 32, 64)
+atlas = ExtResource("2_kxsrj")
+region = Rect2(736, 64, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iyvsc"]
 atlas = ExtResource("3_kxsrj")
@@ -100,16 +108,22 @@ region = Rect2(96, 0, 32, 64)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_5gdoy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohl54")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3wvd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opm7d")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_yh37d")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vrdhd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gqelr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6d7db")
 }],
 "loop": true,
 "name": &"Adam",
@@ -197,12 +211,14 @@ script = ExtResource("1_u4hbk")
 metadata/_custom_type_script = "uid://dd848bpvpffrx"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1375722058]
-position = Vector2(0, -21)
+position = Vector2(0, -22)
 shape = SubResource("CircleShape2D_u4hbk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1788361974]
 position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_7xbsy")
-animation = &"Guard"
+animation = &"Adam"
+frame = 3
+frame_progress = 0.3002243
 
 [node name="Dialogue" parent="." unique_id=292361673 instance=ExtResource("8_kxsrj")]

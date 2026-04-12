@@ -23,7 +23,7 @@ interaction_type = "npc"
 dialogue_text = "Hey long time no see"
 
 [node name="Player" parent="." unique_id=220904025 instance=ExtResource("2_ve7oe")]
-position = Vector2(16, 157)
+position = Vector2(-16, -201)
 
 [node name="HardDrive" parent="." unique_id=764411796 instance=ExtResource("7_tgpwn")]
 position = Vector2(52, -78)

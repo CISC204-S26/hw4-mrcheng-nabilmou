@@ -2,6 +2,7 @@ class_name Interactable extends Area2D
 
 # Would need to code for switches, buttons, NPC dialogue triggers.
 @export var interaction_type: String = "Basic" # can only be note, door, npc, or harddrive
+@export var door_animation: String = "" # each door instance's played animation can be different
 @export var note_text: String = "" # each note has its own text
 @export var dialogue_text: String = "" # each NPC has its own dialogue line
 
@@ -15,10 +16,14 @@ class_name Interactable extends Area2D
 
 
 func _ready():
+	_update_door_anim_preview()
+	set_process(Engine.is_editor_hint())
+	
 	if note_ui:
 		note_ui.visible = false
 
 
+# ------------------------INTERACT INTERACT INTERACT ------------------------------------
 func interact():
 	# This cleans the string so "Door" becomes "door"
 	var clean_type = interaction_type.strip_edges().to_lower()
@@ -37,6 +42,7 @@ func interact():
 			add_hard_drive()
 
 
+# -------------- NOTE NOTE NOTE NOTE NOTE NOTE ------------------------------------------
 func toggle_note():
 	if note_ui == null:
 		return  # Not a note-type interactable
@@ -53,7 +59,6 @@ func toggle_note():
 		if player:
 			player.can_move = false
 
-
 func _on_note_area_2d_body_entered(body: Node):
 	if body.name == "Player":
 		envelope.play("Open")
@@ -62,12 +67,16 @@ func _on_note_area_2d_body_exited(body: Node):
 	if body.name == "Player":
 		envelope.play("Closed")
 
+
+# -------------- KEY KEY KEY KEY KEY KEY KEY -------------------------------------------
 func add_key():
 	print("Add Key function started!") 
 	GameManager.num_keys += 1
 	print("Picked up a key! Global keys:", GameManager.num_keys)
 	queue_free()
 
+
+# --------------------- DOOR DOOR DOOR DOOR DOOR DOOR DOOR -----------------------------
 func try_open_door():
 	print("Attempting to open door...")
 	
@@ -80,14 +89,26 @@ func try_open_door():
 			$StaticBody2D/CollisionShape2D.set_deferred("disabled", true)
 		
 		if has_node("AnimatedSprite2D"):
-			$AnimatedSprite2D.play("Door open") 
+			$AnimatedSprite2D.play(door_animation) 
 			await $AnimatedSprite2D.animation_finished
 		
-		#queue_free()
 	else:
 		print("LOCKED: You have 0 keys in GameManager.")
 
 
+func _update_door_anim_preview():
+	if not has_node("AnimatedSprite2D"):
+		return
+	
+	var anim = $AnimatedSprite2D
+	
+	if anim.sprite_frames and anim.sprite_frames.has_animation(door_animation):
+		anim.animation = door_animation
+		anim.frame = 0
+		anim.stop()
+
+
+# ---------- DIALOGUE DIALOGUE DIALOGUE DIALOGUE DIALOGUE ------------------------------
 func start_dialogue():
 	print("started dialogue")
 	if dialogue_ui == null:
@@ -105,7 +126,6 @@ func start_dialogue():
 	dialogue_ui.show_text(dialogue_text)
 	if player:
 		player.can_move = false
-
 
 var typing := false
 var full_text := ""
@@ -125,7 +145,7 @@ func type_text(label: Label, text: String) -> void:
 	label.text = full_text
 	typing = false
 
-
+# -------------------------- DRIVE DRIVE DRIVE DRIVE DRIVE ------------------------------
 func add_hard_drive():
 	print("Attempting to pick up hard drive")
 	GameManager.num_harddrive += 1
