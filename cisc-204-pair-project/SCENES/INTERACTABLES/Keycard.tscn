@@ -1,15 +1,18 @@
 [gd_scene format=3 uid="uid://b4dpu5rd4wm6u"]
 
+[ext_resource type="Script" uid="uid://dd848bpvpffrx" path="res://SCRIPTS/interactable.gd" id="1_0ypcn"]
 [ext_resource type="Texture2D" uid="uid://vbmfom71ecll" path="res://ASSETS/ROOMS/19_Hospital_32x32.png" id="1_11dmb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0ypcn"]
-radius = 52.46904
+radius = 16.03122
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0ypcn"]
 atlas = ExtResource("1_11dmb")
 region = Rect2(35.771, 81.987, 24, 15)
 
 [node name="Keycard" type="Area2D" unique_id=1569729701]
+script = ExtResource("1_0ypcn")
+interaction_type = "keycard"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2028144725]
 shape = SubResource("CircleShape2D_0ypcn")

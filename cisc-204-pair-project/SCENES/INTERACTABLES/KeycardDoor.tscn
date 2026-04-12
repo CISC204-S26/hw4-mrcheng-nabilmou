@@ -1,0 +1,170 @@
+[gd_scene format=3 uid="uid://b8pglx8m44ayp"]
+
+[ext_resource type="Script" uid="uid://dd848bpvpffrx" path="res://SCRIPTS/interactable.gd" id="1_nd218"]
+[ext_resource type="Texture2D" uid="uid://dkr8lte5k2sx4" path="res://ASSETS/ANIMATEDSTUFF/animated_elevator_door_entrance_1_32x32.png" id="2_psyjj"]
+[ext_resource type="Texture2D" uid="uid://bg2huk0fpau5n" path="res://ASSETS/ANIMATEDSTUFF/animated_door_glass_sliding_32x32.png" id="3_cg6yp"]
+[ext_resource type="Texture2D" uid="uid://vbmfom71ecll" path="res://ASSETS/ROOMS/19_Hospital_32x32.png" id="3_psyjj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_114ik"]
+radius = 15.033297
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cg6yp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2dcyo"]
+size = Vector2(64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51u4j"]
+atlas = ExtResource("2_psyjj")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xc0hg"]
+atlas = ExtResource("2_psyjj")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ng2mr"]
+atlas = ExtResource("2_psyjj")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5tcq"]
+atlas = ExtResource("2_psyjj")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4cjjb"]
+atlas = ExtResource("2_psyjj")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbpf0"]
+atlas = ExtResource("2_psyjj")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_td3gb"]
+atlas = ExtResource("2_psyjj")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7v3xl"]
+atlas = ExtResource("2_psyjj")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2dcyo"]
+atlas = ExtResource("3_cg6yp")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50is4"]
+atlas = ExtResource("3_cg6yp")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8jka"]
+atlas = ExtResource("3_cg6yp")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3pnik"]
+atlas = ExtResource("3_cg6yp")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqoqk"]
+atlas = ExtResource("3_cg6yp")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4evd"]
+atlas = ExtResource("3_cg6yp")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73biw"]
+atlas = ExtResource("3_cg6yp")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lf03t"]
+atlas = ExtResource("3_cg6yp")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vph81"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_51u4j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xc0hg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ng2mr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5tcq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4cjjb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qbpf0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_td3gb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7v3xl")
+}],
+"loop": false,
+"name": &"Elevator_Door",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2dcyo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50is4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q8jka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3pnik")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqoqk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s4evd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_73biw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lf03t")
+}],
+"loop": false,
+"name": &"Lab_Door",
+"speed": 6.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vph81"]
+atlas = ExtResource("3_psyjj")
+region = Rect2(333.972, 1119.999, 12, 18)
+
+[node name="KeycardDoor" type="Area2D" unique_id=918274409]
+script = ExtResource("1_nd218")
+interaction_type = "door"
+metadata/_custom_type_script = "uid://dd848bpvpffrx"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=375072205]
+position = Vector2(-53, 10)
+shape = SubResource("CircleShape2D_114ik")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1085334172]
+physics_material_override = SubResource("PhysicsMaterial_cg6yp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2021053407]
+shape = SubResource("RectangleShape2D_2dcyo")
+
+[node name="KeycardDoorSprite" type="AnimatedSprite2D" parent="." unique_id=98796507]
+sprite_frames = SubResource("SpriteFrames_vph81")
+animation = &"Elevator_Door"
+
+[node name="KeyCardSwipe" type="TextureRect" parent="." unique_id=178905]
+offset_left = -59.0
+offset_top = 4.0
+offset_right = -47.0
+offset_bottom = 22.0
+texture = SubResource("AtlasTexture_vph81")
+stretch_mode = 5

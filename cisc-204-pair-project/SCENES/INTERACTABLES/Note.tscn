@@ -36,7 +36,7 @@ animations = [{
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8dbsn"]
 atlas = ExtResource("2_8dbsn")
-region = Rect2(512.5, 18, 47, 61)
+region = Rect2(513, 81, 48, 62)
 margin = Rect2(16, 0, 16, 0)
 
 [node name="Note" type="Area2D" unique_id=1528998479]
@@ -76,12 +76,12 @@ stretch_mode = 5
 modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 layout_mode = 0
-offset_left = 24.25
-offset_top = 1.625
-offset_right = 98.25
-offset_bottom = 112.125
+offset_left = 23.125
+offset_top = 3.875
+offset_right = 97.125
+offset_bottom = 114.375
 scale = Vector2(0.5, 0.5)
-theme_override_constants/line_spacing = -4
+theme_override_constants/line_spacing = -3
 theme_override_fonts/font = ExtResource("3_87umw")
 theme_override_font_sizes/font_size = 12
 autowrap_mode = 3

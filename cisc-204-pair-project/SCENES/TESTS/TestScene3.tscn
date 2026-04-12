@@ -13,14 +13,14 @@
 position = Vector2(208, -224)
 
 [node name="Player" parent="." unique_id=220904025 instance=ExtResource("2_uos08")]
-position = Vector2(16, 11)
+position = Vector2(464, 90)
 
 [node name="Note" parent="." unique_id=1528998479 instance=ExtResource("3_uos08")]
 position = Vector2(-21, -110)
 note_text = "Lesley, remind me to change the safe combination. We need to keep the Lab under wraps. "
 
 [node name="Note2" parent="." unique_id=1924517080 instance=ExtResource("3_uos08")]
-position = Vector2(460, 240)
+position = Vector2(369, 243)
 note_text = "I remember overhearing Bubba saying hiding it BETWEEN the sofas was genius. I wonder what that meant."
 
 [node name="Note3" parent="." unique_id=602075615 instance=ExtResource("3_uos08")]

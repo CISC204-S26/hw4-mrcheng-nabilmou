@@ -3,6 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://utogh7nbqc5c" path="res://ASSETS/PLAYER/Bob_32x32.png" id="1_85nbx"]
 [ext_resource type="Script" uid="uid://clojjpg0s7miv" path="res://SCRIPTS/player.gd" id="1_667t4"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_667t4"]
+size = Vector2(25, 44)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_667t4"]
+radius = 38.013157
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_dxdai"]
 atlas = ExtResource("1_85nbx")
 region = Rect2(192, 64, 32, 64)
@@ -429,17 +435,21 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_667t4"]
-size = Vector2(25, 44)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_667t4"]
-radius = 44.04543
-
 [node name="Player" type="CharacterBody2D" unique_id=220904025]
 script = ExtResource("1_667t4")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1228000612]
-offset = Vector2(0, -50)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=777894705]
+position = Vector2(0, -22)
+shape = SubResource("RectangleShape2D_667t4")
+
+[node name="InteractionArea2D" type="Area2D" parent="." unique_id=1493574799]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea2D" unique_id=2071174942]
+position = Vector2(0, -21)
+shape = SubResource("CircleShape2D_667t4")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=441582169]
+target_position = Vector2(32, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1847273026]
 position = Vector2(0, -32)
@@ -449,17 +459,5 @@ autoplay = "Idle_Forward"
 frame = 1
 frame_progress = 0.81887496
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=777894705]
-visible = false
-position = Vector2(0, -22)
-shape = SubResource("RectangleShape2D_667t4")
-
-[node name="InteractionArea2D" type="Area2D" parent="." unique_id=1493574799]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea2D" unique_id=2071174942]
-position = Vector2(0, -21)
-shape = SubResource("CircleShape2D_667t4")
-
-[node name="RayCast2D" type="RayCast2D" parent="." unique_id=441582169]
-target_position = Vector2(32, 0)
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1228000612]
+offset = Vector2(0, -50)

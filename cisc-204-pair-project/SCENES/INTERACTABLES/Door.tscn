@@ -1,50 +1,17 @@
 [gd_scene format=3 uid="uid://cbi68oekbamj5"]
 
-[ext_resource type="Texture2D" uid="uid://dkr8lte5k2sx4" path="res://ASSETS/ANIMATEDSTUFF/animated_elevator_door_entrance_1_32x32.png" id="1_7iwbw"]
 [ext_resource type="Script" uid="uid://dd848bpvpffrx" path="res://SCRIPTS/interactable.gd" id="1_e0pcw"]
 [ext_resource type="Texture2D" uid="uid://dsjxes4yvmlog" path="res://ASSETS/ANIMATEDSTUFF/animated_door_big_1_32x32.png" id="1_ussyc"]
 [ext_resource type="Texture2D" uid="uid://dcju5nf0prmhn" path="res://ASSETS/ANIMATEDSTUFF/animated_door_vertical_left_1_32x32.png" id="3_e0pcw"]
 [ext_resource type="Texture2D" uid="uid://g6t84m05vnb8" path="res://ASSETS/ANIMATEDSTUFF/animated_door_vertical_right_1_32x32.png" id="4_4coe6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ussyc"]
-size = Vector2(57, 67)
+size = Vector2(32, 67)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ussyc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_02dpm"]
 size = Vector2(27, 56)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i0na5"]
-atlas = ExtResource("1_7iwbw")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_03eyi"]
-atlas = ExtResource("1_7iwbw")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ujuex"]
-atlas = ExtResource("1_7iwbw")
-region = Rect2(128, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0loq3"]
-atlas = ExtResource("1_7iwbw")
-region = Rect2(192, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_60357"]
-atlas = ExtResource("1_7iwbw")
-region = Rect2(256, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6k72j"]
-atlas = ExtResource("1_7iwbw")
-region = Rect2(320, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ngcny"]
-atlas = ExtResource("1_7iwbw")
-region = Rect2(384, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mmd62"]
-atlas = ExtResource("1_7iwbw")
-region = Rect2(448, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_02dpm"]
 atlas = ExtResource("1_ussyc")
@@ -110,35 +77,6 @@ region = Rect2(256, 0, 64, 96)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_i0na5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_03eyi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ujuex")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0loq3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_60357")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6k72j")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ngcny")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mmd62")
-}],
-"loop": false,
-"name": &"Elevator_Door",
-"speed": 6.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_02dpm")
 }, {
 "duration": 1.0,
@@ -200,9 +138,10 @@ animations = [{
 
 [node name="Door" type="Area2D" unique_id=1158038630]
 script = ExtResource("1_e0pcw")
+interaction_type = "door"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1356880146]
-position = Vector2(-0.5, -3.5)
+position = Vector2(0, -3.5)
 shape = SubResource("RectangleShape2D_ussyc")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=331589893]
@@ -212,7 +151,7 @@ physics_material_override = SubResource("PhysicsMaterial_ussyc")
 position = Vector2(-0.5, 2)
 shape = SubResource("RectangleShape2D_02dpm")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1077900769]
+[node name="NormalDoorSprite" type="AnimatedSprite2D" parent="." unique_id=1077900769]
 position = Vector2(0, -17)
 sprite_frames = SubResource("SpriteFrames_i0na5")
 animation = &"H_Door"

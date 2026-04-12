@@ -3,8 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://c1l2ylctq4ydm" path="res://SCENES/ROOMS/StartRoom.tscn" id="1_30eqk"]
 [ext_resource type="PackedScene" uid="uid://bn67onos3vkvd" path="res://SCENES/Player.tscn" id="2_ve7oe"]
 [ext_resource type="PackedScene" uid="uid://op6b3eew8oca" path="res://SCENES/INTERACTABLES/Note.tscn" id="3_ve7oe"]
-[ext_resource type="PackedScene" uid="uid://48lmgoukpa6t" path="res://SCENES/INTERACTABLES/StartingPhone.tscn" id="4_rwfuf"]
 [ext_resource type="PackedScene" uid="uid://dwqnd2v5ervp4" path="res://SCENES/INTERACTABLES/HardDrive.tscn" id="7_tgpwn"]
+[ext_resource type="PackedScene" uid="uid://bk8qbs7k6m5te" path="res://SCENES/INTERACTABLES/Key.tscn" id="7_uhm18"]
+[ext_resource type="PackedScene" uid="uid://b4dpu5rd4wm6u" path="res://SCENES/INTERACTABLES/Keycard.tscn" id="8_lwgcp"]
 [ext_resource type="PackedScene" uid="uid://dllation0new5" path="res://SCENES/INTERACTABLES/NPC.tscn" id="8_uhm18"]
 
 [node name="TestScene2" type="Node2D" unique_id=617962878]
@@ -12,19 +13,26 @@
 [node name="StartRoom" parent="." unique_id=242163522 instance=ExtResource("1_30eqk")]
 
 [node name="Note" parent="." unique_id=1528998479 instance=ExtResource("3_ve7oe")]
-position = Vector2(-10, -76)
-
-[node name="StartingPhone" parent="." unique_id=118944451 instance=ExtResource("4_rwfuf")]
-position = Vector2(-87, 79)
+position = Vector2(-25, -76)
 
 [node name="Npc" parent="." unique_id=888581163 instance=ExtResource("8_uhm18")]
-position = Vector2(79, -228)
+position = Vector2(112, -168)
 interaction_type = "npc"
 dialogue_text = "Hey long time no see"
 
 [node name="Player" parent="." unique_id=220904025 instance=ExtResource("2_ve7oe")]
-position = Vector2(-16, -201)
+position = Vector2(15, 125)
 
 [node name="HardDrive" parent="." unique_id=764411796 instance=ExtResource("7_tgpwn")]
-position = Vector2(52, -78)
+position = Vector2(58, -79)
 interaction_type = "drive"
+
+[node name="Key" parent="." unique_id=655332623 instance=ExtResource("7_uhm18")]
+position = Vector2(129, 82)
+
+[node name="Keycard" parent="." unique_id=1569729701 instance=ExtResource("8_lwgcp")]
+position = Vector2(-132, -87)
+
+[node name="Keycard2" parent="." unique_id=1680618804 instance=ExtResource("8_lwgcp")]
+position = Vector2(25, -163)
+keycard_level = 2

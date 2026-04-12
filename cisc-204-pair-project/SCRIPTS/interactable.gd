@@ -1,10 +1,13 @@
 class_name Interactable extends Area2D
 
 # Would need to code for switches, buttons, NPC dialogue triggers.
-@export var interaction_type: String = "Basic" # can only be note, door, npc, or harddrive
+@export var interaction_type: String = "Basic" # note, door, npc, or harddrive
 @export var door_animation: String = "" # each door instance's played animation can be different
 @export var note_text: String = "" # each note has its own text
 @export var dialogue_text: String = "" # each NPC has its own dialogue line
+@export var keycard_level: int = 1 # set level of keycard instance
+@export var required_keycard_level: int = 0 # set level of required keycard to open door
+
 
 # Checks if node with specific name exists, otherwise ignore it
 @onready var envelope = $LetterSprite if has_node("LetterSprite") else null
@@ -16,11 +19,10 @@ class_name Interactable extends Area2D
 
 
 func _ready():
-	_update_door_anim_preview()
-	set_process(Engine.is_editor_hint())
-	
 	if note_ui:
 		note_ui.visible = false
+		
+	_set_door_anim_frame()
 
 
 # ------------------------INTERACT INTERACT INTERACT ------------------------------------
@@ -34,6 +36,8 @@ func interact():
 			toggle_note()
 		"key":
 			add_key()
+		"keycard":
+			add_keycard()
 		"door":
 			try_open_door()
 		"npc":
@@ -68,11 +72,22 @@ func _on_note_area_2d_body_exited(body: Node):
 		envelope.play("Closed")
 
 
-# -------------- KEY KEY KEY KEY KEY KEY KEY -------------------------------------------
+# -------------- PICKUPS -------------------------------------------
 func add_key():
-	print("Add Key function started!") 
 	GameManager.num_keys += 1
-	print("Picked up a key! Global keys:", GameManager.num_keys)
+	print("Picked up a key! Global keys: ", GameManager.num_keys)
+	queue_free()
+
+func add_keycard():
+	if keycard_level == 1:
+		GameManager.give_keycard(1)
+	elif keycard_level == 2:
+		GameManager.give_keycard(2)
+	queue_free()
+
+func add_hard_drive():
+	GameManager.num_harddrive += 1
+	print("Picked up a hard drive!")
 	queue_free()
 
 
@@ -80,32 +95,68 @@ func add_key():
 func try_open_door():
 	print("Attempting to open door...")
 	
-	# Check the Global Manager instead of the Player node
-	if GameManager.num_keys > 0:
-		GameManager.num_keys -= 1
-		print("SUCCESS: Opening Door! Keys remaining: ", GameManager.num_keys)
+	# ---------- Keycard Doors ---------
+	if required_keycard_level > 0:
+		if required_keycard_level == 1 and not GameManager.has_keycard1:
+			print("LOCKED: Need Keycard Level 1")
+			return
 		
-		if has_node("StaticBody2D/CollisionShape2D"):
-			$StaticBody2D/CollisionShape2D.set_deferred("disabled", true)
+		if required_keycard_level == 2 and not GameManager.has_keycard2:
+			print("LOCKED: Need Keycard Level 2")
+			return
 		
-		if has_node("AnimatedSprite2D"):
-			$AnimatedSprite2D.play(door_animation) 
-			await $AnimatedSprite2D.animation_finished
-		
+		print("KEYCARD ACCEPTED: Opening secured door")
+		open_door()
+	
+	# ---------- Normal Doors ----------
 	else:
-		print("LOCKED: You have 0 keys in GameManager.")
+		if GameManager.num_keys <= 0:
+			print("Locked: Need a KEY")
+			return
+		
+		GameManager.num_keys -=1
+		print("Used a KEY")
+		open_door()
+		
+	
+	## KEY CHECK (if you still want normal doors too)
+	#if GameManager.num_keys > 0:
+		#GameManager.num_keys -= 1
+	#print("SUCCESS: Opening Door!")
+	
+	
+func open_door():
+	if has_node("StaticBody2D/CollisionShape2D"):
+		$StaticBody2D/CollisionShape2D.set_deferred("disabled", true)
+	
+	if has_node("NormalDoorSprite"):
+		$NormalDoorSprite.play(door_animation)
+		await $NormalDoorSprite.animation_finished
+	
+	if has_node("KeycardDoorSprite"):
+		$KeycardDoorSprite.play(door_animation)
+		await $KeycardDoorSprite.animation_finished
 
 
-func _update_door_anim_preview():
-	if not has_node("AnimatedSprite2D"):
+func _set_door_anim_frame():
+	if door_animation == "":
 		return
 	
-	var anim = $AnimatedSprite2D
+	# Show normal door sprite if it exists
+	if has_node("NormalDoorSprite"):
+		var anim = $NormalDoorSprite
+		if anim.sprite_frames and anim.sprite_frames.has_animation(door_animation):
+			anim.animation = door_animation
+			anim.frame = 0
+			anim.stop()
 	
-	if anim.sprite_frames and anim.sprite_frames.has_animation(door_animation):
-		anim.animation = door_animation
-		anim.frame = 0
-		anim.stop()
+	# Show keycard door sprite if it exists
+	if has_node("KeycardDoorSprite"):
+		var anim2 = $KeycardDoorSprite
+		if anim2.sprite_frames and anim2.sprite_frames.has_animation(door_animation):
+			anim2.animation = door_animation
+			anim2.frame = 0
+			anim2.stop()
 
 
 # ---------- DIALOGUE DIALOGUE DIALOGUE DIALOGUE DIALOGUE ------------------------------
@@ -146,7 +197,7 @@ func type_text(label: Label, text: String) -> void:
 	typing = false
 
 # -------------------------- DRIVE DRIVE DRIVE DRIVE DRIVE ------------------------------
-func add_hard_drive():
+func add_harddrive():
 	print("Attempting to pick up hard drive")
 	GameManager.num_harddrive += 1
 	print("Picked up a hard drive!")

@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dsx84d3v50a1" path="res://SCENES/INTERACTABLES/Dialogue.tscn" id="8_kxsrj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u4hbk"]
-radius = 38.052597
+radius = 20.024984
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5gdoy"]
 atlas = ExtResource("2_kxsrj")

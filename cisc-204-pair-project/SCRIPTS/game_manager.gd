@@ -12,3 +12,12 @@ func can_enter_final_room():
 	if num_harddrive >= 5:
 		print("You can enter the final room")
 		return drives_collected >= 5
+
+func give_keycard(level: int):
+	if level == 1:
+		has_keycard1 = true
+		print("Picked up Keycard Level 1")
+		
+	if level == 2:
+		has_keycard2 = true
+		print("Picked up Keycard Level 2")
