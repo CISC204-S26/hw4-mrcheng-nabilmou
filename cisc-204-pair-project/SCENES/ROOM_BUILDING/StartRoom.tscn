@@ -3,12 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://c2srugnvjx2n6" path="res://ASSETS/ROOMS/Room_Builder_32x32.png" id="1_w6aes"]
 [ext_resource type="Texture2D" uid="uid://8jx4q284aux3" path="res://ASSETS/ROOMS/1_Generic_32x32.png" id="3_bdlid"]
 [ext_resource type="Texture2D" uid="uid://dp8vx2ju4cfen" path="res://ASSETS/ROOMS/2_LivingRoom_32x32.png" id="4_brlca"]
-[ext_resource type="PackedScene" uid="uid://ja2pilj8kmv6" path="res://SCENES/TESTS/TestScene3.tscn" id="4_osygj"]
 [ext_resource type="Texture2D" uid="uid://deg23rng3npjl" path="res://ASSETS/ROOMS/13_Conference_Hall_32x32.png" id="5_35ghx"]
 [ext_resource type="Texture2D" uid="uid://j0ljjth67eb8" path="res://ASSETS/ROOMS/22_Museum_32x32.png" id="5_orpgw"]
 [ext_resource type="Texture2D" uid="uid://cj7sltiwnebhk" path="res://ASSETS/ROOMS/7_Art_32x32.png" id="6_fvcal"]
 [ext_resource type="PackedScene" uid="uid://cbi68oekbamj5" path="res://SCENES/INTERACTABLES/Door.tscn" id="8_fvcal"]
-[ext_resource type="PackedScene" uid="uid://b8pglx8m44ayp" path="res://SCENES/INTERACTABLES/KeycardDoor.tscn" id="8_osygj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_837px"]
 texture = ExtResource("1_w6aes")
@@ -31848,12 +31846,6 @@ tile_set = SubResource("TileSet_87e3c")
 tile_map_data = PackedByteArray("AAD7/wYAAAA2ADsAAAACAAYAAAA3ADsAAAADAAYAAAA4ADsAAAAAAAYAAAA3ADsAAAABAAYAAAA4ADsAAAD+/wYAAAA3ADsAAAD//wYAAAA4ADsAAAD8/wYAAAA3ADsAAAD9/wYAAAA4ADsAAAD7/wEAAAA3ADYAAAD7/wIAAAA3ADcAAAD7/wMAAAA2ADgAAAABAAEAAAA0ADYAAAABAAIAAAA0ADcAAAD8/wEAAAA3ADgAAAD8/wIAAAA3ADkAAAD9/wEAAAA3ADgAAAD9/wIAAAA3ADkAAAACAAEAAAA3ADgAAAACAAIAAAA3ADkAAAADAAEAAAA3ADgAAAADAAIAAAA3ADkAAAD7/wQAAAA2ADgAAAD7/wUAAAA2ADgAAAD7////AAA1ADoAAAD7/wAAAAA1ADsAAAD5////AAA3ADsAAAD6////AAA4ADsAAAAFAP//AAA6ADoAAAAGAP//AAA4ADsAAAD3////AAA4ADsAAAD4////AAA4ADsAAAAHAP//AAA3ADsAAAAIAP//AAA4ADsAAAD3//v/AAA0ADYAAAD4//v/AAA4ADgAAAD4//z/AAA4ADkAAAD5//r/AAA2ADgAAAD5//v/AAA2ADkAAAD5//z/AAA2ADoAAAD5//j/AAA2ADYAAAD5//n/AAA2ADcAAAAEAPj/AAA3ADgAAAAEAPn/AAA3ADkAAAAFAPj/AAA4ADgAAAAFAPn/AAA4ADkAAAD8//j/AAA3ADgAAAD8//n/AAA3ADkAAAD9//j/AAA2ADkAAAD9//n/AAA2ADoAAAD6//j/AAA3ADgAAAD6//n/AAA3ADkAAAD7//j/AAA4ADgAAAD7//n/AAA4ADkAAAD9//f/AAA2ADcAAAD+//b/AAA3ADgAAAD+//f/AAA3ADkAAAD9//b/AAA2ADYAAAD+/wEAAAA3ADgAAAD+/wIAAAA3ADkAAAD//wEAAAA0ADkAAAD//wIAAAA0ADoAAAAFAAYAAAA5ADsAAAAEAAYAAAA3ADsAAAAFAAEAAAA6ADYAAAAFAAIAAAA5ADcAAAAFAAMAAAA5ADgAAAAFAAQAAAA5ADgAAAAFAAUAAAA5ADgAAAAEAAEAAAA4ADgAAAAEAAIAAAA4ADkAAAAFAAAAAAA6ADsAAAAJAP//AAA4ADsAAAAHAPj/AAA5ADYAAAAHAPn/AAA5ADcAAAAGAPj/AAA4ADgAAAAGAPn/AAA4ADkAAAADAPj/AAA5ADkAAAADAPn/AAA5ADoAAAADAPb/AAA5ADYAAAADAPf/AAA5ADcAAAACAPb/AAA4ADgAAAACAPf/AAA4ADkAAAAHAPr/AAA5ADgAAAAHAPv/AAA5ADkAAAAHAPz/AAA5ADoAAAAIAPv/AAA3ADgAAAAIAPz/AAA3ADkAAAAJAPv/AAA4ADgAAAAJAPz/AAA4ADkAAAAKAPv/AAA5ADYAAAAKAPz/AAA5ADcAAAAKAP//AAA5ADsAAAAKAP7/AAA5ADgAAAAKAP3/AAA5ADgAAAD3//z/AAA0ADcAAADz////AAA3ADsAAAD0////AAA3ADsAAAD1////AAA4ADsAAAD2////AAA3ADsAAADz//v/AAA4ADgAAADz//z/AAA4ADkAAAD0//v/AAA0ADkAAAD0//z/AAA0ADoAAADy//v/AAA2ADYAAADy//z/AAA2ADcAAADy//3/AAA2ADgAAADy//7/AAA2ADgAAADy////AAA2ADsAAAD1//v/AAA3ADsAAAD2//v/AAA4ADsAAAA=")
 tile_set = SubResource("TileSet_brlca")
 
-[node name="KeycardDoor2" parent="." unique_id=351789723 instance=ExtResource("8_osygj")]
-position = Vector2(-320, -126)
-door_animation = "Lab_Door"
-target_scene = ExtResource("4_osygj")
-required_keycard_level = 1
-
 [node name="ElevatorWall" type="TileMapLayer" parent="." unique_id=113731782]
 tile_map_data = PackedByteArray("AAADAOz/AABpAGwAAAADAO3/AABpAG0AAAADAO7/AABpAG4AAAADAO//AABpAG8AAAD+/+z/AABoAHIAAAD+/+3/AABoAHMAAAD+/+7/AABoAHQAAAD+/+//AABoAHUAAAD//+z/AABuAHYAAAAAAOz/AABvAHYAAAABAOz/AABwAHYAAAACAOz/AABxAHYAAAA=")
 tile_set = SubResource("TileSet_x4260")
@@ -31869,8 +31861,3 @@ tile_set = SubResource("TileSet_rser0")
 [node name="Door" parent="." unique_id=1158038630 instance=ExtResource("8_fvcal")]
 position = Vector2(16, 66)
 door_animation = "H_Door"
-
-[node name="KeycardDoor" parent="." unique_id=918274409 instance=ExtResource("8_osygj")]
-position = Vector2(16, -288)
-door_animation = "Elevator_Door"
-required_keycard_level = 2

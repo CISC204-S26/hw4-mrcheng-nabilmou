@@ -5,6 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://op6b3eew8oca" path="res://SCENES/INTERACTABLES/Note.tscn" id="3_uos08"]
 [ext_resource type="PackedScene" uid="uid://bn67onos3vkvd" path="res://SCENES/Player.tscn" id="5_k3m6f"]
 [ext_resource type="PackedScene" uid="uid://dllation0new5" path="res://SCENES/INTERACTABLES/NPC.tscn" id="5_v4hpt"]
+[ext_resource type="PackedScene" uid="uid://h4mjbmtr88hi" path="res://SCENES/NextLevel.tscn" id="6_k3m6f"]
+[ext_resource type="PackedScene" uid="uid://b8pglx8m44ayp" path="res://SCENES/INTERACTABLES/KeycardDoor.tscn" id="6_swyf6"]
+[ext_resource type="PackedScene" uid="uid://m1hfx401y7fn" path="res://SCENES/TESTS/TestScene2.tscn" id="7_peap8"]
 
 [node name="TestScene3" type="Node2D" unique_id=107810296]
 
@@ -31,3 +34,12 @@ npc_animation = "Adam"
 
 [node name="Player" parent="." unique_id=220904025 instance=ExtResource("5_k3m6f")]
 position = Vector2(-147, 156)
+
+[node name="Node2D" parent="." unique_id=633110917 instance=ExtResource("6_k3m6f")]
+position = Vector2(-181, 129)
+level_to_load = ExtResource("7_peap8")
+
+[node name="KeycardDoor" parent="." unique_id=918274409 instance=ExtResource("6_swyf6")]
+position = Vector2(377, -128)
+target_scene = ExtResource("7_peap8")
+required_keycard_level = 1

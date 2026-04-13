@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://crwmiu50up68e" path="res://LoadLevel.gd" id="1_8bemu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p44iv"]
+size = Vector2(16, 44)
 
 [node name="Node2D" type="Node2D" unique_id=633110917]
 script = ExtResource("1_8bemu")
