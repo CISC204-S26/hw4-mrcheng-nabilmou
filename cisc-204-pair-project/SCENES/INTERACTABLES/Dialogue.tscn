@@ -9,10 +9,10 @@ atlas = ExtResource("2_mxu08")
 region = Rect2(720, 64, 48, 48)
 
 [node name="Dialogue" type="Node2D" unique_id=292361673]
-script = ExtResource("1_jxc7o")
 
-[node name="DialogueUI" type="CanvasLayer" parent="." unique_id=1921108910]
+[node name="DialogueUI" type="CanvasLayer" parent="." unique_id=1921108910 groups=["dialogue"]]
 visible = false
+script = ExtResource("1_jxc7o")
 
 [node name="DialogueBox" type="NinePatchRect" parent="DialogueUI" unique_id=1790231617]
 anchors_preset = 8

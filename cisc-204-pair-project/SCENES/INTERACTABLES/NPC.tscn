@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://5j3ug7pnq0bj" path="res://ASSETS/NPCs/Doctor_1_32x32.png" id="5_ohl54"]
 [ext_resource type="Texture2D" uid="uid://cixcflctahke0" path="res://ASSETS/NPCs/Doctor_2_32x32.png" id="6_x3wvd"]
 [ext_resource type="Texture2D" uid="uid://ccdxashsfbwca" path="res://ASSETS/NPCs/Bouncer_32x32.png" id="7_opm7d"]
-[ext_resource type="PackedScene" uid="uid://dsx84d3v50a1" path="res://SCENES/INTERACTABLES/Dialogue.tscn" id="8_kxsrj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u4hbk"]
 radius = 20.024984
@@ -311,5 +310,3 @@ position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_7xbsy")
 animation = &"Guard"
 frame_progress = 0.82162416
-
-[node name="Dialogue" parent="." unique_id=292361673 instance=ExtResource("8_kxsrj")]

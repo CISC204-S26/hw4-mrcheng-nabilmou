@@ -62,7 +62,7 @@ func move_to_grid(direction: Vector2) -> void:
 	
 	moving = false
 
-
+'''
 func _process(delta):
 	if Input.is_action_just_pressed("Interact"):
 		if not reading_note:
@@ -79,6 +79,34 @@ func _process(delta):
 					area.toggle_note()
 			reading_note = false
 			can_move = true
+'''
+
+func _process(delta):
+	# Always allow interact, even when can_move = false
+	if Input.is_action_just_pressed("Interact"):    
+	# 1. If dialogue is open, skip/advance/close it
+		var dialogue = get_tree().get_first_node_in_group("dialogue")
+		if dialogue and dialogue.visible:
+			dialogue.skip_or_close()
+			return
+					# 2. If reading a note, close it
+		if reading_note:
+			for area in interaction_area.get_overlapping_areas():
+				if area is Interactable and area.interaction_type == "note":
+					area.toggle_note()
+			reading_note = false
+			can_move = true
+			return
+		# 3. Otherwise, interact normally
+		if can_move:
+			var areas = interaction_area.get_overlapping_areas()
+			for area in areas:
+				if area is Interactable:
+					area.interact()
+					if area.interaction_type == "note":
+						reading_note = true
+						can_move = false
+			return
 
 
 func update_animation(input_vector: Vector2) -> void:

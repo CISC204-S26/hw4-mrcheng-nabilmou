@@ -17,7 +17,8 @@ class_name Interactable extends Area2D
 @onready var note_label = $NoteUI/NoteTexture/NoteLabel if has_node("NoteUI/NoteTexture/NoteLabel") else null
 @onready var note_texture = $NoteUI/NoteTexture if has_node("NoteUI/NoteTexture") else null
 
-@onready var dialogue_ui = $DialogueUI if has_node("DialogueUI") else null
+@onready var dialogue_ui = get_tree().get_first_node_in_group("dialogue")
+#@onready var dialogue_ui = $DialogueUI if has_node("DialogueUI") else null
 
 
 func _ready():
@@ -39,14 +40,18 @@ func interact():
 			toggle_note()
 		"key":
 			add_key()
+			show_message("*Picked up a key*")
 		"keycard":
 			add_keycard()
+			show_message("*Picked up a keycard*")
 		"door":
 			try_open_door()
+			#show_message("*Door has been opened*")
 		"npc":
 			start_dialogue()
 		"harddrive":
 			add_harddrive()
+			show_message("*Picked up a hard drive*")
 
 
 # -------------- NOTE NOTE NOTE NOTE NOTE NOTE ------------------------------------------
@@ -87,40 +92,45 @@ func add_keycard():
 		print("Picked up Keycard Level 1")
 	elif keycard_level == 2:
 		GameManager.give_keycard(2)
-		print("Picked up Keycard Level 2")
+		#print("Picked up Keycard Level 2")
 	queue_free()
 
 func add_harddrive():
 	GameManager.num_harddrive += 1
-	print("Picked up a hard drive!")
+	#print("Picked up a hard drive!")
 	queue_free()
 
 
 # --------------------- DOOR DOOR DOOR DOOR DOOR DOOR DOOR -----------------------------
 func try_open_door():
-	print("Attempting to open door...")
+	#print("Attempting to open door...")
 	
 	# ---------- Keycard Doors ---------
 	if required_keycard_level > 0:
 		if required_keycard_level == 1 and not GameManager.has_keycard1:
 			print("LOCKED: Need Keycard Level 1")
+			show_message("LOCKED: Need Keycard Level 1")
 			return
 		
 		if required_keycard_level == 2 and not GameManager.has_keycard2:
+			show_message("LOCKED: Need Keycard Level 2")
 			print("LOCKED: Need Keycard Level 2")
 			return
 		
 		print("KEYCARD ACCEPTED: Opening Secured Door")
+		show_message("KEYCARD ACCEPTED: Opening Secured Door")
 		open_door()
 	
 	# ---------- Normal Doors ----------
 	else:
 		if GameManager.num_keys <= 0:
 			print("Locked: Need a KEY")
+			show_message("Locked: Need a KEY")
 			return
 		
 		GameManager.num_keys -=1
 		print("SUCCESS: Opening Door!")
+		show_message("SUCCESS: Opening Door!")
 		open_door()
 
 
@@ -160,7 +170,7 @@ func _set_door_anim_frame():
 
 # ---------- DIALOGUE DIALOGUE DIALOGUE DIALOGUE DIALOGUE ------------------------------
 func start_dialogue():
-	print("started dialogue")
+	print("dialogue_ui.visible =", dialogue_ui.visible)
 	if dialogue_ui == null:
 		return
 	var player = get_tree().get_first_node_in_group("player")
@@ -174,6 +184,7 @@ func start_dialogue():
 		return
 		# Otherwise start new dialogue
 	dialogue_ui.show_text(dialogue_lines)
+	#dialogue_ui.show_text(dialogue_lines[0])
 	if player:
 		player.can_move = false
 
@@ -210,5 +221,9 @@ func _set_npc_anim():
 		if anim.sprite_frames and anim.sprite_frames.has_animation(npc_animation):
 			anim.animation = npc_animation
 			anim.play()
-	
-	
+
+#This is to show generalized messages in the dialouge text
+# all you need to do is it: show_message("Door opened")
+func show_message(text: String):
+	if dialogue_ui:
+		dialogue_ui.show_text([text] as Array[String])
