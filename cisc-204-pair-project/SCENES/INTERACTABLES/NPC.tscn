@@ -297,18 +297,19 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Npc" type="Area2D" unique_id=888581163]
+[node name="NPC" type="Area2D" unique_id=888581163]
 script = ExtResource("1_u4hbk")
+interaction_type = "npc"
 metadata/_custom_type_script = "uid://dd848bpvpffrx"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1375722058]
 position = Vector2(0, -22)
 shape = SubResource("CircleShape2D_u4hbk")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1788361974]
+[node name="NpcSprites" type="AnimatedSprite2D" parent="." unique_id=1788361974]
 position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_7xbsy")
-animation = &"Adam"
-frame_progress = 0.765334
+animation = &"Guard"
+frame_progress = 0.82162416
 
 [node name="Dialogue" parent="." unique_id=292361673 instance=ExtResource("8_kxsrj")]

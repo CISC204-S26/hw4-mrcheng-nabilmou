@@ -1,12 +1,14 @@
 class_name Interactable extends Area2D
 
 # Would need to code for switches, buttons, NPC dialogue triggers.
-@export var interaction_type: String = "Basic" # note, door, npc, or harddrive
-@export var door_animation: String = "" # each door instance's played animation can be different
-@export var note_text: String = "" # each note has its own text
-@export var dialogue_text: String = "" # each NPC has its own dialogue line
-@export var keycard_level: int = 1 # set level of keycard instance
-@export var required_keycard_level: int = 0 # set level of required keycard to open door
+@export var interaction_type: String = "Basic" # choose interact type as seen in interact()
+@export var npc_animation:  String = "" # set each npc instance's animation
+@export var door_animation: String = "" # set each door instance's played animation 
+@export var keycard_level: int = 0 # set level of keycard instance
+@export var required_keycard_level: int = 0 # set level of required keycard to open a door
+@export var note_text: String = "" # set text for each note
+@export var dialogue_lines: Array[String] = [] # set dialogue for each npc
+
 
 
 # Checks if node with specific name exists, otherwise ignore it
@@ -23,6 +25,7 @@ func _ready():
 		note_ui.visible = false
 		
 	_set_door_anim_frame()
+	_set_npc_anim()
 
 
 # ------------------------INTERACT INTERACT INTERACT ------------------------------------
@@ -43,7 +46,7 @@ func interact():
 		"npc":
 			start_dialogue()
 		"harddrive":
-			add_hard_drive()
+			add_harddrive()
 
 
 # -------------- NOTE NOTE NOTE NOTE NOTE NOTE ------------------------------------------
@@ -72,7 +75,7 @@ func _on_note_area_2d_body_exited(body: Node):
 		envelope.play("Closed")
 
 
-# -------------- PICKUPS -------------------------------------------
+# -------------- PICKUPS PICKUPS PICKUPS PICKUPS PICKUPS -------------------------------
 func add_key():
 	GameManager.num_keys += 1
 	print("Picked up a key! Global keys: ", GameManager.num_keys)
@@ -81,11 +84,13 @@ func add_key():
 func add_keycard():
 	if keycard_level == 1:
 		GameManager.give_keycard(1)
+		print("Picked up Keycard Level 1")
 	elif keycard_level == 2:
 		GameManager.give_keycard(2)
+		print("Picked up Keycard Level 2")
 	queue_free()
 
-func add_hard_drive():
+func add_harddrive():
 	GameManager.num_harddrive += 1
 	print("Picked up a hard drive!")
 	queue_free()
@@ -105,7 +110,7 @@ func try_open_door():
 			print("LOCKED: Need Keycard Level 2")
 			return
 		
-		print("KEYCARD ACCEPTED: Opening secured door")
+		print("KEYCARD ACCEPTED: Opening Secured Door")
 		open_door()
 	
 	# ---------- Normal Doors ----------
@@ -115,16 +120,10 @@ func try_open_door():
 			return
 		
 		GameManager.num_keys -=1
-		print("Used a KEY")
+		print("SUCCESS: Opening Door!")
 		open_door()
-		
-	
-	## KEY CHECK (if you still want normal doors too)
-	#if GameManager.num_keys > 0:
-		#GameManager.num_keys -= 1
-	#print("SUCCESS: Opening Door!")
-	
-	
+
+
 func open_door():
 	if has_node("StaticBody2D/CollisionShape2D"):
 		$StaticBody2D/CollisionShape2D.set_deferred("disabled", true)
@@ -174,7 +173,7 @@ func start_dialogue():
 			player.can_move = true
 		return
 		# Otherwise start new dialogue
-	dialogue_ui.show_text(dialogue_text)
+	dialogue_ui.show_text(dialogue_lines)
 	if player:
 		player.can_move = false
 
@@ -196,11 +195,20 @@ func type_text(label: Label, text: String) -> void:
 	label.text = full_text
 	typing = false
 
-# -------------------------- DRIVE DRIVE DRIVE DRIVE DRIVE ------------------------------
-func add_harddrive():
-	print("Attempting to pick up hard drive")
-	GameManager.num_harddrive += 1
-	print("Picked up a hard drive!")
+
+# ----------------------- NPC NPC NPC NPC NPC NPC ----------------------------------------
+func _set_npc_anim():
+	if interaction_type.strip_edges().to_lower() != "npc":
+		return
 	
-	if interaction_type == "harddrive":
-		queue_free()
+	if npc_animation == "":
+		return
+	
+	if has_node("NpcSprites"):
+		var anim = $NpcSprites
+		
+		if anim.sprite_frames and anim.sprite_frames.has_animation(npc_animation):
+			anim.animation = npc_animation
+			anim.play()
+	
+	

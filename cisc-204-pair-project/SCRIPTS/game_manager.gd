@@ -16,8 +16,6 @@ func can_enter_final_room():
 func give_keycard(level: int):
 	if level == 1:
 		has_keycard1 = true
-		print("Picked up Keycard Level 1")
-		
+	
 	if level == 2:
 		has_keycard2 = true
-		print("Picked up Keycard Level 2")
