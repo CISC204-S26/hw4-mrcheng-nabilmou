@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://m1hfx401y7fn"]
 
-[ext_resource type="PackedScene" uid="uid://c1l2ylctq4ydm" path="res://SCENES/ROOMS/StartRoom.tscn" id="1_30eqk"]
+[ext_resource type="PackedScene" uid="uid://c1l2ylctq4ydm" path="res://SCENES/ROOM_BUILDING/StartRoom.tscn" id="1_30eqk"]
 [ext_resource type="PackedScene" uid="uid://bn67onos3vkvd" path="res://SCENES/Player.tscn" id="2_ve7oe"]
 [ext_resource type="PackedScene" uid="uid://op6b3eew8oca" path="res://SCENES/INTERACTABLES/Note.tscn" id="3_ve7oe"]
 [ext_resource type="PackedScene" uid="uid://dwqnd2v5ervp4" path="res://SCENES/INTERACTABLES/HardDrive.tscn" id="7_tgpwn"]
@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://dsx84d3v50a1" path="res://SCENES/INTERACTABLES/Dialogue.tscn" id="8_hmyhn"]
 [ext_resource type="PackedScene" uid="uid://b4dpu5rd4wm6u" path="res://SCENES/INTERACTABLES/Keycard.tscn" id="8_lwgcp"]
 [ext_resource type="PackedScene" uid="uid://dllation0new5" path="res://SCENES/INTERACTABLES/NPC.tscn" id="8_uhm18"]
-[ext_resource type="PackedScene" path="res://SCENES/NextLevel.tscn" id="9_lwgcp"]
-[ext_resource type="PackedScene" uid="uid://c3cmaqjf63taa" path="res://SCENES/ROOMS/OfficeRoom.tscn" id="10_hmyhn"]
+[ext_resource type="PackedScene" uid="uid://h4mjbmtr88hi" path="res://SCENES/NextLevel.tscn" id="9_lwgcp"]
+[ext_resource type="PackedScene" uid="uid://c3cmaqjf63taa" path="res://SCENES/ROOM_BUILDING/OfficeRoom.tscn" id="10_hmyhn"]
 
 [node name="TestScene2" type="Node2D" unique_id=617962878]
 

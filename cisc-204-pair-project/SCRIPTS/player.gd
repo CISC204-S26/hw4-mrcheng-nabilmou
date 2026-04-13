@@ -15,7 +15,7 @@ var moving := false
 
 func _ready():
 	# Original feet alignment
-	position.y = int(position.y / tile_size) * tile_size + tile_size * 2 - 4
+	position.y = int(position.y / tile_size) * tile_size + tile_size - 4
 	
 	# Keep the raycast from rotating if player is ever rotated
 	ray.top_level = true 

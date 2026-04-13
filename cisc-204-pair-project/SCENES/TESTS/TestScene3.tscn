@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://ja2pilj8kmv6"]
 
-[ext_resource type="PackedScene" uid="uid://c3cmaqjf63taa" path="res://SCENES/ROOMS/OfficeRoom.tscn" id="1_us46u"]
+[ext_resource type="PackedScene" uid="uid://c3cmaqjf63taa" path="res://SCENES/ROOM_BUILDING/OfficeRoom.tscn" id="1_us46u"]
 [ext_resource type="PackedScene" uid="uid://bws8nq4cs6k8n" path="res://SCENES/INTERACTABLES/FalseWall.tscn" id="2_k2o3x"]
 [ext_resource type="PackedScene" uid="uid://op6b3eew8oca" path="res://SCENES/INTERACTABLES/Note.tscn" id="3_uos08"]
+[ext_resource type="PackedScene" uid="uid://bn67onos3vkvd" path="res://SCENES/Player.tscn" id="5_k3m6f"]
 [ext_resource type="PackedScene" uid="uid://dllation0new5" path="res://SCENES/INTERACTABLES/NPC.tscn" id="5_v4hpt"]
 
 [node name="TestScene3" type="Node2D" unique_id=107810296]
@@ -27,3 +28,6 @@ note_text = "The boss "
 [node name="Npc" parent="." unique_id=888581163 instance=ExtResource("5_v4hpt")]
 position = Vector2(46, 55)
 npc_animation = "Adam"
+
+[node name="Player" parent="." unique_id=220904025 instance=ExtResource("5_k3m6f")]
+position = Vector2(-147, 156)
