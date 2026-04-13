@@ -4,12 +4,11 @@ class_name Interactable extends Area2D
 @export var interaction_type: String = "Basic" # choose interact type as seen in interact()
 @export var npc_animation:  String = "" # set each npc instance's animation
 @export var door_animation: String = "" # set each door instance's played animation 
+@export var target_scene: PackedScene # any door can change scene if this is set
 @export var keycard_level: int = 0 # set level of keycard instance
 @export var required_keycard_level: int = 0 # set level of required keycard to open a door
 @export var note_text: String = "" # set text for each note
 @export var dialogue_lines: Array[String] = [] # set dialogue for each npc
-
-
 
 # Checks if node with specific name exists, otherwise ignore it
 @onready var envelope = $LetterSprite if has_node("LetterSprite") else null
@@ -145,6 +144,14 @@ func open_door():
 	if has_node("KeycardDoorSprite"):
 		$KeycardDoorSprite.play(door_animation)
 		await $KeycardDoorSprite.animation_finished
+		
+	# ------- Scene Changer ----------
+	if target_scene:
+		print("CHANGING SCENE: ", target_scene)
+		await get_tree().create_timer(2).timeout
+		get_tree().change_scene_to_packed(target_scene)
+	else:
+		print("No Target Scene Set!")
 
 
 func _set_door_anim_frame():
@@ -170,7 +177,7 @@ func _set_door_anim_frame():
 
 # ---------- DIALOGUE DIALOGUE DIALOGUE DIALOGUE DIALOGUE ------------------------------
 func start_dialogue():
-	print("dialogue_ui.visible =", dialogue_ui.visible)
+	#print("dialogue_ui.visible =", dialogue_ui.visible)
 	if dialogue_ui == null:
 		return
 	var player = get_tree().get_first_node_in_group("player")
@@ -222,7 +229,7 @@ func _set_npc_anim():
 			anim.animation = npc_animation
 			anim.play()
 
-#This is to show generalized messages in the dialouge text
+#This is to show generalized messages in the dialogue text
 # all you need to do is it: show_message("Door opened")
 func show_message(text: String):
 	if dialogue_ui:

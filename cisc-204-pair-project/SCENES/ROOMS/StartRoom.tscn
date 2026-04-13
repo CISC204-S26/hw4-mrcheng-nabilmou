@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c2srugnvjx2n6" path="res://ASSETS/ROOMS/Room_Builder_32x32.png" id="1_w6aes"]
 [ext_resource type="Texture2D" uid="uid://8jx4q284aux3" path="res://ASSETS/ROOMS/1_Generic_32x32.png" id="3_bdlid"]
 [ext_resource type="Texture2D" uid="uid://dp8vx2ju4cfen" path="res://ASSETS/ROOMS/2_LivingRoom_32x32.png" id="4_brlca"]
+[ext_resource type="PackedScene" uid="uid://ja2pilj8kmv6" path="res://SCENES/TESTS/TestScene3.tscn" id="4_osygj"]
 [ext_resource type="Texture2D" uid="uid://deg23rng3npjl" path="res://ASSETS/ROOMS/13_Conference_Hall_32x32.png" id="5_35ghx"]
 [ext_resource type="Texture2D" uid="uid://j0ljjth67eb8" path="res://ASSETS/ROOMS/22_Museum_32x32.png" id="5_orpgw"]
 [ext_resource type="Texture2D" uid="uid://cj7sltiwnebhk" path="res://ASSETS/ROOMS/7_Art_32x32.png" id="6_fvcal"]
@@ -31850,6 +31851,7 @@ tile_set = SubResource("TileSet_brlca")
 [node name="KeycardDoor2" parent="." unique_id=351789723 instance=ExtResource("8_osygj")]
 position = Vector2(-320, -126)
 door_animation = "Lab_Door"
+target_scene = ExtResource("4_osygj")
 required_keycard_level = 1
 
 [node name="ElevatorWall" type="TileMapLayer" parent="." unique_id=113731782]
