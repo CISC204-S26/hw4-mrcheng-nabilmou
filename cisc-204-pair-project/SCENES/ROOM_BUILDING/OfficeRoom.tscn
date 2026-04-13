@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://bbssqt57irexm" path="res://ASSETS/ROOMS/Modern_Office_32x32.png" id="7_7b08u"]
 [ext_resource type="Texture2D" uid="uid://j0ljjth67eb8" path="res://ASSETS/ROOMS/22_Museum_32x32.png" id="8_0u0ae"]
 [ext_resource type="Texture2D" uid="uid://vbmfom71ecll" path="res://ASSETS/ROOMS/19_Hospital_32x32.png" id="9_5r4xh"]
-[ext_resource type="PackedScene" uid="uid://r24y6ono1qty" path="res://SCENES/INTERACTABLES/Safe.tscn" id="9_jqwev"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5d7fg"]
 texture = ExtResource("1_8j2bq")
@@ -25773,6 +25772,3 @@ tile_set = SubResource("TileSet_iu4ty")
 z_index = 2
 tile_map_data = PackedByteArray("AAD///v/AQAHABwAAAAAAPv/AQAKAAcAAAAAAPz/AQAKAAgAAAA=")
 tile_set = SubResource("TileSet_iu4ty")
-
-[node name="Safe" parent="." unique_id=1002522100 instance=ExtResource("9_jqwev")]
-position = Vector2(16, -217)
