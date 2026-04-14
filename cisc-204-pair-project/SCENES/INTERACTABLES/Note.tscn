@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dd848bpvpffrx" path="res://SCRIPTS/interactable.gd" id="1_v24m6"]
 [ext_resource type="Texture2D" uid="uid://dggb0bl2r3jsc" path="res://ASSETS/UI/UI books & more.png" id="2_8dbsn"]
-[ext_resource type="FontFile" uid="uid://diagsg6itx81q" path="res://ASSETS/UI/font/m6x11plus.ttf" id="3_hw6st"]
+[ext_resource type="FontFile" uid="uid://diagsg6itx81q" path="res://ASSETS/UI/FONTS/m6x11plus.ttf" id="3_hw6st"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8dbsn"]
 radius = 15.033297

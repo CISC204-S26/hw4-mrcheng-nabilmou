@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dd848bpvpffrx" path="res://SCRIPTS/interactable.gd" id="1_qhu77"]
 [ext_resource type="Texture2D" uid="uid://bbssqt57irexm" path="res://ASSETS/ROOMS/Modern_Office_32x32.png" id="2_rxaun"]
 [ext_resource type="Texture2D" uid="uid://dggb0bl2r3jsc" path="res://ASSETS/UI/UI books & more.png" id="3_2hrly"]
-[ext_resource type="FontFile" uid="uid://dh5n7jcgq8slb" path="res://ASSETS/UI/font/BoldPixels.otf" id="4_2hrly"]
+[ext_resource type="FontFile" uid="uid://dh5n7jcgq8slb" path="res://ASSETS/UI/FONTS/BoldPixels.otf" id="4_2hrly"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2hrly"]
 size = Vector2(24, 36)
