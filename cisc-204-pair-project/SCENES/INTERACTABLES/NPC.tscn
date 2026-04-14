@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ccdxashsfbwca" path="res://ASSETS/NPCs/Bouncer_32x32.png" id="7_opm7d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u4hbk"]
-radius = 20.024984
+radius = 26.019224
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5gdoy"]
 atlas = ExtResource("2_kxsrj")
@@ -297,6 +297,7 @@ animations = [{
 }]
 
 [node name="NPC" type="Area2D" unique_id=888581163]
+z_index = -1
 script = ExtResource("1_u4hbk")
 interaction_type = "npc"
 metadata/_custom_type_script = "uid://dd848bpvpffrx"
@@ -308,5 +309,4 @@ shape = SubResource("CircleShape2D_u4hbk")
 [node name="NpcSprites" type="AnimatedSprite2D" parent="." unique_id=1788361974]
 position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_7xbsy")
-animation = &"Guard"
-frame_progress = 0.82162416
+animation = &"Alex"

@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://dd848bpvpffrx" path="res://SCRIPTS/interactable.gd" id="1_v24m6"]
 [ext_resource type="Texture2D" uid="uid://dggb0bl2r3jsc" path="res://ASSETS/UI/UI books & more.png" id="2_8dbsn"]
-[ext_resource type="FontFile" uid="uid://dh5n7jcgq8slb" path="res://ASSETS/UI/font/BoldPixels.otf" id="3_87umw"]
+[ext_resource type="FontFile" uid="uid://diagsg6itx81q" path="res://ASSETS/UI/font/m6x11plus.ttf" id="3_hw6st"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8dbsn"]
-radius = 25.019993
+radius = 15.033297
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_87umw"]
 atlas = ExtResource("2_8dbsn")
@@ -54,7 +54,6 @@ animation = &"Closed"
 autoplay = "Closed"
 
 [node name="NoteUI" type="CanvasLayer" parent="." unique_id=162442318]
-visible = false
 
 [node name="NoteTexture" type="TextureRect" parent="NoteUI" unique_id=589223293]
 anchors_preset = 8
@@ -62,10 +61,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -162.0
-offset_top = -122.0
-offset_right = -99.0
-offset_bottom = -61.0
+offset_left = -303.0
+offset_top = -220.0
+offset_right = -178.0
+offset_bottom = -116.75
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(4, 4)
@@ -76,14 +75,14 @@ stretch_mode = 5
 modulate = Color(0, 0, 0, 1)
 texture_filter = 1
 layout_mode = 0
-offset_left = 23.125
-offset_top = 3.875
-offset_right = 97.125
-offset_bottom = 114.375
+offset_left = 47.0
+offset_top = 4.75
+offset_right = 170.0
+offset_bottom = 187.25
 scale = Vector2(0.5, 0.5)
 theme_override_constants/line_spacing = -3
-theme_override_fonts/font = ExtResource("3_87umw")
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("3_hw6st")
+theme_override_font_sizes/font_size = 16
 autowrap_mode = 3
 
 [connection signal="body_entered" from="." to="." method="_on_note_area_2d_body_entered"]

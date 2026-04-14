@@ -461,3 +461,4 @@ frame_progress = 0.81887496
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1228000612]
 offset = Vector2(0, -50)
+zoom = Vector2(2, 2)

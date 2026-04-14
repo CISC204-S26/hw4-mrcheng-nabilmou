@@ -39,10 +39,10 @@ func interact():
 			toggle_note()
 		"key":
 			add_key()
-			show_message("*Picked up a key*")
+			show_message("Picked up a KEY")
 		"keycard":
 			add_keycard()
-			show_message("*Picked up a keycard*")
+			show_message("Picked up KEYCARD level " + str(keycard_level))
 		"door":
 			try_open_door()
 			#show_message("*Door has been opened*")
