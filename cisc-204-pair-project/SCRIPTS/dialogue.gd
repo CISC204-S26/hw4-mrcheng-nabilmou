@@ -1,25 +1,35 @@
 extends CanvasLayer
 
+
 @export var text_speed := 0.03
+
+@onready var label := $DialogueBox/DialogueText
+
 
 var lines: Array[String] = []
 var current_line := 0
 var full_text := ""
 var typing := false
 
-@onready var label := $DialogueBox/DialogueText
 
 func show_text(new_lines: Array[String]):
 	visible = true
 	lines = new_lines
 	current_line = 0
+	
+	var player = get_tree().get_first_node_in_group("player")
+	if player:
+		player.can_move = false
+	
 	_show_current_line()
+
 
 func _show_current_line():
 	full_text = lines[current_line]
 	label.text = ""
 	typing = true
 	_type_text()
+
 
 func _type_text():
 	for i in full_text.length():
@@ -30,6 +40,7 @@ func _type_text():
 	
 	label.text = full_text
 	typing = false
+
 
 func skip_or_close():
 	# If still typing, finish instantly
@@ -45,3 +56,9 @@ func skip_or_close():
 		return
 		# No more lines → close UI
 	visible = false
+	
+	var player = get_tree().get_first_node_in_group("player")
+	if player:
+		player.can_move = true
+		
+		

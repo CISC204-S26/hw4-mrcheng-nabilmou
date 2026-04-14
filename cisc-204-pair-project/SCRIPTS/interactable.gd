@@ -17,7 +17,6 @@ class_name Interactable extends Area2D
 @onready var note_texture = $NoteUI/NoteTexture if has_node("NoteUI/NoteTexture") else null
 
 @onready var dialogue_ui = get_tree().get_first_node_in_group("dialogue")
-#@onready var dialogue_ui = $DialogueUI if has_node("DialogueUI") else null
 
 
 func _ready():
@@ -39,10 +38,10 @@ func interact():
 			toggle_note()
 		"key":
 			add_key()
-			show_message("Picked up a KEY")
+			show_message("Picked up KEY")
 		"keycard":
 			add_keycard()
-			show_message("Picked up KEYCARD level " + str(keycard_level))
+			show_message("Picked up KEYCARD: level " + str(keycard_level))
 		"door":
 			try_open_door()
 			#show_message("*Door has been opened*")
@@ -50,7 +49,7 @@ func interact():
 			start_dialogue()
 		"harddrive":
 			add_harddrive()
-			show_message("*Picked up a hard drive*")
+			show_message("Picked up HARD DRIVE")
 
 
 # -------------- NOTE NOTE NOTE NOTE NOTE NOTE ------------------------------------------
@@ -70,9 +69,11 @@ func toggle_note():
 		if player:
 			player.can_move = false
 
+
 func _on_note_area_2d_body_entered(body: Node):
 	if body.name == "Player":
 		envelope.play("Open")
+
 
 func _on_note_area_2d_body_exited(body: Node):
 	if body.name == "Player":
@@ -85,6 +86,7 @@ func add_key():
 	print("Picked up a key! Global keys: ", GameManager.num_keys)
 	queue_free()
 
+
 func add_keycard():
 	if keycard_level == 1:
 		GameManager.give_keycard(1)
@@ -93,6 +95,7 @@ func add_keycard():
 		GameManager.give_keycard(2)
 		#print("Picked up Keycard Level 2")
 	queue_free()
+
 
 func add_harddrive():
 	GameManager.num_harddrive += 1
@@ -123,8 +126,8 @@ func try_open_door():
 	# ---------- Normal Doors ----------
 	else:
 		if GameManager.num_keys <= 0:
-			print("Locked: Need a KEY")
-			show_message("Locked: Need a KEY")
+			print("Locked: Need KEY")
+			show_message("Locked: Need KEY")
 			return
 		
 		GameManager.num_keys -=1
@@ -180,25 +183,19 @@ func start_dialogue():
 	#print("dialogue_ui.visible =", dialogue_ui.visible)
 	if dialogue_ui == null:
 		return
-	var player = get_tree().get_first_node_in_group("player")
 	
 	# If bubble is already visible
 	if dialogue_ui.visible:
 		dialogue_ui.skip_or_close()
-			# If it just closed, restore movement
-		if not dialogue_ui.visible and player:
-			player.can_move = true
 		return
 		# Otherwise start new dialogue
 	dialogue_ui.show_text(dialogue_lines)
-	#dialogue_ui.show_text(dialogue_lines[0])
-	if player:
-		player.can_move = false
-
+	
 var typing := false
 var full_text := ""
 var text_speed := 0.03  # seconds per character
-
+	
+	
 func type_text(label: Label, text: String) -> void:
 	typing = true
 	full_text = text
@@ -212,6 +209,12 @@ func type_text(label: Label, text: String) -> void:
 	# If typing was interrupted, instantly finish
 	label.text = full_text
 	typing = false
+	
+#This is to show generalized messages in the dialogue text
+# all you need to do is it: show_message("Door opened")
+func show_message(text: String):
+	if dialogue_ui:
+		dialogue_ui.show_text([text] as Array[String])
 
 
 # ----------------------- NPC NPC NPC NPC NPC NPC ----------------------------------------
@@ -228,9 +231,3 @@ func _set_npc_anim():
 		if anim.sprite_frames and anim.sprite_frames.has_animation(npc_animation):
 			anim.animation = npc_animation
 			anim.play()
-
-#This is to show generalized messages in the dialogue text
-# all you need to do is it: show_message("Door opened")
-func show_message(text: String):
-	if dialogue_ui:
-		dialogue_ui.show_text([text] as Array[String])

@@ -58,5 +58,5 @@ position = Vector2(-147, -157)
 npc_animation = "Amelia"
 dialogue_lines = Array[String](["You must be looking for LYDIAS LETTER. ", "I've left it on the counter beside me.", "I would be a little cautious opening it in front of anyone sir."])
 
-[node name="Player" parent="." unique_id=220904025 instance=ExtResource("2_ve7oe")]
-position = Vector2(15, 156)
+[node name="Player" parent="." unique_id=220904025 groups=["player"] instance=ExtResource("2_ve7oe")]
+position = Vector2(15, 157)
