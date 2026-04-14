@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://dggb0bl2r3jsc" path="res://ASSETS/UI/UI books & more.png" id="3_2hrly"]
 [ext_resource type="FontFile" uid="uid://dh5n7jcgq8slb" path="res://ASSETS/UI/font/BoldPixels.otf" id="4_2hrly"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_qhu77"]
-radius = 27.018513
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2hrly"]
+size = Vector2(24, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gh7ab"]
 atlas = ExtResource("2_rxaun")
@@ -33,7 +33,8 @@ interaction_type = "NPC"
 metadata/_custom_type_script = "uid://dd848bpvpffrx"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=122306324]
-shape = SubResource("CircleShape2D_qhu77")
+position = Vector2(2, 8)
+shape = SubResource("RectangleShape2D_2hrly")
 
 [node name="PhoneSprite" type="AnimatedSprite2D" parent="." unique_id=1116583603]
 position = Vector2(0, -6)

@@ -8,9 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://cixcflctahke0" path="res://ASSETS/NPCs/Doctor_2_32x32.png" id="6_x3wvd"]
 [ext_resource type="Texture2D" uid="uid://ccdxashsfbwca" path="res://ASSETS/NPCs/Bouncer_32x32.png" id="7_opm7d"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_u4hbk"]
-radius = 26.019224
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_5gdoy"]
 atlas = ExtResource("2_kxsrj")
 region = Rect2(576, 64, 32, 64)
@@ -296,17 +293,20 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_71pyx"]
+size = Vector2(31, 62)
+
 [node name="NPC" type="Area2D" unique_id=888581163]
 z_index = -1
 script = ExtResource("1_u4hbk")
 interaction_type = "npc"
 metadata/_custom_type_script = "uid://dd848bpvpffrx"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1375722058]
-position = Vector2(0, -22)
-shape = SubResource("CircleShape2D_u4hbk")
-
 [node name="NpcSprites" type="AnimatedSprite2D" parent="." unique_id=1788361974]
 position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_7xbsy")
 animation = &"Alex"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1375722058]
+position = Vector2(0.5, -15)
+shape = SubResource("RectangleShape2D_71pyx")

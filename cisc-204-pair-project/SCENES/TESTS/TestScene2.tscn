@@ -37,7 +37,7 @@ position = Vector2(140, 80)
 position = Vector2(16, 66)
 
 [node name="KeycardDoor" parent="." unique_id=918274409 instance=ExtResource("11_k0t7j")]
-position = Vector2(-320, -126)
+position = Vector2(-336, -126)
 door_animation = "Lab_Door"
 required_keycard_level = 1
 

@@ -54,6 +54,7 @@ animation = &"Closed"
 autoplay = "Closed"
 
 [node name="NoteUI" type="CanvasLayer" parent="." unique_id=162442318]
+visible = false
 
 [node name="NoteTexture" type="TextureRect" parent="NoteUI" unique_id=589223293]
 anchors_preset = 8
