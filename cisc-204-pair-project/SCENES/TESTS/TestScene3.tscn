@@ -2,16 +2,70 @@
 
 [ext_resource type="PackedScene" uid="uid://c3cmaqjf63taa" path="res://SCENES/ROOM_BUILDING/OfficeRoom.tscn" id="1_us46u"]
 [ext_resource type="PackedScene" uid="uid://bn67onos3vkvd" path="res://SCENES/Player.tscn" id="5_k3m6f"]
+[ext_resource type="PackedScene" uid="uid://dwqnd2v5ervp4" path="res://SCENES/INTERACTABLES/HardDrive.tscn" id="5_swyf6"]
 [ext_resource type="PackedScene" uid="uid://h4mjbmtr88hi" path="res://SCENES/NextLevel.tscn" id="6_k3m6f"]
+[ext_resource type="PackedScene" uid="uid://b4dpu5rd4wm6u" path="res://SCENES/INTERACTABLES/Keycard.tscn" id="6_peap8"]
+[ext_resource type="PackedScene" uid="uid://cbi68oekbamj5" path="res://SCENES/INTERACTABLES/Door.tscn" id="7_08s47"]
 [ext_resource type="PackedScene" uid="uid://m1hfx401y7fn" path="res://SCENES/TESTS/TestScene2.tscn" id="7_peap8"]
+[ext_resource type="PackedScene" uid="uid://bws8nq4cs6k8n" path="res://SCENES/INTERACTABLES/FalseWall.tscn" id="8_08s47"]
+[ext_resource type="PackedScene" uid="uid://bk8qbs7k6m5te" path="res://SCENES/INTERACTABLES/Key.tscn" id="9_u83ir"]
+[ext_resource type="PackedScene" uid="uid://op6b3eew8oca" path="res://SCENES/INTERACTABLES/Note.tscn" id="10_u83ir"]
+[ext_resource type="PackedScene" uid="uid://dsx84d3v50a1" path="res://SCENES/INTERACTABLES/Dialogue.tscn" id="11_3ml40"]
+[ext_resource type="PackedScene" uid="uid://r24y6ono1qty" path="res://SCENES/INTERACTABLES/Safe.tscn" id="12_h46en"]
+[ext_resource type="PackedScene" uid="uid://dllation0new5" path="res://SCENES/INTERACTABLES/NPC.tscn" id="13_pj3bp"]
 
 [node name="TestScene3" type="Node2D" unique_id=391728651]
 
 [node name="OfficeRoom" parent="." unique_id=486450647 instance=ExtResource("1_us46u")]
 
-[node name="Player" parent="." unique_id=220904025 instance=ExtResource("5_k3m6f")]
-position = Vector2(-129, 152)
+[node name="Dialogue" parent="." unique_id=292361673 instance=ExtResource("11_3ml40")]
 
 [node name="Node2D" parent="." unique_id=633110917 instance=ExtResource("6_k3m6f")]
 position = Vector2(-182, 127)
 level_to_load = ExtResource("7_peap8")
+
+[node name="Player" parent="." unique_id=220904025 instance=ExtResource("5_k3m6f")]
+position = Vector2(-145, 156)
+
+[node name="HardDrive" parent="." unique_id=764411796 instance=ExtResource("5_swyf6")]
+position = Vector2(469, 233)
+
+[node name="HardDrive2" parent="." unique_id=555741233 instance=ExtResource("5_swyf6")]
+position = Vector2(1289, -565)
+
+[node name="Keycard" parent="." unique_id=1569729701 instance=ExtResource("6_peap8")]
+position = Vector2(828, -441)
+keycard_level = 1
+
+[node name="Door" parent="." unique_id=1158038630 instance=ExtResource("7_08s47")]
+position = Vector2(720, 66)
+
+[node name="FalseWall" parent="." unique_id=1353587326 instance=ExtResource("8_08s47")]
+position = Vector2(464, -128)
+
+[node name="Key" parent="." unique_id=655332623 instance=ExtResource("9_u83ir")]
+position = Vector2(-11, -117)
+
+[node name="Note" parent="." unique_id=1528998479 instance=ExtResource("10_u83ir")]
+position = Vector2(621, 242)
+
+[node name="Note2" parent="." unique_id=557352785 instance=ExtResource("10_u83ir")]
+position = Vector2(554, 113)
+
+[node name="Note3" parent="." unique_id=620295791 instance=ExtResource("10_u83ir")]
+position = Vector2(200, -198)
+
+[node name="Note4" parent="." unique_id=40376772 instance=ExtResource("10_u83ir")]
+position = Vector2(878, -233)
+
+[node name="Note5" parent="." unique_id=348529677 instance=ExtResource("10_u83ir")]
+position = Vector2(934, -433)
+
+[node name="Safe" parent="." unique_id=1002522100 instance=ExtResource("12_h46en")]
+position = Vector2(16, -218)
+
+[node name="NPC" parent="." unique_id=888581163 instance=ExtResource("13_pj3bp")]
+z_index = 0
+position = Vector2(1230, -518)
+npc_animation = "Adam"
+dialogue_lines = Array[String](["Hello"])

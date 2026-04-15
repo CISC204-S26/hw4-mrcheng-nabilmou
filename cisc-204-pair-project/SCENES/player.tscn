@@ -407,7 +407,7 @@ target_position = Vector2(32, 0)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1847273026]
 position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_dxdai")
-animation = &"Idle_Backward"
+animation = &"Idle_Forward"
 autoplay = "Idle_Forward"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1228000612]
