@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://m1hfx401y7fn"]
 
 [ext_resource type="PackedScene" uid="uid://c1l2ylctq4ydm" path="res://SCENES/ROOM_BUILDING/StartRoom.tscn" id="1_30eqk"]
+[ext_resource type="PackedScene" uid="uid://bn67onos3vkvd" path="res://SCENES/PLAYER/Player.tscn" id="2_ve7oe"]
 [ext_resource type="PackedScene" uid="uid://op6b3eew8oca" path="res://SCENES/INTERACTABLES/Note.tscn" id="3_ve7oe"]
 [ext_resource type="PackedScene" uid="uid://cbi68oekbamj5" path="res://SCENES/INTERACTABLES/Door.tscn" id="6_lwgcp"]
 [ext_resource type="PackedScene" uid="uid://bk8qbs7k6m5te" path="res://SCENES/INTERACTABLES/Key.tscn" id="7_uhm18"]
 [ext_resource type="PackedScene" uid="uid://dsx84d3v50a1" path="res://SCENES/INTERACTABLES/Dialogue.tscn" id="8_hmyhn"]
 [ext_resource type="PackedScene" uid="uid://b4dpu5rd4wm6u" path="res://SCENES/INTERACTABLES/Keycard.tscn" id="8_lwgcp"]
 [ext_resource type="PackedScene" uid="uid://dllation0new5" path="res://SCENES/INTERACTABLES/NPC.tscn" id="8_uhm18"]
+[ext_resource type="PackedScene" uid="uid://chnltqg4pb04r" path="res://SCENES/INTERACTABLES/HallSceneChanger.tscn" id="11_25bw8"]
 [ext_resource type="PackedScene" uid="uid://b8pglx8m44ayp" path="res://SCENES/INTERACTABLES/KeycardDoor.tscn" id="11_k0t7j"]
 [ext_resource type="PackedScene" uid="uid://48lmgoukpa6t" path="res://SCENES/INTERACTABLES/StartingPhone.tscn" id="12_25bw8"]
 
@@ -28,6 +30,7 @@ position = Vector2(142, 82)
 [node name="NPC" parent="." unique_id=888581163 instance=ExtResource("8_uhm18")]
 position = Vector2(-146, -162)
 npc_animation = "Amelia"
+dialogue_lines = Array[String](["Hello"])
 
 [node name="Note" parent="." unique_id=1528998479 instance=ExtResource("3_ve7oe")]
 position = Vector2(-124, -181)
@@ -35,6 +38,7 @@ position = Vector2(-124, -181)
 [node name="KeycardDoor" parent="." unique_id=918274409 instance=ExtResource("11_k0t7j")]
 position = Vector2(16, -288)
 door_animation = "Elevator_Door"
+target_scene_path = "res://SCENES/TESTS/TestScene3.tscn"
 required_keycard_level = 2
 
 [node name="Keycard" parent="." unique_id=1569729701 instance=ExtResource("8_lwgcp")]
@@ -44,3 +48,15 @@ keycard_level = 2
 [node name="Keycard2" parent="." unique_id=2125800993 instance=ExtResource("8_lwgcp")]
 position = Vector2(-239, -87)
 keycard_level = 1
+
+[node name="KeycardDoor2" parent="." unique_id=1875040182 instance=ExtResource("11_k0t7j")]
+position = Vector2(-336, -126)
+door_animation = "Lab_Door"
+required_keycard_level = 1
+
+[node name="Player" parent="." unique_id=220904025 instance=ExtResource("2_ve7oe")]
+position = Vector2(16, 153)
+
+[node name="HallSceneChanger" parent="." unique_id=1394976554 instance=ExtResource("11_25bw8")]
+position = Vector2(304, -64)
+target_scene_path = "res://SCENES/TESTS/TestScene3.tscn"

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ja2pilj8kmv6"]
 
 [ext_resource type="PackedScene" uid="uid://c3cmaqjf63taa" path="res://SCENES/ROOM_BUILDING/OfficeRoom.tscn" id="1_us46u"]
+[ext_resource type="PackedScene" uid="uid://bn67onos3vkvd" path="res://SCENES/PLAYER/Player.tscn" id="5_k3m6f"]
 [ext_resource type="PackedScene" uid="uid://dwqnd2v5ervp4" path="res://SCENES/INTERACTABLES/HardDrive.tscn" id="5_swyf6"]
 [ext_resource type="PackedScene" uid="uid://b4dpu5rd4wm6u" path="res://SCENES/INTERACTABLES/Keycard.tscn" id="6_peap8"]
 [ext_resource type="PackedScene" uid="uid://cbi68oekbamj5" path="res://SCENES/INTERACTABLES/Door.tscn" id="7_08s47"]
@@ -8,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bk8qbs7k6m5te" path="res://SCENES/INTERACTABLES/Key.tscn" id="9_u83ir"]
 [ext_resource type="PackedScene" uid="uid://op6b3eew8oca" path="res://SCENES/INTERACTABLES/Note.tscn" id="10_u83ir"]
 [ext_resource type="PackedScene" uid="uid://dsx84d3v50a1" path="res://SCENES/INTERACTABLES/Dialogue.tscn" id="11_3ml40"]
+[ext_resource type="PackedScene" uid="uid://chnltqg4pb04r" path="res://SCENES/INTERACTABLES/HallSceneChanger.tscn" id="11_h46en"]
 [ext_resource type="PackedScene" uid="uid://r24y6ono1qty" path="res://SCENES/INTERACTABLES/Safe.tscn" id="12_h46en"]
 
 [node name="TestScene3" type="Node2D" unique_id=1810388064]
@@ -52,3 +54,10 @@ position = Vector2(629, 235)
 
 [node name="Note5" parent="." unique_id=1155800984 instance=ExtResource("10_u83ir")]
 position = Vector2(458, 244)
+
+[node name="Player" parent="." unique_id=220904025 instance=ExtResource("5_k3m6f")]
+position = Vector2(16, 156)
+
+[node name="HallSceneChanger" parent="." unique_id=1394976554 instance=ExtResource("11_h46en")]
+position = Vector2(-176, 128)
+target_scene_path = "res://SCENES/TESTS/TestScene2.tscn"
