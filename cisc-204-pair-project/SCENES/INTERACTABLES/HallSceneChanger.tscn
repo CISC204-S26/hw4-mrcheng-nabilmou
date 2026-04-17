@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://chnltqg4pb04r"]
+
+[ext_resource type="Script" uid="uid://cliyx2pkma5cn" path="res://SCRIPTS/hall_scene_changer.gd" id="1_fvgug"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ujhfq"]
+size = Vector2(31.75, 64)
+
+[node name="HallSceneChanger" type="Area2D" unique_id=1394976554]
+collision_layer = 2
+script = ExtResource("1_fvgug")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1734956520]
+shape = SubResource("RectangleShape2D_ujhfq")
+
+[node name="ExitLeft" type="Marker2D" parent="." unique_id=789057715]
+position = Vector2(-32, 0)
+
+[node name="ExitRight" type="Marker2D" parent="." unique_id=1098903850]
+position = Vector2(32, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

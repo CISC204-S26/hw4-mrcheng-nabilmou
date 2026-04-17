@@ -21,6 +21,8 @@ func _ready():
 	
 	# Keep the raycast from rotating if player is ever rotated
 	ray.top_level = true 
+	
+	SceneChanger.register_player(self)
 
 
 func _physics_process(_delta: float) -> void:

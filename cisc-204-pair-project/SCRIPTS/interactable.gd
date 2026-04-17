@@ -4,7 +4,7 @@ class_name Interactable extends Area2D
 @export var interaction_type: String = "Basic" # choose interact type as seen in interact()
 @export var npc_animation:  String = "" # set each npc instance's animation
 @export var door_animation: String = "" # set each door instance's played animation 
-@export var target_scene: PackedScene # any door can change scene if this is set
+@export var target_scene_path: String # any door can change scene if this is set
 @export var keycard_level: int = 0 # set level of keycard instance
 @export var required_keycard_level: int = 0 # set level of required keycard to open a door
 @export var note_text: String = "" # set text for each note
@@ -149,10 +149,9 @@ func open_door():
 		await $KeycardDoorSprite.animation_finished
 		
 	# ------- Scene Changer ----------
-	if target_scene:
-		print("CHANGING SCENE: ", target_scene)
-		await get_tree().create_timer(2).timeout
-		get_tree().change_scene_to_packed(target_scene)
+	if target_scene_path != "":
+		await get_tree().create_timer(1).timeout
+		SceneChanger.change_scene(target_scene_path)
 	else:
 		print("No Target Scene Set!")
 
