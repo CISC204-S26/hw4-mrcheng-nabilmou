@@ -55,9 +55,9 @@ position = Vector2(629, 235)
 [node name="Note5" parent="." unique_id=1155800984 instance=ExtResource("10_u83ir")]
 position = Vector2(458, 244)
 
-[node name="Player" parent="." unique_id=220904025 instance=ExtResource("5_k3m6f")]
-position = Vector2(16, 156)
-
 [node name="HallSceneChanger" parent="." unique_id=1394976554 instance=ExtResource("11_h46en")]
 position = Vector2(-176, 128)
 target_scene_path = "res://SCENES/TESTS/TestScene2.tscn"
+
+[node name="Player" parent="." unique_id=220904025 instance=ExtResource("5_k3m6f")]
+position = Vector2(-115, 141)

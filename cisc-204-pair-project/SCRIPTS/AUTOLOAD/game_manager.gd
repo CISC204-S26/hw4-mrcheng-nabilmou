@@ -7,6 +7,15 @@ var has_keycard2: bool = false
 var num_keys: int = 0 
 var num_harddrive: int = 0
 
+var collected_ids: Array = []
+
+func _ready():
+	var root = get_tree().get_root()
+	if get_parent() != root:
+		get_parent().remove_child(self)
+		root.add_child(self)
+
+
 # once player does everything they may enter final room
 func can_enter_final_room():
 	if num_harddrive >= 5:

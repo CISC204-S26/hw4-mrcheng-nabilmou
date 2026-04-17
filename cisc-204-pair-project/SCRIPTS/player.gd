@@ -16,6 +16,9 @@ var moving := false
 
 
 func _ready():
+	
+	SceneChanger.register_player(self)
+	
 	# Original feet alignment
 	position.y = int(position.y / tile_size) * tile_size + tile_size - 4
 	

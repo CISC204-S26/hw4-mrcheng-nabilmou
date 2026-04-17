@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://chnltqg4pb04r" path="res://SCENES/INTERACTABLES/HallSceneChanger.tscn" id="11_25bw8"]
 [ext_resource type="PackedScene" uid="uid://b8pglx8m44ayp" path="res://SCENES/INTERACTABLES/KeycardDoor.tscn" id="11_k0t7j"]
 [ext_resource type="PackedScene" uid="uid://48lmgoukpa6t" path="res://SCENES/INTERACTABLES/StartingPhone.tscn" id="12_25bw8"]
+[ext_resource type="Script" uid="uid://cd251iuwbe62t" path="res://SCRIPTS/AUTOLOAD/game_manager.gd" id="12_wfs6v"]
+[ext_resource type="Script" uid="uid://dqffivbh7jh3e" path="res://SCRIPTS/AUTOLOAD/scene_changer.gd" id="13_7gi14"]
 
 [node name="TestScene2" type="Node2D" unique_id=1239764402]
 
@@ -27,6 +29,7 @@ dialogue_lines = Array[String](["yo boss its lesley"])
 
 [node name="Key" parent="." unique_id=655332623 instance=ExtResource("7_uhm18")]
 position = Vector2(142, 82)
+unique_id = "key"
 
 [node name="NPC" parent="." unique_id=888581163 instance=ExtResource("8_uhm18")]
 position = Vector2(-146, -162)
@@ -45,10 +48,12 @@ required_keycard_level = 2
 [node name="Keycard" parent="." unique_id=1569729701 instance=ExtResource("8_lwgcp")]
 position = Vector2(112, -180)
 keycard_level = 2
+unique_id = "keycard"
 
 [node name="Keycard2" parent="." unique_id=2125800993 instance=ExtResource("8_lwgcp")]
 position = Vector2(-239, -87)
 keycard_level = 1
+unique_id = "keycard"
 
 [node name="KeycardDoor2" parent="." unique_id=1875040182 instance=ExtResource("11_k0t7j")]
 position = Vector2(-336, -126)
@@ -61,3 +66,9 @@ position = Vector2(16, 153)
 [node name="HallSceneChanger" parent="." unique_id=1394976554 instance=ExtResource("11_25bw8")]
 position = Vector2(304, -64)
 target_scene_path = "res://SCENES/TESTS/TestScene3.tscn"
+
+[node name="Game Manager" type="Node2D" parent="." unique_id=398517596]
+script = ExtResource("12_wfs6v")
+
+[node name="Scene Manager" type="Node2D" parent="." unique_id=1611710852]
+script = ExtResource("13_7gi14")

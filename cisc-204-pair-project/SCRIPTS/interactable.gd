@@ -18,8 +18,15 @@ class_name Interactable extends Area2D
 
 @onready var dialogue_ui = get_tree().get_first_node_in_group("dialogue")
 
+@export var unique_id: String = "" #a list of all the data when switching scenes
+
 
 func _ready():
+	# If this object was already collected/opened, remove it immediately
+	if unique_id != "" and unique_id in GameManager.collected_ids:
+		queue_free()
+		return
+	
 	if note_ui:
 		note_ui.visible = false
 		
@@ -84,6 +91,7 @@ func _on_note_area_2d_body_exited(body: Node):
 func add_key():
 	GameManager.num_keys += 1
 	print("Picked up a key! Global keys: ", GameManager.num_keys)
+	GameManager.collected_ids.append(unique_id)
 	queue_free()
 
 
@@ -91,15 +99,17 @@ func add_keycard():
 	if keycard_level == 1:
 		GameManager.give_keycard(1)
 		print("Picked up Keycard Level 1")
+		GameManager.collected_ids.append(unique_id)
 	elif keycard_level == 2:
 		GameManager.give_keycard(2)
-		#print("Picked up Keycard Level 2")
+		print("Picked up Keycard Level 2")
+		GameManager.collected_ids.append(unique_id)
 	queue_free()
 
 
 func add_harddrive():
 	GameManager.num_harddrive += 1
-	#print("Picked up a hard drive!")
+	GameManager.collected_ids.append(unique_id)
 	queue_free()
 
 
@@ -137,6 +147,9 @@ func try_open_door():
 
 
 func open_door():
+	if unique_id != "":
+		GameManager.collected_ids.append(unique_id)
+	
 	if has_node("StaticBody2D/CollisionShape2D"):
 		$StaticBody2D/CollisionShape2D.set_deferred("disabled", true)
 	

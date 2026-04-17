@@ -8,6 +8,14 @@ var spawn_position: Vector2 = Vector2.ZERO
 var is_transitioning := false
 
 
+func _ready():
+	var root = get_tree().get_root()
+	if get_parent() != root:
+		get_parent().remove_child(self)
+		root.add_child(self)
+
+
+
 func register_player(player: Node):
 	player_ref = player
 
@@ -22,8 +30,9 @@ func change_scene(path: String):
 	apply_spawn()
 	await fade_in()
 
-
+'''
 func apply_spawn():
+	
 	print("APPLY SPAWN CALLED")
 	
 	var player = get_tree().get_first_node_in_group("player")
@@ -35,6 +44,30 @@ func apply_spawn():
 	if spawn_position != Vector2.ZERO:
 		player.global_position = spawn_position
 	
+	spawn_position = Vector2.ZERO
+'''
+
+
+func apply_spawn():
+	print("FOUND PLAYER:", get_tree().get_first_node_in_group("player"))
+	print("APPLY SPAWN CALLED")
+	# Wait until the player actually exists in the scene
+	var player = get_tree().get_first_node_in_group("player")
+	var attempts = 0
+	while player == null and attempts < 10:
+		await get_tree().process_frame
+		player = get_tree().get_first_node_in_group("player")
+		attempts += 1
+	
+	if player == null:
+		print("ERROR: Player not found after scene load")
+		return
+	
+	print("FOUND PLAYER:", player)
+	print("SPAWN POSITION:", spawn_position)
+		# Apply spawn
+	if spawn_position != Vector2.ZERO:
+		player.global_position = spawn_position
 	spawn_position = Vector2.ZERO
 
 
