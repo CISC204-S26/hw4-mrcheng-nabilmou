@@ -22,6 +22,7 @@
 
 [node name="Door" parent="." unique_id=1158038630 instance=ExtResource("6_lwgcp")]
 position = Vector2(16, 66)
+unique_id = "startingDoor"
 
 [node name="StartingPhone" parent="." unique_id=118944451 instance=ExtResource("12_25bw8")]
 position = Vector2(-85, 81)

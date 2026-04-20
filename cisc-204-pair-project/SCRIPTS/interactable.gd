@@ -99,6 +99,7 @@ func add_keycard():
 	if keycard_level == 1:
 		GameManager.give_keycard(1)
 		print("Picked up Keycard Level 1")
+		print
 		GameManager.collected_ids.append(unique_id)
 	elif keycard_level == 2:
 		GameManager.give_keycard(2)
@@ -136,30 +137,39 @@ func try_open_door():
 	# ---------- Normal Doors ----------
 	else:
 		if GameManager.num_keys <= 0:
-			print("Locked: Need KEY")
+			#print("Locked: Need KEY")
 			show_message("Locked: Need KEY")
 			return
 		
-		GameManager.num_keys -=1
-		print("SUCCESS: Opening Door!")
+		#GameManager.num_keys =1
+		#print("SUCCESS: Opening Door!")
 		show_message("SUCCESS: Opening Door!")
 		open_door()
 
 
 func open_door():
-	if unique_id != "":
-		GameManager.collected_ids.append(unique_id)
-	
-	if has_node("StaticBody2D/CollisionShape2D"):
-		$StaticBody2D/CollisionShape2D.set_deferred("disabled", true)
-	
-	if has_node("NormalDoorSprite"):
-		$NormalDoorSprite.play(door_animation)
-		await $NormalDoorSprite.animation_finished
-	
-	if has_node("KeycardDoorSprite"):
-		$KeycardDoorSprite.play(door_animation)
-		await $KeycardDoorSprite.animation_finished
+	GameManager.door_unlocked = true
+	print(" DOOR UNLOCKED = " ,GameManager.door_unlocked)
+	if GameManager.door_unlocked == true:
+		if unique_id != "":
+			GameManager.collected_ids.append(unique_id)
+		
+		if has_node("StaticBody2D/CollisionShape2D"):
+			$StaticBody2D/CollisionShape2D.set_deferred("disabled", true)
+		
+		if has_node("NormalDoorSprite"):
+			$NormalDoorSprite.play(door_animation)
+			await $NormalDoorSprite.animation_finished
+		
+		if has_node("KeycardDoorSprite"):
+			$KeycardDoorSprite.play(door_animation)
+			await $KeycardDoorSprite.animation_finished
+		
+		#else:
+			#await $KeycardDoorSprite.animation_finished
+			#$StaticBody2D/CollisionShape2D.set_deferred("disabled", true)
+			#await $NormalDoorSprite.animation_finished
+			
 		
 	# ------- Scene Changer ----------
 	if target_scene_path != "":
