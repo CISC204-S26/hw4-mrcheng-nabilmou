@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://dkr8lte5k2sx4" path="res://ASSETS/ANIMATEDSTUFF/animated_elevator_door_entrance_1_32x32.png" id="2_psyjj"]
 [ext_resource type="Texture2D" uid="uid://bg2huk0fpau5n" path="res://ASSETS/ANIMATEDSTUFF/animated_door_glass_sliding_32x32.png" id="3_cg6yp"]
 [ext_resource type="Texture2D" uid="uid://vbmfom71ecll" path="res://ASSETS/ROOMS/19_Hospital_32x32.png" id="3_psyjj"]
+[ext_resource type="Texture2D" uid="uid://chi3ux04q2apx" path="res://ASSETS/ANIMATEDSTUFF/animated_hospital_door_green_double_32x32.png" id="4_2dcyo"]
+[ext_resource type="Texture2D" uid="uid://ch8fp1bxjcl1l" path="res://ASSETS/ANIMATEDSTUFF/animated_hospital_surgery_door_32x32.png" id="5_50is4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_114ik"]
 radius = 15.033297
@@ -11,7 +13,7 @@ radius = 15.033297
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cg6yp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2dcyo"]
-size = Vector2(64, 64)
+size = Vector2(64, 78)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_51u4j"]
 atlas = ExtResource("2_psyjj")
@@ -77,6 +79,54 @@ region = Rect2(384, 0, 64, 64)
 atlas = ExtResource("3_cg6yp")
 region = Rect2(448, 0, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0tvr"]
+atlas = ExtResource("4_2dcyo")
+region = Rect2(0, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kpc31"]
+atlas = ExtResource("4_2dcyo")
+region = Rect2(64, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q3god"]
+atlas = ExtResource("4_2dcyo")
+region = Rect2(128, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcjxc"]
+atlas = ExtResource("4_2dcyo")
+region = Rect2(192, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l68kf"]
+atlas = ExtResource("4_2dcyo")
+region = Rect2(256, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5fj7o"]
+atlas = ExtResource("4_2dcyo")
+region = Rect2(320, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1lmc"]
+atlas = ExtResource("5_50is4")
+region = Rect2(0, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ms43x"]
+atlas = ExtResource("5_50is4")
+region = Rect2(64, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fb8l4"]
+atlas = ExtResource("5_50is4")
+region = Rect2(128, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q3dro"]
+atlas = ExtResource("5_50is4")
+region = Rect2(192, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nice3"]
+atlas = ExtResource("5_50is4")
+region = Rect2(256, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46kd5"]
+atlas = ExtResource("5_50is4")
+region = Rect2(320, 0, 64, 96)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_vph81"]
 animations = [{
 "frames": [{
@@ -134,7 +184,53 @@ animations = [{
 "texture": SubResource("AtlasTexture_lf03t")
 }],
 "loop": false,
+"name": &"Glass_Door",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0tvr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kpc31")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q3god")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jcjxc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l68kf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5fj7o")
+}],
+"loop": false,
 "name": &"Lab_Door",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1lmc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ms43x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fb8l4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q3dro")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nice3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_46kd5")
+}],
+"loop": false,
+"name": &"Lab_Door2",
 "speed": 6.0
 }]
 
@@ -155,6 +251,7 @@ shape = SubResource("CircleShape2D_114ik")
 physics_material_override = SubResource("PhysicsMaterial_cg6yp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2021053407]
+position = Vector2(0, 7)
 shape = SubResource("RectangleShape2D_2dcyo")
 
 [node name="KeycardDoorSprite" type="AnimatedSprite2D" parent="." unique_id=98796507]
