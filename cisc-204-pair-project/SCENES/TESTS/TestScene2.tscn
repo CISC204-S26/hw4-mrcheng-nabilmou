@@ -81,7 +81,7 @@ script = ExtResource("12_wfs6v")
 script = ExtResource("13_7gi14")
 
 [node name="FromOfficeHall" type="Marker2D" parent="." unique_id=65541043 groups=["spawn_point"]]
-position = Vector2(274, -40)
+position = Vector2(276, -40)
 
 [node name="FromLabHall" type="Marker2D" parent="." unique_id=638529966 groups=["spawn_point"]]
 position = Vector2(-336, -67)
