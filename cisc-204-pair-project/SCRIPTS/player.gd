@@ -16,16 +16,11 @@ var moving := false
 
 
 func _ready():
-	
-	SceneChanger.register_player(self)
-	
 	# Original feet alignment
 	position.y = int(position.y / tile_size) * tile_size + tile_size - 4
 	
 	# Keep the raycast from rotating if player is ever rotated
 	ray.top_level = true 
-	
-	SceneChanger.register_player(self)
 
 
 func _physics_process(_delta: float) -> void:

@@ -8,14 +8,10 @@ size = Vector2(31.75, 64)
 [node name="HallSceneChanger" type="Area2D" unique_id=1394976554]
 collision_layer = 2
 script = ExtResource("1_fvgug")
+target_scene_path = null
+target_spawn_marker = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1734956520]
 shape = SubResource("RectangleShape2D_ujhfq")
-
-[node name="ExitLeft" type="Marker2D" parent="." unique_id=789057715]
-position = Vector2(-32, 0)
-
-[node name="ExitRight" type="Marker2D" parent="." unique_id=1098903850]
-position = Vector2(32, 0)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

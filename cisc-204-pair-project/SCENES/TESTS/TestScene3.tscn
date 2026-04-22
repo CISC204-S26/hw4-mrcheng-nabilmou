@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://ja2pilj8kmv6"]
 
+[ext_resource type="Script" uid="uid://cnc3vmith3my0" path="res://SCRIPTS/spawn_controller.gd" id="1_h46en"]
 [ext_resource type="PackedScene" uid="uid://c3cmaqjf63taa" path="res://SCENES/ROOM_BUILDING/OfficeRoom.tscn" id="1_us46u"]
 [ext_resource type="PackedScene" uid="uid://bn67onos3vkvd" path="res://SCENES/PLAYER/Player.tscn" id="5_k3m6f"]
 [ext_resource type="PackedScene" uid="uid://dwqnd2v5ervp4" path="res://SCENES/INTERACTABLES/HardDrive.tscn" id="5_swyf6"]
@@ -13,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://r24y6ono1qty" path="res://SCENES/INTERACTABLES/Safe.tscn" id="12_h46en"]
 
 [node name="TestScene3" type="Node2D" unique_id=1810388064]
+script = ExtResource("1_h46en")
 
 [node name="Dialogue" parent="." unique_id=292361673 instance=ExtResource("11_3ml40")]
 
@@ -59,6 +61,10 @@ position = Vector2(458, 244)
 [node name="HallSceneChanger" parent="." unique_id=1394976554 instance=ExtResource("11_h46en")]
 position = Vector2(-176, 128)
 target_scene_path = "res://SCENES/TESTS/TestScene2.tscn"
+target_spawn_marker = "FromOfficeHall"
 
 [node name="Player" parent="." unique_id=220904025 instance=ExtResource("5_k3m6f")]
-position = Vector2(-144, 153)
+position = Vector2(16, 0)
+
+[node name="FromFoyerHall" type="Marker2D" parent="." unique_id=864625031 groups=["spawn_point"]]
+position = Vector2(-142, 153)

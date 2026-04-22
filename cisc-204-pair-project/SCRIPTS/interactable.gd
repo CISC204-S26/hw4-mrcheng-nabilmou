@@ -9,6 +9,7 @@ class_name Interactable extends Area2D
 @export var required_keycard_level: int = 0 # set level of required keycard to open a door
 @export var note_text: String = "" # set text for each note
 @export var dialogue_lines: Array[String] = [] # set dialogue for each npc
+@export var target_spawn_id: String
 
 # Checks if node with specific name exists, otherwise ignore it
 @onready var envelope = $LetterSprite if has_node("LetterSprite") else null
@@ -164,17 +165,11 @@ func open_door():
 		if has_node("KeycardDoorSprite"):
 			$KeycardDoorSprite.play(door_animation)
 			await $KeycardDoorSprite.animation_finished
-		
-		#else:
-			#await $KeycardDoorSprite.animation_finished
-			#$StaticBody2D/CollisionShape2D.set_deferred("disabled", true)
-			#await $NormalDoorSprite.animation_finished
-			
-		
+
 	# ------- Scene Changer ----------
 	if target_scene_path != "":
 		await get_tree().create_timer(1).timeout
-		SceneChanger.change_scene(target_scene_path)
+		SceneChanger.change_scene(target_scene_path, target_spawn_id)
 	else:
 		print("No Target Scene Set!")
 

@@ -1,32 +1,20 @@
 extends Area2D
 
-
 @export var target_scene_path: String
+@export var target_spawn_marker: String 
 
-@onready var exit_left: Marker2D = $ExitLeft
-@onready var exit_right: Marker2D = $ExitRight
+# This variable is ONLY true when the player is allowed to use the hallway
+var is_ready_to_trigger: bool = false
 
+func _ready():
+	# collision starts disabled
+	is_ready_to_trigger = false
+	await get_tree().create_timer(0.2).timeout
+	# now tracks collisions
+	is_ready_to_trigger = true
 
 func _on_body_entered(body: Node):
-	if not body.is_in_group("player"):
-		return
-	
-	# debug
-	var pos = _get_spawn_position(body)
-	print("HALL TRIGGER FIRED")
-	print("CALCULATED SPAWN:", pos)
-	
-	SceneChanger.spawn_position = _get_spawn_position(body)
-	SceneChanger.change_scene(target_scene_path)
-
-
-func _get_spawn_position(player: Node) -> Vector2:
-	# default fallback
-	if exit_right == null or exit_left == null:
-		return global_position
-	
-	# If player came from left side then spawn right side
-	if player.global_position.x < global_position.x:
-		return exit_right.global_position
-	else:
-		return exit_left.global_position
+	if is_ready_to_trigger and body.is_in_group("player"):
+		is_ready_to_trigger = false
+		print("Valid collision! Moving to: ", target_scene_path)
+		SceneChanger.change_scene(target_scene_path, target_spawn_marker)

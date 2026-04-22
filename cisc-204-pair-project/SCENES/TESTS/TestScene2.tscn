@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://m1hfx401y7fn"]
 
+[ext_resource type="Script" uid="uid://cnc3vmith3my0" path="res://SCRIPTS/spawn_controller.gd" id="1_7gi14"]
 [ext_resource type="PackedScene" uid="uid://c1l2ylctq4ydm" path="res://SCENES/ROOM_BUILDING/StartRoom.tscn" id="1_30eqk"]
 [ext_resource type="PackedScene" uid="uid://bn67onos3vkvd" path="res://SCENES/PLAYER/Player.tscn" id="2_ve7oe"]
 [ext_resource type="PackedScene" uid="uid://op6b3eew8oca" path="res://SCENES/INTERACTABLES/Note.tscn" id="3_ve7oe"]
@@ -15,6 +16,7 @@
 [ext_resource type="Script" uid="uid://dqffivbh7jh3e" path="res://SCRIPTS/AUTOLOAD/scene_changer.gd" id="13_7gi14"]
 
 [node name="TestScene2" type="Node2D" unique_id=1239764402]
+script = ExtResource("1_7gi14")
 
 [node name="Dialogue" parent="." unique_id=292361673 instance=ExtResource("8_hmyhn")]
 
@@ -43,6 +45,7 @@ position = Vector2(-124, -181)
 [node name="KeycardDoor" parent="." unique_id=918274409 instance=ExtResource("11_k0t7j")]
 position = Vector2(16, -288)
 door_animation = "Elevator_Door"
+target_scene_path = "res://SCENES/TESTS/TestScene3.tscn"
 required_keycard_level = 2
 
 [node name="Keycard" parent="." unique_id=1569729701 instance=ExtResource("8_lwgcp")]
@@ -58,17 +61,25 @@ unique_id = "keycard"
 [node name="KeycardDoor2" parent="." unique_id=1875040182 instance=ExtResource("11_k0t7j")]
 position = Vector2(-336, -140)
 door_animation = "Lab_Door2"
+target_scene_path = "res://SCENES/ROOM_BUILDING/LabRoom.tscn"
 required_keycard_level = 1
 
 [node name="Player" parent="." unique_id=220904025 instance=ExtResource("2_ve7oe")]
-position = Vector2(16, 153)
+position = Vector2(16, 155)
 
 [node name="HallSceneChanger" parent="." unique_id=1394976554 instance=ExtResource("11_25bw8")]
 position = Vector2(304, -64)
 target_scene_path = "res://SCENES/TESTS/TestScene3.tscn"
+target_spawn_marker = "FromFoyerHall"
 
 [node name="Game Manager" type="Node2D" parent="." unique_id=398517596]
 script = ExtResource("12_wfs6v")
 
 [node name="Scene Manager" type="Node2D" parent="." unique_id=1611710852]
 script = ExtResource("13_7gi14")
+
+[node name="FromOfficeHall" type="Marker2D" parent="." unique_id=65541043 groups=["spawn_point"]]
+position = Vector2(274, -40)
+
+[node name="FromLabHall" type="Marker2D" parent="." unique_id=638529966 groups=["spawn_point"]]
+position = Vector2(-336, -67)
