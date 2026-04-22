@@ -10,6 +10,7 @@ class_name Interactable extends Area2D
 @export var note_text: String = "" # set text for each note
 @export var dialogue_lines: Array[String] = [] # set dialogue for each npc
 @export var target_spawn_id: String
+@export var required_keys: int = 0 #Number needed for keys 
 
 # Checks if node with specific name exists, otherwise ignore it
 @onready var envelope = $LetterSprite if has_node("LetterSprite") else null
@@ -23,8 +24,11 @@ class_name Interactable extends Area2D
 
 
 func _ready():
+	
 	# If this object was already collected/opened, remove it immediately
+	#print("DOOR READY: ", name, " | unique_id: ", unique_id, " | collected_ids: ", GameManager.collected_ids)
 	if unique_id != "" and unique_id in GameManager.collected_ids:
+		#print("DOOR FREEING: ", unique_id)
 		queue_free()
 		return
 	
@@ -39,10 +43,10 @@ func _ready():
 func interact():
 	# This cleans the string so "Door" becomes "door"
 	var clean_type = interaction_type.strip_edges().to_lower()
-	print("INTERACT FUNCTION WAS CALLED ON: ", name)
+	#print("INTERACT FUNCTION WAS CALLED ON: ", name)
 	match clean_type:
 		"note":
-			print("Interacted with NOTE")
+			#print("Interacted with NOTE")
 			toggle_note()
 		"key":
 			add_key()
@@ -91,7 +95,7 @@ func _on_note_area_2d_body_exited(body: Node):
 # -------------- PICKUPS PICKUPS PICKUPS PICKUPS PICKUPS -------------------------------
 func add_key():
 	GameManager.num_keys += 1
-	print("Picked up a key! Global keys: ", GameManager.num_keys)
+	#print("Picked up a key! Global keys: ", GameManager.num_keys)
 	GameManager.collected_ids.append(unique_id)
 	queue_free()
 
@@ -99,12 +103,11 @@ func add_key():
 func add_keycard():
 	if keycard_level == 1:
 		GameManager.give_keycard(1)
-		print("Picked up Keycard Level 1")
-		print
+		#print("Picked up Keycard Level 1")
 		GameManager.collected_ids.append(unique_id)
 	elif keycard_level == 2:
 		GameManager.give_keycard(2)
-		print("Picked up Keycard Level 2")
+		#print("Picked up Keycard Level 2")
 		GameManager.collected_ids.append(unique_id)
 	queue_free()
 
@@ -116,39 +119,67 @@ func add_harddrive():
 
 
 # --------------------- DOOR DOOR DOOR DOOR DOOR DOOR DOOR -----------------------------
+var is_open: bool = false
 func try_open_door():
-	#print("Attempting to open door...")
-	
+	if is_open:
+		return
 	# ---------- Keycard Doors ---------
 	if required_keycard_level > 0:
 		if required_keycard_level == 1 and not GameManager.has_keycard1:
-			print("LOCKED: Need Keycard Level 1")
+			#print("LOCKED: Need Keycard Level 1")
 			show_message("LOCKED: Need Keycard Level 1")
 			return
 		
 		if required_keycard_level == 2 and not GameManager.has_keycard2:
 			show_message("LOCKED: Need Keycard Level 2")
-			print("LOCKED: Need Keycard Level 2")
+			#print("LOCKED: Need Keycard Level 2")
 			return
 		
-		print("KEYCARD ACCEPTED: Opening Secured Door")
+		#print("KEYCARD ACCEPTED: Opening Secured Door")
 		show_message("KEYCARD ACCEPTED: Opening Secured Door")
 		open_door()
 	
 	# ---------- Normal Doors ----------
+	
 	else:
-		if GameManager.num_keys <= 0:
-			#print("Locked: Need KEY")
-			show_message("Locked: Need KEY")
+		if GameManager.num_keys < required_keys:
+			show_message("Locked: Need " + str(required_keys) + " key(s)")
 			return
-		
-		#GameManager.num_keys =1
-		#print("SUCCESS: Opening Door!")
 		show_message("SUCCESS: Opening Door!")
 		open_door()
+	
 
 
 func open_door():
+	is_open = true
+	
+	# Save FIRST before any awaits
+	if unique_id != "":
+		GameManager.collected_ids.append(unique_id)
+	
+	GameManager.door_unlocked = true
+	
+	if has_node("StaticBody2D/CollisionShape2D"):
+		$StaticBody2D/CollisionShape2D.set_deferred("disabled", true)
+	
+	if has_node("NormalDoorSprite"):
+		$NormalDoorSprite.play(door_animation)
+		await $NormalDoorSprite.animation_finished
+	
+	if has_node("KeycardDoorSprite"):
+		$KeycardDoorSprite.play(door_animation)
+		await $KeycardDoorSprite.animation_finished
+	
+	if target_scene_path != "":
+		await get_tree().create_timer(1).timeout
+		SceneChanger.change_scene(target_scene_path, target_spawn_id)
+	else:
+		print("No Target Scene Set!")
+
+
+"""
+func open_door():
+	is_open = true
 	GameManager.door_unlocked = true
 	print(" DOOR UNLOCKED = " ,GameManager.door_unlocked)
 	if GameManager.door_unlocked == true:
@@ -172,7 +203,7 @@ func open_door():
 		SceneChanger.change_scene(target_scene_path, target_spawn_id)
 	else:
 		print("No Target Scene Set!")
-
+"""
 
 func _set_door_anim_frame():
 	if door_animation == "":

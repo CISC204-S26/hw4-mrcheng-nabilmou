@@ -24,6 +24,7 @@ script = ExtResource("1_7gi14")
 
 [node name="Door" parent="." unique_id=1158038630 instance=ExtResource("6_lwgcp")]
 position = Vector2(16, 66)
+required_keys = 1
 unique_id = "startingDoor"
 
 [node name="StartingPhone" parent="." unique_id=118944451 instance=ExtResource("12_25bw8")]
@@ -51,18 +52,19 @@ required_keycard_level = 2
 [node name="Keycard" parent="." unique_id=1569729701 instance=ExtResource("8_lwgcp")]
 position = Vector2(112, -180)
 keycard_level = 2
-unique_id = "keycard"
+unique_id = "keycard2"
 
 [node name="Keycard2" parent="." unique_id=2125800993 instance=ExtResource("8_lwgcp")]
 position = Vector2(-239, -87)
 keycard_level = 1
-unique_id = "keycard"
+unique_id = "keycard1"
 
 [node name="KeycardDoor2" parent="." unique_id=1875040182 instance=ExtResource("11_k0t7j")]
 position = Vector2(-336, -140)
 door_animation = "Lab_Door2"
 target_scene_path = "res://SCENES/ROOM_BUILDING/LabRoom.tscn"
 required_keycard_level = 1
+unique_id = "labdoor"
 
 [node name="Player" parent="." unique_id=220904025 instance=ExtResource("2_ve7oe")]
 position = Vector2(16, 155)
