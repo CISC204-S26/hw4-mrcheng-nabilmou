@@ -12471,7 +12471,7 @@ target_scene_path = "res://SCENES/TESTS/TestScene2.tscn"
 target_spawn_marker = "FromLabHall"
 
 [node name="Door" parent="." unique_id=1158038630 instance=ExtResource("6_cci8o")]
-position = Vector2(624, -612)
+position = Vector2(624, -610)
 
 [node name="Player" parent="." unique_id=220904025 instance=ExtResource("7_cci8o")]
 position = Vector2(400, -420)
