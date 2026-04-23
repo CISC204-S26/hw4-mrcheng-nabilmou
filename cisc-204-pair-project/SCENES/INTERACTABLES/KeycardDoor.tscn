@@ -244,7 +244,7 @@ interaction_type = "door"
 metadata/_custom_type_script = "uid://dd848bpvpffrx"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=375072205]
-position = Vector2(-53, 10)
+position = Vector2(-59, 11)
 shape = SubResource("CircleShape2D_114ik")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1085334172]
@@ -259,9 +259,9 @@ sprite_frames = SubResource("SpriteFrames_vph81")
 animation = &"Elevator_Door"
 
 [node name="KeyCardSwipe" type="TextureRect" parent="." unique_id=178905]
-offset_left = -59.0
-offset_top = 4.0
-offset_right = -47.0
-offset_bottom = 22.0
+offset_left = -65.0
+offset_top = 5.0
+offset_right = -53.0
+offset_bottom = 23.0
 texture = SubResource("AtlasTexture_vph81")
 stretch_mode = 5

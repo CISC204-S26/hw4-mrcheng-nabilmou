@@ -22,6 +22,7 @@ script = ExtResource("1_h46en")
 
 [node name="Note" parent="." unique_id=1528998479 instance=ExtResource("10_u83ir")]
 position = Vector2(-20, -109)
+note_text = "hey there its lesley"
 
 [node name="Note2" parent="." unique_id=1775270854 instance=ExtResource("10_u83ir")]
 position = Vector2(553, 116)
@@ -64,7 +65,7 @@ target_scene_path = "res://SCENES/TESTS/TestScene2.tscn"
 target_spawn_marker = "FromOfficeHall"
 
 [node name="Player" parent="." unique_id=220904025 instance=ExtResource("5_k3m6f")]
-position = Vector2(16, 0)
+position = Vector2(16, 153)
 
 [node name="FromFoyerHall" type="Marker2D" parent="." unique_id=864625031 groups=["spawn_point"]]
-position = Vector2(-142, 153)
+position = Vector2(-144, 153)
