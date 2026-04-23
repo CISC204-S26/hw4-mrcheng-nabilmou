@@ -16,5 +16,4 @@ func _ready():
 func _on_body_entered(body: Node):
 	if is_ready_to_trigger and body.is_in_group("player"):
 		is_ready_to_trigger = false
-		print("Valid collision! Moving to: ", target_scene_path)
 		SceneChanger.change_scene(target_scene_path, target_spawn_marker)

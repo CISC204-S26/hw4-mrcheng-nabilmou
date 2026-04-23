@@ -48,17 +48,17 @@ func interact():
 			toggle_note()
 		"key":
 			add_key()
-			show_message("Picked up KEY")
+			show_message("Obtained KEY")
 		"keycard":
 			add_keycard()
-			show_message("Picked up KEYCARD: level " + str(keycard_level))
+			show_message("Obtained KEYCARD: level " + str(keycard_level))
 		"door":
 			try_open_door()
 		"npc":
 			start_dialogue()
 		"harddrive":
 			add_harddrive()
-			show_message("Picked up HARD DRIVE")
+			show_message("Obtained HARD DRIVE")
 
 
 # -------------- NOTE NOTE NOTE NOTE NOTE NOTE ------------------------------------------
@@ -165,8 +165,6 @@ func open_door():
 	if target_scene_path != "":
 		await get_tree().create_timer(1).timeout
 		SceneChanger.change_scene(target_scene_path, target_spawn_id)
-	else:
-		print("No Target Scene Set!")
 
 
 func _set_door_anim_frame():
@@ -192,7 +190,6 @@ func _set_door_anim_frame():
 
 # ---------- DIALOGUE DIALOGUE DIALOGUE DIALOGUE DIALOGUE ------------------------------
 func start_dialogue():
-	#print("dialogue_ui.visible =", dialogue_ui.visible)
 	if dialogue_ui == null:
 		return
 	

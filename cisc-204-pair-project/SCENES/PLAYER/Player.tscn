@@ -393,6 +393,7 @@ collision_mask = 2
 script = ExtResource("1_667t4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=777894705]
+visibility_layer = 2
 position = Vector2(0, -22)
 shape = SubResource("RectangleShape2D_667t4")
 

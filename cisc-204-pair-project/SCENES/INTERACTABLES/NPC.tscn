@@ -7,6 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://5j3ug7pnq0bj" path="res://ASSETS/NPCs/Doctor_1_32x32.png" id="5_ohl54"]
 [ext_resource type="Texture2D" uid="uid://cixcflctahke0" path="res://ASSETS/NPCs/Doctor_2_32x32.png" id="6_x3wvd"]
 [ext_resource type="Texture2D" uid="uid://ccdxashsfbwca" path="res://ASSETS/NPCs/Bouncer_32x32.png" id="7_opm7d"]
+[ext_resource type="Texture2D" uid="uid://y5gmxtidj0wo" path="res://ASSETS/NPCs/Rob_32x32.png" id="9_5gdoy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_71pyx"]
+size = Vector2(32, 62)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5gdoy"]
 atlas = ExtResource("2_kxsrj")
@@ -152,6 +156,30 @@ region = Rect2(704, 64, 32, 64)
 atlas = ExtResource("7_opm7d")
 region = Rect2(736, 64, 32, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5v0we"]
+atlas = ExtResource("9_5gdoy")
+region = Rect2(576, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0fcf"]
+atlas = ExtResource("9_5gdoy")
+region = Rect2(608, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6dxfx"]
+atlas = ExtResource("9_5gdoy")
+region = Rect2(640, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eo42e"]
+atlas = ExtResource("9_5gdoy")
+region = Rect2(672, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pnkka"]
+atlas = ExtResource("9_5gdoy")
+region = Rect2(704, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21mdv"]
+atlas = ExtResource("9_5gdoy")
+region = Rect2(736, 64, 32, 64)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_7xbsy"]
 animations = [{
 "frames": [{
@@ -291,15 +319,35 @@ animations = [{
 "loop": true,
 "name": &"Guard",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5v0we")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0fcf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6dxfx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eo42e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pnkka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_21mdv")
+}],
+"loop": true,
+"name": &"Rob",
+"speed": 5.0
 }]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_71pyx"]
-size = Vector2(32, 62)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_71pyx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kxsrj"]
-size = Vector2(28, 44)
+size = Vector2(32, 46)
 
 [node name="NPC" type="Area2D" unique_id=888581163]
 z_index = -1
@@ -307,18 +355,19 @@ script = ExtResource("1_u4hbk")
 interaction_type = "npc"
 metadata/_custom_type_script = "uid://dd848bpvpffrx"
 
-[node name="NpcSprites" type="AnimatedSprite2D" parent="." unique_id=1788361974]
-position = Vector2(0, -32)
-sprite_frames = SubResource("SpriteFrames_7xbsy")
-animation = &"Alex"
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1375722058]
 position = Vector2(0, -15)
 shape = SubResource("RectangleShape2D_71pyx")
 
+[node name="NpcSprites" type="AnimatedSprite2D" parent="." unique_id=1788361974]
+position = Vector2(0, -32)
+sprite_frames = SubResource("SpriteFrames_7xbsy")
+animation = &"Adam"
+
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2111739459]
+collision_layer = 2
 physics_material_override = SubResource("PhysicsMaterial_71pyx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1630796849]
-position = Vector2(0, -22)
+position = Vector2(0, -23)
 shape = SubResource("RectangleShape2D_kxsrj")

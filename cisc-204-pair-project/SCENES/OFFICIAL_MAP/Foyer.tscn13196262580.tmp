@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dehctk4gyuqy7"]
 
 [ext_resource type="PackedScene" uid="uid://dsx84d3v50a1" path="res://SCENES/INTERACTABLES/Dialogue.tscn" id="1_0gy0a"]
-[ext_resource type="Script" uid="uid://cnc3vmith3my0" path="res://SCRIPTS/spawn_controller.gd" id="1_an0pu"]
 [ext_resource type="PackedScene" uid="uid://c1l2ylctq4ydm" path="res://SCENES/ROOM_LAYOUTS/StartRoom.tscn" id="2_rw6i8"]
 [ext_resource type="PackedScene" uid="uid://cbi68oekbamj5" path="res://SCENES/INTERACTABLES/Door.tscn" id="3_an0pu"]
 [ext_resource type="PackedScene" uid="uid://48lmgoukpa6t" path="res://SCENES/INTERACTABLES/StartingPhone.tscn" id="4_cvw5k"]
@@ -52,13 +51,8 @@ door_animation = "Lab_Door2"
 target_scene_path = "res://SCENES/OFFICIAL_MAP/Laboratory.tscn"
 required_keycard_level = 1
 
-[node name="NPC2" parent="." unique_id=285946941 instance=ExtResource("6_m7qns")]
-position = Vector2(80, -228)
-npc_animation = "Guard"
-dialogue_lines = Array[String](["Hey Boss, if you require entry to the panic room,", "you will need to find your LEVEL 2 KEYCARD", "I think you may have left it in the Lab.", "Your last experiment ran a little long, I'm sure you must have been tired."])
-
 [node name="Player" parent="." unique_id=220904025 instance=ExtResource("9_vrsv7")]
-position = Vector2(16, 154)
+position = Vector2(16, 155)
 
 [node name="HallSceneChanger" parent="." unique_id=1394976554 instance=ExtResource("10_c6yas")]
 position = Vector2(304, -64)
@@ -67,7 +61,11 @@ target_spawn_marker = "FromFoyerHall"
 
 [node name="FromOfficeHall" type="Marker2D" parent="." unique_id=1713609792 groups=["spawn_point"]]
 position = Vector2(272, -40)
-script = ExtResource("1_an0pu")
 
 [node name="FromLabHall" type="Marker2D" parent="." unique_id=797840263 groups=["spawn_point"]]
 position = Vector2(-336, -67)
+
+[node name="NPC2" parent="." unique_id=285946941 instance=ExtResource("6_m7qns")]
+position = Vector2(80, -228)
+npc_animation = "Guard"
+dialogue_lines = Array[String](["Hey Boss, if you require entry to the panic room,", "you will need to find your LEVEL 2 KEYCARD", "I think you may have left it in the Lab.", "Your last experiment ran a little long, I'm sure you must have been tired."])

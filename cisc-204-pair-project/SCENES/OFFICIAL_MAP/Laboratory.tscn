@@ -2,11 +2,19 @@
 
 [ext_resource type="Script" uid="uid://cnc3vmith3my0" path="res://SCRIPTS/spawn_controller.gd" id="1_ech24"]
 [ext_resource type="PackedScene" uid="uid://cdns3eu3ubyc2" path="res://SCENES/ROOM_LAYOUTS/LabRoom.tscn" id="1_f8tem"]
+[ext_resource type="PackedScene" uid="uid://dsx84d3v50a1" path="res://SCENES/INTERACTABLES/Dialogue.tscn" id="2_518ot"]
 [ext_resource type="PackedScene" uid="uid://chnltqg4pb04r" path="res://SCENES/INTERACTABLES/HallSceneChanger.tscn" id="2_jk24a"]
 [ext_resource type="PackedScene" uid="uid://bn67onos3vkvd" path="res://SCENES/PLAYER/Player.tscn" id="3_mwb88"]
+[ext_resource type="PackedScene" uid="uid://dllation0new5" path="res://SCENES/INTERACTABLES/NPC.tscn" id="5_8f1ok"]
+[ext_resource type="PackedScene" uid="uid://cbi68oekbamj5" path="res://SCENES/INTERACTABLES/Door.tscn" id="6_2d807"]
+[ext_resource type="PackedScene" uid="uid://b8pglx8m44ayp" path="res://SCENES/INTERACTABLES/KeycardDoor.tscn" id="7_2d807"]
+[ext_resource type="PackedScene" uid="uid://bk8qbs7k6m5te" path="res://SCENES/INTERACTABLES/Key.tscn" id="8_yrge5"]
+[ext_resource type="PackedScene" uid="uid://b4dpu5rd4wm6u" path="res://SCENES/INTERACTABLES/Keycard.tscn" id="9_518ot"]
 
 [node name="Laboratory" type="Node2D" unique_id=1344493545]
 script = ExtResource("1_ech24")
+
+[node name="Dialogue" parent="." unique_id=292361673 instance=ExtResource("2_518ot")]
 
 [node name="LabRoom" parent="." unique_id=252647189 instance=ExtResource("1_f8tem")]
 position = Vector2(0, 64)
@@ -19,5 +27,58 @@ target_spawn_marker = "FromLabHall"
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1739195236]
 position = Vector2(16, 56)
 
+[node name="Door" parent="." unique_id=1158038630 instance=ExtResource("6_2d807")]
+position = Vector2(624, -546)
+
+[node name="Door2" parent="." unique_id=21533257 instance=ExtResource("6_2d807")]
+position = Vector2(496, -798)
+required_keys = 3
+
+[node name="Door3" parent="." unique_id=63926420 instance=ExtResource("6_2d807")]
+position = Vector2(-368, -190)
+required_keys = 4
+
+[node name="KeycardDoor" parent="." unique_id=918274409 instance=ExtResource("7_2d807")]
+position = Vector2(384, -206)
+door_animation = "Lab_Door2"
+required_keycard_level = 1
+
+[node name="Key" parent="." unique_id=655332623 instance=ExtResource("8_yrge5")]
+position = Vector2(83, -250)
+
+[node name="Key2" parent="." unique_id=1296366847 instance=ExtResource("8_yrge5")]
+position = Vector2(527, -1096)
+
+[node name="Key3" parent="." unique_id=1752260965 instance=ExtResource("8_yrge5")]
+z_index = -1
+position = Vector2(273, -519)
+
+[node name="Keycard" parent="." unique_id=1569729701 instance=ExtResource("9_518ot")]
+position = Vector2(304, -739)
+keycard_level = 2
+
+[node name="NPC" parent="." unique_id=888581163 instance=ExtResource("5_8f1ok")]
+position = Vector2(720, -424)
+npc_animation = "Doctor1"
+dialogue_lines = Array[String](["heyheyhey"])
+
+[node name="NPC2" parent="." unique_id=1280386913 instance=ExtResource("5_8f1ok")]
+position = Vector2(336, -1064)
+npc_animation = "Rob"
+dialogue_lines = Array[String](["Do I see sheets of plastic in your future?", "Oh I'm just kidding...", "You would happen to have any more trash bags would you?"])
+
+[node name="NPC3" parent="." unique_id=612645279 instance=ExtResource("5_8f1ok")]
+position = Vector2(-144, -678)
+npc_animation = "Doctor2"
+dialogue_lines = Array[String](["I've already put the children to sleep.", "Though I seem to have misplaced my key.", "I must have thrown it away by accident."])
+
 [node name="Player" parent="." unique_id=220904025 instance=ExtResource("3_mwb88")]
 position = Vector2(16, 56)
+
+[node name="NPC4" parent="." unique_id=1350594285 instance=ExtResource("5_8f1ok")]
+position = Vector2(-2, -233)
+npc_animation = "Adam"
+
+[node name="NPC5" parent="." unique_id=121008959 instance=ExtResource("5_8f1ok")]
+position = Vector2(368, -746)
+npc_animation = "Amelia"

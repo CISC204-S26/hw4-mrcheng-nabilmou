@@ -1,4 +1,4 @@
-extends Node2D # GOES ON ROOT NODE OF COMPLETE ROOM SCENE
+extends Node2D # GOES ON ROOT NODE OF COMPLETE ROOM SCENE, WONT WORK IF AUTOLOADED
 
 @onready var player = $Player 
 
@@ -12,7 +12,6 @@ func _ready():
 	
 	if spawn_node:
 		player.global_position = spawn_node.global_position
-		print("Teleported player to: ", SceneChanger.target_spawn_marker)
 	
 	# Clear it
 	SceneChanger.target_spawn_marker = ""
