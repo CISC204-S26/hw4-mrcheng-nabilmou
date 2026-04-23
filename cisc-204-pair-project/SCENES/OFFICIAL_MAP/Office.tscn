@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dwqnd2v5ervp4" path="res://SCENES/INTERACTABLES/HardDrive.tscn" id="8_qbh4q"]
 [ext_resource type="PackedScene" uid="uid://chnltqg4pb04r" path="res://SCENES/INTERACTABLES/HallSceneChanger.tscn" id="9_y4njk"]
 [ext_resource type="PackedScene" uid="uid://bn67onos3vkvd" path="res://SCENES/PLAYER/Player.tscn" id="10_4vjgk"]
+[ext_resource type="PackedScene" uid="uid://dllation0new5" path="res://SCENES/INTERACTABLES/NPC.tscn" id="11_arjom"]
 
 [node name="Office" type="Node2D" unique_id=1522631063]
 script = ExtResource("1_arjom")
@@ -17,6 +18,14 @@ script = ExtResource("1_arjom")
 [node name="Dialogue" parent="." unique_id=292361673 instance=ExtResource("1_gpjrv")]
 
 [node name="OfficeRoom" parent="." unique_id=486450647 instance=ExtResource("2_arjom")]
+
+[node name="HallSceneChanger" parent="." unique_id=1394976554 instance=ExtResource("9_y4njk")]
+position = Vector2(-176, 128)
+target_scene_path = "res://SCENES/OFFICIAL_MAP/Foyer.tscn"
+target_spawn_marker = "FromOfficeHall"
+
+[node name="FromFoyerHall" type="Marker2D" parent="." unique_id=136953355 groups=["spawn_point"]]
+position = Vector2(-144, 153)
 
 [node name="Note" parent="." unique_id=1528998479 instance=ExtResource("3_mg8ry")]
 position = Vector2(-20, -109)
@@ -31,13 +40,15 @@ position = Vector2(940, -431)
 [node name="Note4" parent="." unique_id=1943175646 instance=ExtResource("3_mg8ry")]
 position = Vector2(877, -234)
 
+[node name="Note5" parent="." unique_id=1500581837 instance=ExtResource("3_mg8ry")]
+position = Vector2(458, 244)
+
 [node name="Key" parent="." unique_id=655332623 instance=ExtResource("4_ik3c6")]
 position = Vector2(208, -208)
 
 [node name="Door" parent="." unique_id=1158038630 instance=ExtResource("5_le2wk")]
 position = Vector2(720, 66)
 door_animation = "H_Door"
-required_keys = 2
 unique_id = "door"
 
 [node name="Keycard" parent="." unique_id=1569729701 instance=ExtResource("7_kwjhx")]
@@ -50,16 +61,11 @@ position = Vector2(1235, -567)
 [node name="HardDrive2" parent="." unique_id=1169782019 instance=ExtResource("8_qbh4q")]
 position = Vector2(629, 235)
 
-[node name="Note5" parent="." unique_id=1500581837 instance=ExtResource("3_mg8ry")]
-position = Vector2(458, 244)
-
-[node name="HallSceneChanger" parent="." unique_id=1394976554 instance=ExtResource("9_y4njk")]
-position = Vector2(-176, 128)
-target_scene_path = "res://SCENES/OFFICIAL_MAP/Foyer.tscn"
-target_spawn_marker = "FromOfficeHall"
+[node name="NPC" parent="." unique_id=888581163 instance=ExtResource("11_arjom")]
+z_index = 0
+position = Vector2(784, 314)
+npc_animation = "Adam"
+dialogue_lines = Array[String](["kokok"])
 
 [node name="Player" parent="." unique_id=220904025 instance=ExtResource("10_4vjgk")]
-position = Vector2(-144, 153)
-
-[node name="FromFoyerHall" type="Marker2D" parent="." unique_id=136953355 groups=["spawn_point"]]
 position = Vector2(-144, 153)
