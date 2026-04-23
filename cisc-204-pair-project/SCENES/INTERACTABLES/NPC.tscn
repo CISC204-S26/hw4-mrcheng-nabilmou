@@ -294,7 +294,12 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_71pyx"]
-size = Vector2(31, 62)
+size = Vector2(32, 62)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_71pyx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kxsrj"]
+size = Vector2(28, 44)
 
 [node name="NPC" type="Area2D" unique_id=888581163]
 z_index = -1
@@ -308,5 +313,12 @@ sprite_frames = SubResource("SpriteFrames_7xbsy")
 animation = &"Alex"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1375722058]
-position = Vector2(0.5, -15)
+position = Vector2(0, -15)
 shape = SubResource("RectangleShape2D_71pyx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2111739459]
+physics_material_override = SubResource("PhysicsMaterial_71pyx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1630796849]
+position = Vector2(0, -22)
+shape = SubResource("RectangleShape2D_kxsrj")

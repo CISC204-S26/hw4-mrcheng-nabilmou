@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://vryp2ck2hapr"]
+
+[ext_resource type="Script" uid="uid://cnc3vmith3my0" path="res://SCRIPTS/spawn_controller.gd" id="1_8au8j"]
+
+[node name="PanicRoom" type="Node2D" unique_id=65600963]
+script = ExtResource("1_8au8j")

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dnvrwibr87rxk"]
+
+[ext_resource type="Script" uid="uid://cnc3vmith3my0" path="res://SCRIPTS/spawn_controller.gd" id="1_ech24"]
+[ext_resource type="PackedScene" uid="uid://cdns3eu3ubyc2" path="res://SCENES/ROOM_LAYOUTS/LabRoom.tscn" id="1_f8tem"]
+[ext_resource type="PackedScene" uid="uid://chnltqg4pb04r" path="res://SCENES/INTERACTABLES/HallSceneChanger.tscn" id="2_jk24a"]
+[ext_resource type="PackedScene" uid="uid://bn67onos3vkvd" path="res://SCENES/PLAYER/Player.tscn" id="3_mwb88"]
+
+[node name="Laboratory" type="Node2D" unique_id=1344493545]
+script = ExtResource("1_ech24")
+
+[node name="LabRoom" parent="." unique_id=252647189 instance=ExtResource("1_f8tem")]
+position = Vector2(0, 64)
+
+[node name="HallSceneChanger" parent="." unique_id=1394976554 instance=ExtResource("2_jk24a")]
+position = Vector2(0, 96)
+target_scene_path = "res://SCENES/OFFICIAL_MAP/Foyer.tscn"
+target_spawn_marker = "FromLabHall"
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1739195236]
+position = Vector2(16, 56)
+
+[node name="Player" parent="." unique_id=220904025 instance=ExtResource("3_mwb88")]
+position = Vector2(16, 56)

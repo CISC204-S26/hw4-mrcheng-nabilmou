@@ -1,5 +1,6 @@
 class_name Interactable extends Area2D
 
+
 # Would need to code for switches, buttons, NPC dialogue triggers.
 @export var interaction_type: String = "Basic" # choose interact type as seen in interact()
 @export var npc_animation:  String = "" # set each npc instance's animation
@@ -11,16 +12,15 @@ class_name Interactable extends Area2D
 @export var dialogue_lines: Array[String] = [] # set dialogue for each npc
 @export var target_spawn_id: String
 @export var required_keys: int = 0 #Number needed for keys 
+@export var unique_id: String = "" #a list of all the data when switching scenes
+
 
 # Checks if node with specific name exists, otherwise ignore it
 @onready var envelope = $LetterSprite if has_node("LetterSprite") else null
 @onready var note_ui = $NoteUI if has_node("NoteUI") else null
 @onready var note_label = $NoteUI/NoteTexture/NoteLabel if has_node("NoteUI/NoteTexture/NoteLabel") else null
 @onready var note_texture = $NoteUI/NoteTexture if has_node("NoteUI/NoteTexture") else null
-
 @onready var dialogue_ui = get_tree().get_first_node_in_group("dialogue")
-
-@export var unique_id: String = "" #a list of all the data when switching scenes
 
 
 func _ready():
@@ -43,10 +43,8 @@ func _ready():
 func interact():
 	# This cleans the string so "Door" becomes "door"
 	var clean_type = interaction_type.strip_edges().to_lower()
-	#print("INTERACT FUNCTION WAS CALLED ON: ", name)
 	match clean_type:
 		"note":
-			#print("Interacted with NOTE")
 			toggle_note()
 		"key":
 			add_key()
@@ -56,7 +54,6 @@ func interact():
 			show_message("Picked up KEYCARD: level " + str(keycard_level))
 		"door":
 			try_open_door()
-			#show_message("*Door has been opened*")
 		"npc":
 			start_dialogue()
 		"harddrive":
@@ -95,7 +92,6 @@ func _on_note_area_2d_body_exited(body: Node):
 # -------------- PICKUPS PICKUPS PICKUPS PICKUPS PICKUPS -------------------------------
 func add_key():
 	GameManager.num_keys += 1
-	#print("Picked up a key! Global keys: ", GameManager.num_keys)
 	GameManager.collected_ids.append(unique_id)
 	queue_free()
 
@@ -103,11 +99,9 @@ func add_key():
 func add_keycard():
 	if keycard_level == 1:
 		GameManager.give_keycard(1)
-		#print("Picked up Keycard Level 1")
 		GameManager.collected_ids.append(unique_id)
 	elif keycard_level == 2:
 		GameManager.give_keycard(2)
-		#print("Picked up Keycard Level 2")
 		GameManager.collected_ids.append(unique_id)
 	queue_free()
 
@@ -123,20 +117,18 @@ var is_open: bool = false
 func try_open_door():
 	if is_open:
 		return
+	
 	# ---------- Keycard Doors ---------
 	if required_keycard_level > 0:
 		if required_keycard_level == 1 and not GameManager.has_keycard1:
-			#print("LOCKED: Need Keycard Level 1")
-			show_message("LOCKED: Need Keycard Level 1")
+			show_message("Access Denied: Need LEVEL 1 KEYCARD")
 			return
 		
 		if required_keycard_level == 2 and not GameManager.has_keycard2:
-			show_message("LOCKED: Need Keycard Level 2")
-			#print("LOCKED: Need Keycard Level 2")
+			show_message("Access Denied: Need LEVEL 2 KEYCARD")
 			return
 		
-		#print("KEYCARD ACCEPTED: Opening Secured Door")
-		show_message("KEYCARD ACCEPTED: Opening Secured Door")
+		show_message("Access Granted: Opening Secured Door")
 		open_door()
 	
 	# ---------- Normal Doors ----------
@@ -145,7 +137,7 @@ func try_open_door():
 		if GameManager.num_keys < required_keys:
 			show_message("Locked: Need " + str(required_keys) + " key(s)")
 			return
-		show_message("SUCCESS: Opening Door!")
+		show_message("The DOOR opened!")
 		open_door()
 	
 
@@ -176,34 +168,6 @@ func open_door():
 	else:
 		print("No Target Scene Set!")
 
-
-"""
-func open_door():
-	is_open = true
-	GameManager.door_unlocked = true
-	print(" DOOR UNLOCKED = " ,GameManager.door_unlocked)
-	if GameManager.door_unlocked == true:
-		if unique_id != "":
-			GameManager.collected_ids.append(unique_id)
-		
-		if has_node("StaticBody2D/CollisionShape2D"):
-			$StaticBody2D/CollisionShape2D.set_deferred("disabled", true)
-		
-		if has_node("NormalDoorSprite"):
-			$NormalDoorSprite.play(door_animation)
-			await $NormalDoorSprite.animation_finished
-		
-		if has_node("KeycardDoorSprite"):
-			$KeycardDoorSprite.play(door_animation)
-			await $KeycardDoorSprite.animation_finished
-
-	# ------- Scene Changer ----------
-	if target_scene_path != "":
-		await get_tree().create_timer(1).timeout
-		SceneChanger.change_scene(target_scene_path, target_spawn_id)
-	else:
-		print("No Target Scene Set!")
-"""
 
 func _set_door_anim_frame():
 	if door_animation == "":
@@ -258,8 +222,7 @@ func type_text(label: Label, text: String) -> void:
 	label.text = full_text
 	typing = false
 	
-#This is to show generalized messages in the dialogue text
-# all you need to do is it: show_message("Door opened")
+# This lets you show generalized messages in the dialogue text
 func show_message(text: String):
 	if dialogue_ui:
 		dialogue_ui.show_text([text] as Array[String])

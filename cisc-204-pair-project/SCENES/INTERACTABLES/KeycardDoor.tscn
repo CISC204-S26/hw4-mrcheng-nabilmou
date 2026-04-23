@@ -259,6 +259,7 @@ sprite_frames = SubResource("SpriteFrames_vph81")
 animation = &"Elevator_Door"
 
 [node name="KeyCardSwipe" type="TextureRect" parent="." unique_id=178905]
+visible = false
 offset_left = -65.0
 offset_top = 5.0
 offset_right = -53.0

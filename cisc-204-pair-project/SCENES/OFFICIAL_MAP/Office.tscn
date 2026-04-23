@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://ba0vu1s8r0s1m"]
+
+[ext_resource type="Script" uid="uid://cnc3vmith3my0" path="res://SCRIPTS/spawn_controller.gd" id="1_arjom"]
+[ext_resource type="PackedScene" uid="uid://dsx84d3v50a1" path="res://SCENES/INTERACTABLES/Dialogue.tscn" id="1_gpjrv"]
+[ext_resource type="PackedScene" uid="uid://c3cmaqjf63taa" path="res://SCENES/ROOM_LAYOUTS/OfficeRoom.tscn" id="2_arjom"]
+[ext_resource type="PackedScene" uid="uid://op6b3eew8oca" path="res://SCENES/INTERACTABLES/Note.tscn" id="3_mg8ry"]
+[ext_resource type="PackedScene" uid="uid://bk8qbs7k6m5te" path="res://SCENES/INTERACTABLES/Key.tscn" id="4_ik3c6"]
+[ext_resource type="PackedScene" uid="uid://cbi68oekbamj5" path="res://SCENES/INTERACTABLES/Door.tscn" id="5_le2wk"]
+[ext_resource type="PackedScene" uid="uid://bws8nq4cs6k8n" path="res://SCENES/INTERACTABLES/FalseWall.tscn" id="6_n0m8j"]
+[ext_resource type="PackedScene" uid="uid://b4dpu5rd4wm6u" path="res://SCENES/INTERACTABLES/Keycard.tscn" id="7_kwjhx"]
+[ext_resource type="PackedScene" uid="uid://dwqnd2v5ervp4" path="res://SCENES/INTERACTABLES/HardDrive.tscn" id="8_qbh4q"]
+[ext_resource type="PackedScene" uid="uid://chnltqg4pb04r" path="res://SCENES/INTERACTABLES/HallSceneChanger.tscn" id="9_y4njk"]
+[ext_resource type="PackedScene" uid="uid://bn67onos3vkvd" path="res://SCENES/PLAYER/Player.tscn" id="10_4vjgk"]
+
+[node name="Office" type="Node2D" unique_id=1522631063]
+script = ExtResource("1_arjom")
+
+[node name="Dialogue" parent="." unique_id=292361673 instance=ExtResource("1_gpjrv")]
+
+[node name="OfficeRoom" parent="." unique_id=486450647 instance=ExtResource("2_arjom")]
+
+[node name="Note" parent="." unique_id=1528998479 instance=ExtResource("3_mg8ry")]
+position = Vector2(-20, -109)
+note_text = "hey there its lesley"
+
+[node name="Note2" parent="." unique_id=1336247270 instance=ExtResource("3_mg8ry")]
+position = Vector2(553, 116)
+
+[node name="Note3" parent="." unique_id=1986664201 instance=ExtResource("3_mg8ry")]
+position = Vector2(940, -431)
+
+[node name="Note4" parent="." unique_id=1943175646 instance=ExtResource("3_mg8ry")]
+position = Vector2(877, -234)
+
+[node name="Key" parent="." unique_id=655332623 instance=ExtResource("4_ik3c6")]
+position = Vector2(208, -208)
+
+[node name="Door" parent="." unique_id=1158038630 instance=ExtResource("5_le2wk")]
+position = Vector2(720, 66)
+door_animation = "H_Door"
+required_keys = 2
+unique_id = "door"
+
+[node name="FalseWall" parent="." unique_id=1353587326 instance=ExtResource("6_n0m8j")]
+position = Vector2(464, -128)
+required_keys = 2
+
+[node name="Keycard" parent="." unique_id=1569729701 instance=ExtResource("7_kwjhx")]
+position = Vector2(843, -439)
+
+[node name="HardDrive" parent="." unique_id=764411796 instance=ExtResource("8_qbh4q")]
+position = Vector2(1235, -567)
+
+[node name="HardDrive2" parent="." unique_id=1169782019 instance=ExtResource("8_qbh4q")]
+position = Vector2(629, 235)
+
+[node name="Note5" parent="." unique_id=1500581837 instance=ExtResource("3_mg8ry")]
+position = Vector2(458, 244)
+
+[node name="HallSceneChanger" parent="." unique_id=1394976554 instance=ExtResource("9_y4njk")]
+position = Vector2(-176, 128)
+target_scene_path = "res://SCENES/OFFICIAL_MAP/Foyer.tscn"
+target_spawn_marker = "FromOfficeHall"
+
+[node name="Player" parent="." unique_id=220904025 instance=ExtResource("10_4vjgk")]
+position = Vector2(-144, 153)
+
+[node name="FromFoyerHall" type="Marker2D" parent="." unique_id=136953355 groups=["spawn_point"]]
+position = Vector2(-144, 153)
