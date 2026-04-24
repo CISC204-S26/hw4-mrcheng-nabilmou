@@ -49,6 +49,7 @@ position = Vector2(208, -208)
 [node name="Door" parent="." unique_id=1158038630 instance=ExtResource("5_le2wk")]
 position = Vector2(720, 66)
 door_animation = "H_Door"
+required_keys = 2
 unique_id = "door"
 
 [node name="Keycard" parent="." unique_id=1569729701 instance=ExtResource("7_kwjhx")]

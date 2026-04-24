@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b8pglx8m44ayp" path="res://SCENES/INTERACTABLES/KeycardDoor.tscn" id="7_2d807"]
 [ext_resource type="PackedScene" uid="uid://bk8qbs7k6m5te" path="res://SCENES/INTERACTABLES/Key.tscn" id="8_yrge5"]
 [ext_resource type="PackedScene" uid="uid://b4dpu5rd4wm6u" path="res://SCENES/INTERACTABLES/Keycard.tscn" id="9_518ot"]
+[ext_resource type="PackedScene" uid="uid://op6b3eew8oca" path="res://SCENES/INTERACTABLES/Note.tscn" id="11_fckv4"]
 
 [node name="Laboratory" type="Node2D" unique_id=1344493545]
 script = ExtResource("1_ech24")
@@ -36,15 +37,12 @@ required_keys = 3
 
 [node name="Door3" parent="." unique_id=63926420 instance=ExtResource("6_2d807")]
 position = Vector2(-368, -190)
-required_keys = 4
+required_keys = 3
 
 [node name="KeycardDoor" parent="." unique_id=918274409 instance=ExtResource("7_2d807")]
 position = Vector2(384, -206)
 door_animation = "Lab_Door2"
 required_keycard_level = 1
-
-[node name="Key" parent="." unique_id=655332623 instance=ExtResource("8_yrge5")]
-position = Vector2(83, -250)
 
 [node name="Key2" parent="." unique_id=1296366847 instance=ExtResource("8_yrge5")]
 position = Vector2(527, -1096)
@@ -60,12 +58,12 @@ keycard_level = 2
 [node name="NPC" parent="." unique_id=888581163 instance=ExtResource("5_8f1ok")]
 position = Vector2(720, -424)
 npc_animation = "Doctor1"
-dialogue_lines = Array[String](["heyheyhey"])
+dialogue_lines = Array[String](["Oh you're back!", "You left in hurry, you had forgotten your KEYCARD.", "I gave to Giselle at the DESK."])
 
 [node name="NPC2" parent="." unique_id=1280386913 instance=ExtResource("5_8f1ok")]
 position = Vector2(336, -1064)
 npc_animation = "Rob"
-dialogue_lines = Array[String](["Do I see sheets of plastic in your future?", "Oh I'm just kidding...", "You would happen to have any more trash bags would you?"])
+dialogue_lines = Array[String](["Do I see sheets of plastic in your future?", "Sorry, I'm only kidding...", "I appreciate you recreating my setup for me.", "Though you wouldn't happen to have any more trash bags would you?"])
 
 [node name="NPC3" parent="." unique_id=612645279 instance=ExtResource("5_8f1ok")]
 position = Vector2(-144, -678)
@@ -78,7 +76,28 @@ position = Vector2(16, 56)
 [node name="NPC4" parent="." unique_id=1350594285 instance=ExtResource("5_8f1ok")]
 position = Vector2(-2, -233)
 npc_animation = "Adam"
+dialogue_lines = Array[String](["Back again so soon?", "You're last experiment ran so long.", "No rest for the wicked I guess."])
 
 [node name="NPC5" parent="." unique_id=121008959 instance=ExtResource("5_8f1ok")]
 position = Vector2(368, -746)
 npc_animation = "Amelia"
+dialogue_lines = Array[String](["Heya it's Giselle", "Pete gave me your KEYCARD. He said you had forgotten it.", "Don't worry though, I left it on the side for you."])
+
+[node name="Note" parent="." unique_id=1528998479 instance=ExtResource("11_fckv4")]
+position = Vector2(553, -521)
+
+[node name="Note2" parent="." unique_id=1539668666 instance=ExtResource("11_fckv4")]
+position = Vector2(-61, -614)
+
+[node name="Note3" parent="." unique_id=1361333737 instance=ExtResource("11_fckv4")]
+position = Vector2(-474, -717)
+
+[node name="Key" parent="." unique_id=655332623 instance=ExtResource("8_yrge5")]
+position = Vector2(15, -145)
+
+[node name="Key4" parent="." unique_id=1253006431 instance=ExtResource("8_yrge5")]
+position = Vector2(47, -147)
+
+[node name="Keycard2" parent="." unique_id=1232915554 instance=ExtResource("9_518ot")]
+position = Vector2(80, -147)
+keycard_level = 1
