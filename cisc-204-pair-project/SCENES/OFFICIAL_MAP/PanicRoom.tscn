@@ -1,6 +1,29 @@
 [gd_scene format=3 uid="uid://vryp2ck2hapr"]
 
 [ext_resource type="Script" uid="uid://cnc3vmith3my0" path="res://SCRIPTS/spawn_controller.gd" id="1_8au8j"]
+[ext_resource type="PackedScene" uid="uid://dsx84d3v50a1" path="res://SCENES/INTERACTABLES/Dialogue.tscn" id="2_1hc0o"]
+[ext_resource type="PackedScene" uid="uid://bjgvxshtmw152" path="res://SCENES/ROOM_LAYOUTS/FinalRoom.tscn" id="2_285on"]
+[ext_resource type="PackedScene" uid="uid://b8pglx8m44ayp" path="res://SCENES/INTERACTABLES/KeycardDoor.tscn" id="3_otc4f"]
+[ext_resource type="PackedScene" uid="uid://bn67onos3vkvd" path="res://SCENES/PLAYER/Player.tscn" id="4_1hc0o"]
+[ext_resource type="PackedScene" uid="uid://dllation0new5" path="res://SCENES/INTERACTABLES/NPC.tscn" id="6_flacv"]
 
 [node name="PanicRoom" type="Node2D" unique_id=65600963]
 script = ExtResource("1_8au8j")
+
+[node name="Dialogue" parent="." unique_id=292361673 instance=ExtResource("2_1hc0o")]
+
+[node name="FinalRoom" parent="." unique_id=778532095 instance=ExtResource("2_285on")]
+
+[node name="KeycardDoor" parent="." unique_id=918274409 instance=ExtResource("3_otc4f")]
+position = Vector2(16, -32)
+door_animation = "Elevator_Door"
+target_scene_path = "res://SCENES/OFFICIAL_MAP/Foyer.tscn"
+required_keycard_level = 2
+
+[node name="Player" parent="." unique_id=220904025 instance=ExtResource("4_1hc0o")]
+position = Vector2(16, 22)
+
+[node name="NPC" parent="." unique_id=888581163 instance=ExtResource("6_flacv")]
+position = Vector2(80, 22)
+npc_animation = "Guard"
+dialogue_lines = Array[String](["Lesley told me we had a situation on our hands.", "You being here means you have retrieved the HARD DRIVES.", "PLUG them into the terminal right in front of you to WIPE them.", "Those bastards wont find a thing."])

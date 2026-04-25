@@ -66,7 +66,7 @@ position = Vector2(629, 235)
 z_index = 0
 position = Vector2(784, 314)
 npc_animation = "Adam"
-dialogue_lines = Array[String](["kokok"])
+dialogue_lines = Array[String](["", "", ""])
 
 [node name="Player" parent="." unique_id=220904025 instance=ExtResource("10_4vjgk")]
 position = Vector2(-144, 153)

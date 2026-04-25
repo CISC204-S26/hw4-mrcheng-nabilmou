@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bk8qbs7k6m5te" path="res://SCENES/INTERACTABLES/Key.tscn" id="8_yrge5"]
 [ext_resource type="PackedScene" uid="uid://b4dpu5rd4wm6u" path="res://SCENES/INTERACTABLES/Keycard.tscn" id="9_518ot"]
 [ext_resource type="PackedScene" uid="uid://op6b3eew8oca" path="res://SCENES/INTERACTABLES/Note.tscn" id="11_fckv4"]
+[ext_resource type="PackedScene" uid="uid://dwqnd2v5ervp4" path="res://SCENES/INTERACTABLES/HardDrive.tscn" id="12_qnv42"]
 
 [node name="Laboratory" type="Node2D" unique_id=1344493545]
 script = ExtResource("1_ech24")
@@ -45,7 +46,7 @@ door_animation = "Lab_Door2"
 required_keycard_level = 1
 
 [node name="Key2" parent="." unique_id=1296366847 instance=ExtResource("8_yrge5")]
-position = Vector2(527, -1096)
+position = Vector2(527, -1092)
 
 [node name="Key3" parent="." unique_id=1752260965 instance=ExtResource("8_yrge5")]
 z_index = -1
@@ -84,7 +85,7 @@ npc_animation = "Amelia"
 dialogue_lines = Array[String](["Heya it's Giselle", "Pete gave me your KEYCARD. He said you had forgotten it.", "Don't worry though, I left it on the side for you."])
 
 [node name="Note" parent="." unique_id=1528998479 instance=ExtResource("11_fckv4")]
-position = Vector2(553, -521)
+position = Vector2(712, -521)
 
 [node name="Note2" parent="." unique_id=1539668666 instance=ExtResource("11_fckv4")]
 position = Vector2(-61, -614)
@@ -92,12 +93,8 @@ position = Vector2(-61, -614)
 [node name="Note3" parent="." unique_id=1361333737 instance=ExtResource("11_fckv4")]
 position = Vector2(-474, -717)
 
-[node name="Key" parent="." unique_id=655332623 instance=ExtResource("8_yrge5")]
-position = Vector2(15, -145)
+[node name="HardDrive" parent="." unique_id=764411796 instance=ExtResource("12_qnv42")]
+position = Vector2(563, -529)
 
-[node name="Key4" parent="." unique_id=1253006431 instance=ExtResource("8_yrge5")]
-position = Vector2(47, -147)
-
-[node name="Keycard2" parent="." unique_id=1232915554 instance=ExtResource("9_518ot")]
-position = Vector2(80, -147)
-keycard_level = 1
+[node name="HardDrive2" parent="." unique_id=1022851587 instance=ExtResource("12_qnv42")]
+position = Vector2(400, -759)
