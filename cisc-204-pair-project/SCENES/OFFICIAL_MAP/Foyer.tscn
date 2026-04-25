@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://chnltqg4pb04r" path="res://SCENES/INTERACTABLES/HallSceneChanger.tscn" id="10_c6yas"]
 
 [node name="Foyer" type="Node2D" unique_id=53470815]
+script = ExtResource("1_an0pu")
 
 [node name="Dialogue" parent="." unique_id=292361673 instance=ExtResource("1_0gy0a")]
 
@@ -67,7 +68,6 @@ target_spawn_marker = "FromFoyerHall"
 
 [node name="FromOfficeHall" type="Marker2D" parent="." unique_id=1713609792 groups=["spawn_point"]]
 position = Vector2(272, -40)
-script = ExtResource("1_an0pu")
 
 [node name="FromLabHall" type="Marker2D" parent="." unique_id=797840263 groups=["spawn_point"]]
 position = Vector2(-336, -67)
