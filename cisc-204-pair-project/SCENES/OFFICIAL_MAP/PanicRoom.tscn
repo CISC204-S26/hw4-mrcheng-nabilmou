@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b8pglx8m44ayp" path="res://SCENES/INTERACTABLES/KeycardDoor.tscn" id="3_otc4f"]
 [ext_resource type="PackedScene" uid="uid://bn67onos3vkvd" path="res://SCENES/PLAYER/Player.tscn" id="4_1hc0o"]
 [ext_resource type="PackedScene" uid="uid://dllation0new5" path="res://SCENES/INTERACTABLES/NPC.tscn" id="6_flacv"]
-[ext_resource type="PackedScene" uid="uid://b3rwv8o57n150" path="res://Ending_Computer.tscn" id="7_0d1jn"]
+[ext_resource type="PackedScene" path="res://Ending_Computer.tscn" id="7_0d1jn"]
 
 [node name="PanicRoom" type="Node2D" unique_id=65600963]
 script = ExtResource("1_8au8j")

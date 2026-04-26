@@ -29,7 +29,15 @@ position = Vector2(-144, 153)
 
 [node name="Note" parent="." unique_id=1528998479 instance=ExtResource("3_mg8ry")]
 position = Vector2(-20, -109)
-note_text = "hey there its lesley"
+note_text = "Office Records are still intact.
+
+Two DRIVES are still stored here.
+
+One is entrusted to general staff. The other is secured in the SERVER ROOM.
+
+Backroom KEY should be nearby. 
+
+Do not access observation systems unless necessary."
 
 [node name="Note2" parent="." unique_id=1336247270 instance=ExtResource("3_mg8ry")]
 position = Vector2(553, 116)
