@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://b3rwv8o57n150"]
+
+[ext_resource type="Script" uid="uid://dd848bpvpffrx" path="res://SCRIPTS/interactable.gd" id="1_0tqly"]
+[ext_resource type="Texture2D" uid="uid://bbssqt57irexm" path="res://ASSETS/ROOMS/Modern_Office_32x32.png" id="2_ybu6s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2hrly"]
+size = Vector2(36, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0tqly"]
+atlas = ExtResource("2_ybu6s")
+region = Rect2(448, 418, 32, 38)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qsoei"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0tqly")
+}],
+"loop": true,
+"name": &"Computer",
+"speed": 5.0
+}]
+
+[node name="StartingPhone" type="Area2D" unique_id=118944451]
+script = ExtResource("1_0tqly")
+interaction_type = "NPC"
+metadata/_custom_type_script = "uid://dd848bpvpffrx"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=122306324]
+position = Vector2(0, 20.5)
+shape = SubResource("RectangleShape2D_2hrly")
+
+[node name="PhoneSprite" type="AnimatedSprite2D" parent="." unique_id=1116583603]
+position = Vector2(0, -6)
+sprite_frames = SubResource("SpriteFrames_qsoei")
+animation = &"Computer"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=48400213]
+position = Vector2(0, 20.5)

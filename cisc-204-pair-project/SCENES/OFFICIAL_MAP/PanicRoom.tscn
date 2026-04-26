@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b8pglx8m44ayp" path="res://SCENES/INTERACTABLES/KeycardDoor.tscn" id="3_otc4f"]
 [ext_resource type="PackedScene" uid="uid://bn67onos3vkvd" path="res://SCENES/PLAYER/Player.tscn" id="4_1hc0o"]
 [ext_resource type="PackedScene" uid="uid://dllation0new5" path="res://SCENES/INTERACTABLES/NPC.tscn" id="6_flacv"]
+[ext_resource type="PackedScene" uid="uid://b3rwv8o57n150" path="res://Ending_Computer.tscn" id="7_0d1jn"]
 
 [node name="PanicRoom" type="Node2D" unique_id=65600963]
 script = ExtResource("1_8au8j")
@@ -27,3 +28,7 @@ position = Vector2(16, 22)
 position = Vector2(80, 22)
 npc_animation = "Guard"
 dialogue_lines = Array[String](["Lesley told me we had a situation on our hands.", "You being here means you have retrieved the HARD DRIVES.", "PLUG them into the terminal right in front of you to WIPE them.", "Those bastards wont find a thing."])
+
+[node name="StartingPhone" parent="." unique_id=118944451 instance=ExtResource("7_0d1jn")]
+position = Vector2(16, 125)
+dialogue_lines = Array[String](["Please insert all HARDDRIVES", "ARE YOU SURE YOU WANT TO DELETE EVERYTHING?", "DELETING..."])

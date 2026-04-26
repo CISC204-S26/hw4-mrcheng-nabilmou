@@ -7,7 +7,7 @@ extends CharacterBody2D
 @onready var footstep := $Footstep
 
 
-var tile_size := 32 # How many seconds it takes to move 1 tile.
+var tile_size := 32 #32 # How many seconds it takes to move 1 tile.
 var move_time := 0.25 
 
 var last_direction := Vector2.DOWN
