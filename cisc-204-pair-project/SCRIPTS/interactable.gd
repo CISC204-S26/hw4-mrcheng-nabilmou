@@ -13,7 +13,7 @@ class_name Interactable extends Area2D
 @export var target_spawn_id: String
 @export var required_keys: int = 0 #Number needed for keys 
 @export var unique_id: String = "" #a list of all the data when switching scenes
-
+@export var required_harddrives: int = 0 # set to 5 on the specific NPC instance
 
 # Checks if node with specific name exists, otherwise ignore it
 @onready var envelope = $LetterSprite if has_node("LetterSprite") else null
@@ -190,7 +190,23 @@ func _set_door_anim_frame():
 
 # ---------- DIALOGUE DIALOGUE DIALOGUE DIALOGUE DIALOGUE ------------------------------
 func start_dialogue():
+	var dialogue_seen: bool = false
 	if dialogue_ui == null:
+		return
+	
+	if dialogue_ui.visible:
+		dialogue_ui.skip_or_close()
+		return
+	
+	# First interaction — play normal dialogue
+	if not dialogue_seen:
+		dialogue_ui.show_text(dialogue_lines)
+		dialogue_seen = true
+		return
+	
+	# Second interaction onwards — check harddrives
+	if required_harddrives > 0 and GameManager.num_harddrive < required_harddrives:
+		show_message("You need " + str(required_harddrives) + " Hard Drives to proceed. [" + str(GameManager.num_harddrive) + "/" + str(required_harddrives) + "]")
 		return
 	
 	# If bubble is already visible
