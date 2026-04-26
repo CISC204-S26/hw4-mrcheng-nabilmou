@@ -4,6 +4,7 @@ extends CanvasLayer
 @export var text_speed := 0.03
 
 @onready var label := $DialogueBox/DialogueText
+@onready var typing_sound := $"../TypingSound"
 
 
 var lines: Array[String] = []
@@ -35,7 +36,13 @@ func _type_text():
 	for i in full_text.length():
 		if not typing:
 			break
+		
 		label.text += full_text[i]
+		
+		if full_text[i] != " ":
+			typing_sound.pitch_scale = randf_range(0.8, 1.1) # tone variation
+			typing_sound.play()
+		
 		await get_tree().create_timer(text_speed).timeout
 	
 	label.text = full_text

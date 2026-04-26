@@ -3,9 +3,10 @@
 [ext_resource type="Script" uid="uid://dd848bpvpffrx" path="res://SCRIPTS/interactable.gd" id="1_nd218"]
 [ext_resource type="Texture2D" uid="uid://dkr8lte5k2sx4" path="res://ASSETS/ANIMATEDSTUFF/animated_elevator_door_entrance_1_32x32.png" id="2_psyjj"]
 [ext_resource type="Texture2D" uid="uid://bg2huk0fpau5n" path="res://ASSETS/ANIMATEDSTUFF/animated_door_glass_sliding_32x32.png" id="3_cg6yp"]
-[ext_resource type="Texture2D" uid="uid://vbmfom71ecll" path="res://ASSETS/ROOMS/19_Hospital_32x32.png" id="3_psyjj"]
 [ext_resource type="Texture2D" uid="uid://chi3ux04q2apx" path="res://ASSETS/ANIMATEDSTUFF/animated_hospital_door_green_double_32x32.png" id="4_2dcyo"]
 [ext_resource type="Texture2D" uid="uid://ch8fp1bxjcl1l" path="res://ASSETS/ANIMATEDSTUFF/animated_hospital_surgery_door_32x32.png" id="5_50is4"]
+[ext_resource type="AudioStream" uid="uid://do63fwtykwcbk" path="res://ASSETS/AUDIO/INTERACTABLE/keycard_denial.wav" id="7_3pnik"]
+[ext_resource type="AudioStream" uid="uid://b7h41rgfva32s" path="res://ASSETS/AUDIO/INTERACTABLE/keycard_accepted.wav" id="8_3pnik"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_114ik"]
 radius = 15.033297
@@ -234,10 +235,6 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vph81"]
-atlas = ExtResource("3_psyjj")
-region = Rect2(333.972, 1119.999, 12, 18)
-
 [node name="KeycardDoor" type="Area2D" unique_id=918274409]
 script = ExtResource("1_nd218")
 interaction_type = "door"
@@ -258,11 +255,10 @@ shape = SubResource("RectangleShape2D_2dcyo")
 sprite_frames = SubResource("SpriteFrames_vph81")
 animation = &"Elevator_Door"
 
-[node name="KeyCardSwipe" type="TextureRect" parent="." unique_id=178905]
-visible = false
-offset_left = -65.0
-offset_top = 5.0
-offset_right = -53.0
-offset_bottom = 23.0
-texture = SubResource("AtlasTexture_vph81")
-stretch_mode = 5
+[node name="KeycardDenied" type="AudioStreamPlayer2D" parent="." unique_id=686870810]
+position = Vector2(-65, 5)
+stream = ExtResource("7_3pnik")
+
+[node name="KeycardAccepted" type="AudioStreamPlayer2D" parent="." unique_id=1560043577]
+position = Vector2(-65, 5)
+stream = ExtResource("8_3pnik")

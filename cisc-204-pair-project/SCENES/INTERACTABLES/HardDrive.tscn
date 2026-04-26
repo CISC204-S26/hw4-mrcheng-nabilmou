@@ -1,17 +1,7 @@
 [gd_scene format=3 uid="uid://dwqnd2v5ervp4"]
 
+[ext_resource type="Script" uid="uid://dd848bpvpffrx" path="res://SCRIPTS/interactable.gd" id="1_js8aw"]
 [ext_resource type="Texture2D" uid="uid://b5f8bs64fsvww" path="res://ASSETS/ROOMS/18_Jail_32x32.png" id="1_jw1d0"]
-
-[sub_resource type="GDScript" id="GDScript_js8aw"]
-resource_name = "HardDrive"
-script/source = "extends \"res://SCRIPTS/interactable.gd\"
-
-class_name Door
-#extends Interactable
-
-func _ready():
-	interaction_type = \"harddrive\"
-"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jnmn0"]
 radius = 15.0
@@ -21,7 +11,7 @@ atlas = ExtResource("1_jw1d0")
 region = Rect2(416.502, 30.097698, 30.655212, 24.9043)
 
 [node name="HardDrive" type="Area2D" unique_id=764411796]
-script = SubResource("GDScript_js8aw")
+script = ExtResource("1_js8aw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=695265599]
 shape = SubResource("CircleShape2D_jnmn0")

@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dsx84d3v50a1"]
 
+[ext_resource type="AudioStream" uid="uid://76ghjxlobifj" path="res://ASSETS/AUDIO/INTERACTABLE/keyboard_type_sound.wav" id="1_663pg"]
 [ext_resource type="Script" uid="uid://rbt0wvfjm15r" path="res://SCRIPTS/dialogue.gd" id="1_jxc7o"]
 [ext_resource type="Texture2D" uid="uid://dggb0bl2r3jsc" path="res://ASSETS/UI/UI books & more.png" id="2_mxu08"]
 [ext_resource type="FontFile" uid="uid://diagsg6itx81q" path="res://ASSETS/UI/FONTS/m6x11plus.ttf" id="3_clwxu"]
@@ -9,6 +10,11 @@ atlas = ExtResource("2_mxu08")
 region = Rect2(720, 64, 48, 48)
 
 [node name="Dialogue" type="Node2D" unique_id=292361673]
+
+[node name="TypingSound" type="AudioStreamPlayer2D" parent="." unique_id=221911856]
+stream = ExtResource("1_663pg")
+volume_db = -15.0
+pitch_scale = 0.8
 
 [node name="DialogueUI" type="CanvasLayer" parent="." unique_id=1921108910 groups=["dialogue"]]
 visible = false

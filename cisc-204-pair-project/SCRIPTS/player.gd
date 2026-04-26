@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var interaction_area = $InteractionArea2D
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var ray: RayCast2D = $RayCast2D # Add a RayCast2D node to your player scene!
+@onready var footstep := $Footstep
 
 
 var tile_size := 32 # How many seconds it takes to move 1 tile.
@@ -87,11 +88,22 @@ func move_to_grid(direction: Vector2) -> void:
 	# If there is NO collision wall in the way, move!
 	if not ray.is_colliding():
 		var tween = create_tween()
-		# Smoothly slide the position to the target over 'move_time' seconds
 		tween.tween_property(self, "position", target_position, move_time)
+		
+		await get_tree().create_timer(move_time / 2).timeout
+		play_footstep()
+		
 		await tween.finished
 	
 	moving = false
+
+func play_footstep():
+	if footstep.playing:
+		return
+	
+	footstep.pitch_scale = randf_range(0.95, 1.05)
+	footstep.volume_db = randf_range(-1, 0)
+	footstep.play()
 
 
 # ------------------------ ANIMATIONS ---------------------------------------------------

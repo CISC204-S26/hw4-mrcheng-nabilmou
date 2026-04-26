@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dd848bpvpffrx" path="res://SCRIPTS/interactable.gd" id="1_v24m6"]
 [ext_resource type="Texture2D" uid="uid://dggb0bl2r3jsc" path="res://ASSETS/UI/UI books & more.png" id="2_8dbsn"]
+[ext_resource type="AudioStream" uid="uid://b65ojx8oiob3u" path="res://ASSETS/AUDIO/INTERACTABLE/note_pickup.wav" id="2_s0k0s"]
 [ext_resource type="FontFile" uid="uid://diagsg6itx81q" path="res://ASSETS/UI/FONTS/m6x11plus.ttf" id="3_hw6st"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8dbsn"]
@@ -85,6 +86,11 @@ theme_override_constants/line_spacing = -3
 theme_override_fonts/font = ExtResource("3_hw6st")
 theme_override_font_sizes/font_size = 16
 autowrap_mode = 3
+
+[node name="NotePickup" type="AudioStreamPlayer2D" parent="." unique_id=58461786]
+position = Vector2(352, 52)
+scale = Vector2(2, 2)
+stream = ExtResource("2_s0k0s")
 
 [connection signal="body_entered" from="." to="." method="_on_note_area_2d_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_note_area_2d_body_exited"]

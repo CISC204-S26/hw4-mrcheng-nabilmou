@@ -22,13 +22,19 @@ class_name Interactable extends Area2D
 @onready var note_texture = $NoteUI/NoteTexture if has_node("NoteUI/NoteTexture") else null
 @onready var dialogue_ui = get_tree().get_first_node_in_group("dialogue")
 
+# Sounds
+@onready var keycard_denied := $KeycardDenied if has_node("KeycardDenied") else null
+@onready var keycard_accepted := $KeycardAccepted if has_node("KeycardAccepted") else null
+@onready var door_locked := $DoorLocked if has_node("DoorLocked") else null
+@onready var door_unlocked := $DoorUnlocked if has_node("DoorUnlocked") else null
+@onready var note_pickup := $NotePickup if has_node("NotePickup") else null
+
 
 func _ready():
 	
 	# If this object was already collected/opened, remove it immediately
 	#print("DOOR READY: ", name, " | unique_id: ", unique_id, " | collected_ids: ", GameManager.collected_ids)
 	if unique_id != "" and unique_id in GameManager.collected_ids:
-		#print("DOOR FREEING: ", unique_id)
 		queue_free()
 		return
 	
@@ -56,6 +62,7 @@ func interact():
 			try_open_door()
 		"npc":
 			start_dialogue()
+			
 		"harddrive":
 			add_harddrive()
 			show_message("Obtained HARD DRIVE")
@@ -72,11 +79,13 @@ func toggle_note():
 		note_ui.visible = false
 		if player:
 			player.can_move = true
+		note_pickup.play()
 	else:
 		note_label.text = note_text
 		note_ui.visible = true
 		if player:
 			player.can_move = false
+		note_pickup.play()
 
 
 func _on_note_area_2d_body_entered(body: Node):
@@ -93,8 +102,8 @@ func _on_note_area_2d_body_exited(body: Node):
 func add_key():
 	GameManager.num_keys += 1
 	GameManager.collected_ids.append(unique_id)
+	GameManager.play_pickup_sound()
 	queue_free()
-
 
 func add_keycard():
 	if keycard_level == 1:
@@ -103,45 +112,51 @@ func add_keycard():
 	elif keycard_level == 2:
 		GameManager.give_keycard(2)
 		GameManager.collected_ids.append(unique_id)
+	GameManager.play_pickup_sound()
 	queue_free()
-
 
 func add_harddrive():
 	GameManager.num_harddrive += 1
 	GameManager.collected_ids.append(unique_id)
+	GameManager.play_pickup_sound()
 	queue_free()
 
 
 # --------------------- DOOR DOOR DOOR DOOR DOOR DOOR DOOR -----------------------------
 var is_open: bool = false
+
 func try_open_door():
 	if is_open:
 		return
 	
-	# ---------- Keycard Doors ---------
+	# ---------- Keycard Doors -----------
 	if required_keycard_level > 0:
 		if required_keycard_level == 1 and not GameManager.has_keycard1:
+			keycard_denied.play()
 			show_message("Access Denied: Need LEVEL 1 KEYCARD")
 			return
 		
 		if required_keycard_level == 2 and not GameManager.has_keycard2:
+			keycard_denied.play()
 			show_message("Access Denied: Need LEVEL 2 KEYCARD")
 			return
 		
 		show_message("Access Granted: Opening Secured Door")
+		keycard_accepted.play()
 		open_door()
 	
-	# ---------- Normal Doors ----------
+	# ---------- Normal Doors ------------
 	
 	else:
 		if GameManager.num_keys < required_keys:
+			door_locked.play()
 			show_message("Locked: Need " + str(required_keys) + " key(s)")
 			return
 		show_message("The DOOR opened!")
+		door_unlocked.play()
 		open_door()
 	
-
-
+	
 func open_door():
 	is_open = true
 	

@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://utogh7nbqc5c" path="res://ASSETS/PLAYER/Bob_32x32.png" id="1_85nbx"]
 [ext_resource type="Script" uid="uid://clojjpg0s7miv" path="res://SCRIPTS/player.gd" id="1_667t4"]
+[ext_resource type="AudioStream" uid="uid://d1abpxu5ta3nc" path="res://ASSETS/AUDIO/INTERACTABLE/footstep.wav" id="3_b63ls"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_667t4"]
 size = Vector2(25, 44)
@@ -415,3 +416,6 @@ autoplay = "Idle_Forward"
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1228000612]
 offset = Vector2(0, -60)
 zoom = Vector2(2, 2)
+
+[node name="Footstep" type="AudioStreamPlayer2D" parent="." unique_id=1500824717]
+stream = ExtResource("3_b63ls")
