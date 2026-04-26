@@ -76,16 +76,26 @@ func toggle_note():
 	var player = get_tree().get_first_node_in_group("player")
 	
 	if note_ui.visible:
+		# ------ CLOSE NOTE ------------
 		note_ui.visible = false
-		if player:
-			player.can_move = true
-		note_pickup.play()
+		if note_pickup:
+			note_pickup.play()
+		
+		if not dialogue_lines.is_empty() and dialogue_ui != null:
+			await get_tree().create_timer(0.3).timeout
+			dialogue_ui.show_text(dialogue_lines)
+		else:
+			if player:
+				player.can_move = true
+	
 	else:
+		# --------- OPEN NOTE -----------
 		note_label.text = note_text
 		note_ui.visible = true
 		if player:
 			player.can_move = false
-		note_pickup.play()
+		if note_pickup:
+			note_pickup.play()
 
 
 func _on_note_area_2d_body_entered(body: Node):

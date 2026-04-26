@@ -25,9 +25,12 @@ func _ready():
 
 
 func _physics_process(_delta: float) -> void:
-	if not can_move or moving:
-		return
-	
+	if not can_move:
+			update_animation(Vector2.ZERO)
+			return
+	if moving:
+			return
+
 	var input_direction = Vector2.ZERO
 	
 	# Check inputs (4-way movement, no diagonals)
