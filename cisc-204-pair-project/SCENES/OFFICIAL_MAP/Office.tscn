@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ba0vu1s8r0s1m"]
 
 [ext_resource type="Script" uid="uid://cnc3vmith3my0" path="res://SCRIPTS/spawn_controller.gd" id="1_arjom"]
-[ext_resource type="PackedScene" uid="uid://dsx84d3v50a1" path="res://SCENES/INTERACTABLES/Dialogue.tscn" id="1_gpjrv"]
+[ext_resource type="PackedScene" uid="uid://dsx84d3v50a1" path="res://SCENES/UI_SCREENS/Dialogue.tscn" id="1_gpjrv"]
 [ext_resource type="PackedScene" uid="uid://c3cmaqjf63taa" path="res://SCENES/ROOM_LAYOUTS/OfficeRoom.tscn" id="2_arjom"]
 [ext_resource type="PackedScene" uid="uid://op6b3eew8oca" path="res://SCENES/INTERACTABLES/Note.tscn" id="3_mg8ry"]
 [ext_resource type="PackedScene" uid="uid://bk8qbs7k6m5te" path="res://SCENES/INTERACTABLES/Key.tscn" id="4_ik3c6"]

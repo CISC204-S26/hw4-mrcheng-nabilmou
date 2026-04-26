@@ -8,7 +8,7 @@ class_name Interactable extends Area2D
 @export var target_scene_path: String # any door can change scene if this is set
 @export var keycard_level: int = 0 # set level of keycard instance
 @export var required_keycard_level: int = 0 # set level of required keycard to open a door
-@export var note_text: String = "" # set text for each note
+@export_multiline var note_text: String = "" # set text for each note
 @export var dialogue_lines: Array[String] = [] # set dialogue for each npc
 @export var target_spawn_id: String
 @export var required_keys: int = 0 #Number needed for keys 

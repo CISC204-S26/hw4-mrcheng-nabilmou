@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://vryp2ck2hapr"]
 
 [ext_resource type="Script" uid="uid://cnc3vmith3my0" path="res://SCRIPTS/spawn_controller.gd" id="1_8au8j"]
-[ext_resource type="PackedScene" uid="uid://dsx84d3v50a1" path="res://SCENES/INTERACTABLES/Dialogue.tscn" id="2_1hc0o"]
+[ext_resource type="PackedScene" uid="uid://dsx84d3v50a1" path="res://SCENES/UI_SCREENS/Dialogue.tscn" id="2_1hc0o"]
 [ext_resource type="PackedScene" uid="uid://bjgvxshtmw152" path="res://SCENES/ROOM_LAYOUTS/FinalRoom.tscn" id="2_285on"]
 [ext_resource type="PackedScene" uid="uid://b8pglx8m44ayp" path="res://SCENES/INTERACTABLES/KeycardDoor.tscn" id="3_otc4f"]
 [ext_resource type="PackedScene" uid="uid://bn67onos3vkvd" path="res://SCENES/PLAYER/Player.tscn" id="4_1hc0o"]

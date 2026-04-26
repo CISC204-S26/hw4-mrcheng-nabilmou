@@ -30,7 +30,7 @@ func _physics_process(_delta: float) -> void:
 			return
 	if moving:
 			return
-
+	
 	var input_direction = Vector2.ZERO
 	
 	# Check inputs (4-way movement, no diagonals)

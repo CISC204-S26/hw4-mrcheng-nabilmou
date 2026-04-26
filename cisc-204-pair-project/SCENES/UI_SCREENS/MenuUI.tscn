@@ -1,0 +1,133 @@
+[gd_scene format=3 uid="uid://vgaladm33q8q"]
+
+[ext_resource type="Script" uid="uid://42bcw3cgkfh1" path="res://SCENES/UI_SCREENS/menu_controller.gd" id="1_yofoo"]
+[ext_resource type="FontFile" uid="uid://diagsg6itx81q" path="res://ASSETS/UI/FONTS/m6x11plus.ttf" id="2_76ey0"]
+[ext_resource type="AudioStream" uid="uid://dnb6dvy78crvb" path="res://ASSETS/AUDIO/MAINMENU/menu_focus.wav" id="3_wovgj"]
+[ext_resource type="AudioStream" uid="uid://ygyjamq6je54" path="res://ASSETS/AUDIO/MAINMENU/menu_select.wav" id="4_3otla"]
+[ext_resource type="AudioStream" uid="uid://cnyci5kc40f4" path="res://ASSETS/AUDIO/MAINMENU/menu_music.wav" id="5_3otla"]
+
+[node name="MenuOverlay" type="CanvasLayer" unique_id=317804801]
+script = ExtResource("1_yofoo")
+
+[node name="TitlePanel" type="Panel" parent="." unique_id=430314157]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -238.0
+offset_top = -183.0
+offset_right = 243.0
+offset_bottom = -72.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainButtons" type="VBoxContainer" parent="." unique_id=666284229]
+custom_minimum_size = Vector2(150, 200)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = 20.0
+offset_right = 75.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayButton" type="Button" parent="MainButtons" unique_id=1343390312]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_76ey0")
+theme_override_font_sizes/font_size = 40
+text = "Play"
+
+[node name="SettingsButton" type="Button" parent="MainButtons" unique_id=1650871053]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_76ey0")
+theme_override_font_sizes/font_size = 40
+text = "SETTINGS"
+
+[node name="QuitButton" type="Button" parent="MainButtons" unique_id=1999075332]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_76ey0")
+theme_override_font_sizes/font_size = 40
+text = "QUIT"
+
+[node name="SettingsPanel" type="VBoxContainer" parent="." unique_id=214126869]
+visible = false
+custom_minimum_size = Vector2(100, 200)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.0
+offset_top = 2.0
+offset_right = 94.0
+offset_bottom = 202.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VolumeLabel" type="Label" parent="SettingsPanel" unique_id=1269951090]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_76ey0")
+theme_override_font_sizes/font_size = 30
+text = "Volume"
+horizontal_alignment = 1
+
+[node name="VolumeSlider" type="HSlider" parent="SettingsPanel" unique_id=843082638]
+layout_mode = 2
+rounded = true
+ticks_on_borders = true
+
+[node name="ControlsLabel" type="Label" parent="SettingsPanel" unique_id=669164064]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_76ey0")
+theme_override_font_sizes/font_size = 30
+text = "Controls"
+horizontal_alignment = 1
+
+[node name="ContolsPanel" type="HBoxContainer" parent="SettingsPanel" unique_id=459710602]
+layout_mode = 2
+
+[node name="KeybindsLabel" type="Label" parent="SettingsPanel/ContolsPanel" unique_id=1235091745]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_76ey0")
+theme_override_font_sizes/font_size = 20
+text = "WASD            
+E                  "
+
+[node name="ActionsLabel" type="Label" parent="SettingsPanel/ContolsPanel" unique_id=1858657893]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_76ey0")
+theme_override_font_sizes/font_size = 20
+text = "Move
+Interact"
+
+[node name="BackButton" type="Button" parent="SettingsPanel" unique_id=746107744]
+layout_mode = 2
+text = "Back"
+
+[node name="HoverSound" type="AudioStreamPlayer2D" parent="." unique_id=878398753]
+stream = ExtResource("3_wovgj")
+
+[node name="ClickSound" type="AudioStreamPlayer2D" parent="." unique_id=979408197]
+stream = ExtResource("4_3otla")
+
+[node name="MainMusic" type="AudioStreamPlayer2D" parent="." unique_id=1605304725]
+stream = ExtResource("5_3otla")
+
+[connection signal="mouse_entered" from="MainButtons/PlayButton" to="." method="play_hover_sound"]
+[connection signal="pressed" from="MainButtons/PlayButton" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MainButtons/PlayButton" to="." method="play_click_sound"]
+[connection signal="mouse_entered" from="MainButtons/SettingsButton" to="." method="play_hover_sound"]
+[connection signal="pressed" from="MainButtons/SettingsButton" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MainButtons/SettingsButton" to="." method="play_click_sound"]
+[connection signal="mouse_entered" from="MainButtons/QuitButton" to="." method="play_hover_sound"]
+[connection signal="pressed" from="MainButtons/QuitButton" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MainButtons/QuitButton" to="." method="play_click_sound"]
+[connection signal="pressed" from="SettingsPanel/BackButton" to="." method="_on_back_pressed"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cnc3vmith3my0" path="res://SCRIPTS/spawn_controller.gd" id="1_ech24"]
 [ext_resource type="PackedScene" uid="uid://cdns3eu3ubyc2" path="res://SCENES/ROOM_LAYOUTS/LabRoom.tscn" id="1_f8tem"]
-[ext_resource type="PackedScene" uid="uid://dsx84d3v50a1" path="res://SCENES/INTERACTABLES/Dialogue.tscn" id="2_518ot"]
+[ext_resource type="PackedScene" uid="uid://dsx84d3v50a1" path="res://SCENES/UI_SCREENS/Dialogue.tscn" id="2_518ot"]
 [ext_resource type="PackedScene" uid="uid://chnltqg4pb04r" path="res://SCENES/INTERACTABLES/HallSceneChanger.tscn" id="2_jk24a"]
 [ext_resource type="PackedScene" uid="uid://bn67onos3vkvd" path="res://SCENES/PLAYER/Player.tscn" id="3_mwb88"]
 [ext_resource type="PackedScene" uid="uid://dllation0new5" path="res://SCENES/INTERACTABLES/NPC.tscn" id="5_8f1ok"]

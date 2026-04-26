@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dehctk4gyuqy7"]
 
-[ext_resource type="PackedScene" uid="uid://dsx84d3v50a1" path="res://SCENES/INTERACTABLES/Dialogue.tscn" id="1_0gy0a"]
+[ext_resource type="PackedScene" uid="uid://dsx84d3v50a1" path="res://SCENES/UI_SCREENS/Dialogue.tscn" id="1_0gy0a"]
 [ext_resource type="Script" uid="uid://cnc3vmith3my0" path="res://SCRIPTS/spawn_controller.gd" id="1_an0pu"]
 [ext_resource type="PackedScene" uid="uid://c1l2ylctq4ydm" path="res://SCENES/ROOM_LAYOUTS/StartRoom.tscn" id="2_rw6i8"]
 [ext_resource type="PackedScene" uid="uid://cbi68oekbamj5" path="res://SCENES/INTERACTABLES/Door.tscn" id="3_an0pu"]
@@ -26,7 +26,7 @@ unique_id = "startingDoor"
 
 [node name="StartingPhone" parent="." unique_id=118944451 instance=ExtResource("4_cvw5k")]
 position = Vector2(-85, 81)
-dialogue_lines = Array[String](["Boss, It's Lesley. We have a situation on our hands.", "It's too sensitive to talk on the phone.", "I have left a letter with your secretary at the FRONT DESK.", "Read it."])
+dialogue_lines = Array[String](["Morning. I've already secured the perimeter feed.", "Listen carefully, they're moving faster than expected.", "The FIB will be here by sunrise.", "I left a note at reception. Read it before doing anything rash.", "...and please don't ignore me this time."])
 
 [node name="Key" parent="." unique_id=655332623 instance=ExtResource("5_k3ws6")]
 position = Vector2(142, 82)
@@ -35,12 +35,17 @@ unique_id = "key"
 [node name="NPC" parent="." unique_id=888581163 instance=ExtResource("6_m7qns")]
 position = Vector2(-144, -162)
 npc_animation = "Amelia"
-dialogue_lines = Array[String](["Nice to see you again boss.", "LESLEY left you a LETTER. She said it was urgent.", "I've left on the side for you."])
+dialogue_lines = Array[String](["Good Morning, sir.", "LESLEY dropped something for you earlier.", "...she said it was important.", "I left it on the side for you."])
 
 [node name="Note" parent="." unique_id=1528998479 instance=ExtResource("7_7n44a")]
-position = Vector2(-123, -181)
-note_text = "Heres the situation. We have a leak. Someone let some confidential information slip about what it is we do here. The FIB will be at the facility in the morning. You must find all FIVE HARD DRIVES before the end of the night. Again this is of umost importance. If they find anything it will be hell."
-dialogue_lines = Array[String](["I should head to the OFFICE to get my LEVEL 1 KEYCARD"])
+position = Vector2(-124, -181)
+note_text = "If you're reading this, I couldn't reach you directly.  The FIB audit has been moved up. They'll be here by morning.
+
+You need to WIPE the facility records. All of them.
+The HARD DRIVES are split between the OFFICE and the LAB. 
+
+I've locked down what I could, but I can't protect you from the system this time."
+dialogue_lines = Array[String](["This sounds serious.", "I should start in the OFFICE and grab my LEVEL 1 KEYCARD while I'm there."])
 
 [node name="KeycardDoor" parent="." unique_id=918274409 instance=ExtResource("8_w31n0")]
 position = Vector2(16, -288)
@@ -57,7 +62,7 @@ required_keycard_level = 1
 [node name="NPC2" parent="." unique_id=285946941 instance=ExtResource("6_m7qns")]
 position = Vector2(80, -228)
 npc_animation = "Guard"
-dialogue_lines = Array[String](["Hey Boss, if you require entry to the panic room,", "you will need to find your LEVEL 2 KEYCARD and 5 HARD DRIVES.", "I think you may have left it in the Lab.", "Your last experiment ran a little long, I'm sure you must have been tired."])
+dialogue_lines = Array[String](["Sorry, sir. Orders are strict on that door.", "LEVEL 2 KEYCARD only.", "...", "Everthing in there is... handled separately. Especially the DRIVES."])
 required_harddrives = 5
 
 [node name="Player" parent="." unique_id=220904025 instance=ExtResource("9_vrsv7")]
@@ -73,3 +78,12 @@ position = Vector2(272, -40)
 
 [node name="FromLabHall" type="Marker2D" parent="." unique_id=797840263 groups=["spawn_point"]]
 position = Vector2(-336, -67)
+
+[node name="Note2" parent="." unique_id=483088315 instance=ExtResource("7_7n44a")]
+position = Vector2(41, -104)
+note_text = "Subject intake procedures remain unchanged.
+Emotional stabilization protocals are to be applied prior to transfer.
+
+Note:  younger subjects exhibit higher compliance after separation periods exceeding 72 hours.
+
+Recommend continued use of \"Educational Retreat\" protocols"
