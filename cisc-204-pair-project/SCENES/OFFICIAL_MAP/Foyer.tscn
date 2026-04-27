@@ -19,6 +19,17 @@ script = ExtResource("1_an0pu")
 
 [node name="StartRoom" parent="." unique_id=242163522 instance=ExtResource("2_rw6i8")]
 
+[node name="HallSceneChanger" parent="." unique_id=1394976554 instance=ExtResource("10_c6yas")]
+position = Vector2(304, -64)
+target_scene_path = "res://SCENES/OFFICIAL_MAP/Office.tscn"
+target_spawn_marker = "FromFoyerHall"
+
+[node name="FromOfficeHall" type="Marker2D" parent="." unique_id=1713609792 groups=["spawn_point"]]
+position = Vector2(272, -40)
+
+[node name="FromLabHall" type="Marker2D" parent="." unique_id=797840263 groups=["spawn_point"]]
+position = Vector2(-336, -67)
+
 [node name="Door" parent="." unique_id=1158038630 instance=ExtResource("3_an0pu")]
 position = Vector2(16, 66)
 required_keys = 1
@@ -65,20 +76,6 @@ npc_animation = "Guard"
 dialogue_lines = Array[String](["Sorry, sir. Orders are strict on this door.", "LEVEL 2 KEYCARD only.", "...", "Everthing in there is... handled separately. Especially the DRIVES."])
 required_harddrives = 5
 
-[node name="Player" parent="." unique_id=220904025 instance=ExtResource("9_vrsv7")]
-position = Vector2(16, 154)
-
-[node name="HallSceneChanger" parent="." unique_id=1394976554 instance=ExtResource("10_c6yas")]
-position = Vector2(304, -64)
-target_scene_path = "res://SCENES/OFFICIAL_MAP/Office.tscn"
-target_spawn_marker = "FromFoyerHall"
-
-[node name="FromOfficeHall" type="Marker2D" parent="." unique_id=1713609792 groups=["spawn_point"]]
-position = Vector2(272, -40)
-
-[node name="FromLabHall" type="Marker2D" parent="." unique_id=797840263 groups=["spawn_point"]]
-position = Vector2(-336, -67)
-
 [node name="Note2" parent="." unique_id=483088315 instance=ExtResource("7_7n44a")]
 position = Vector2(41, -104)
 note_text = "Subject intake procedures remain unchanged.
@@ -86,4 +83,7 @@ Emotional stabilization protocals are to be applied prior to transfer.
 
 Note:  younger subjects exhibit higher compliance after separation periods exceeding 72 hours.
 
-Recommend continued use of \"Educational Retreat\" protocols"
+Recommend continued use of Educational Retreat protocol"
+
+[node name="Player" parent="." unique_id=220904025 instance=ExtResource("9_vrsv7")]
+position = Vector2(16, 154)
