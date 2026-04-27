@@ -1,3 +1,27 @@
 [gd_scene format=3 uid="uid://cdl7ari6gsl1k"]
 
-[node name="PauseMenu" type="Node2D" unique_id=1161926193]
+[node name="PauseMenu" type="CanvasLayer" unique_id=753689908]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1385952057]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.39215687)
+
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect" unique_id=1924941374]
+layout_mode = 0
+offset_left = 426.0
+offset_top = 183.0
+offset_right = 502.0
+offset_bottom = 293.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/CenterContainer" unique_id=1716170657]
+layout_mode = 2
+
+[node name="ResumeButton" type="Button" parent="ColorRect/CenterContainer/VBoxContainer" unique_id=1531161215]
+layout_mode = 2
+
+[node name="MainMenuButton" type="Button" parent="ColorRect/CenterContainer/VBoxContainer" unique_id=197365056]
+layout_mode = 2

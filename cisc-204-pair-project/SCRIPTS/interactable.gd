@@ -45,10 +45,7 @@ func _ready():
 		
 	_set_door_anim_frame()
 	_set_npc_anim()
-<<<<<<< Updated upstream
-=======
-	
->>>>>>> Stashed changes
+
 	GameManager.start_game_bg_music()
 	
 	# Connect ending computer to dialogue finished signal
