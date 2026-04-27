@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c5dfyyl2a3w5l"
-path="res://.godot/imported/DoorKnock.wav-4e257eed8e69ca711f2601a8a80ac60c.sample"
+path="res://.godot/imported/DoorKnock.wav-c0bcfb3209b4f8cf66e74b9c30e6e5ab.sample"
 
 [deps]
 
-source_file="res://DoorKnock.wav"
-dest_files=["res://.godot/imported/DoorKnock.wav-4e257eed8e69ca711f2601a8a80ac60c.sample"]
+source_file="res://ASSETS/AUDIO/INTERACTABLE/DoorKnock.wav"
+dest_files=["res://.godot/imported/DoorKnock.wav-c0bcfb3209b4f8cf66e74b9c30e6e5ab.sample"]
 
 [params]
 

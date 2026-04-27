@@ -6,11 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://b8pglx8m44ayp" path="res://SCENES/INTERACTABLES/KeycardDoor.tscn" id="3_otc4f"]
 [ext_resource type="PackedScene" uid="uid://bn67onos3vkvd" path="res://SCENES/PLAYER/Player.tscn" id="4_1hc0o"]
 [ext_resource type="PackedScene" uid="uid://dllation0new5" path="res://SCENES/INTERACTABLES/NPC.tscn" id="6_flacv"]
-[ext_resource type="PackedScene" uid="uid://b3rwv8o57n150" path="res://Ending_Computer.tscn" id="7_0d1jn"]
-[ext_resource type="AudioStream" uid="uid://dw2l20imx8sjw" path="res://freesound_community-police-siren-one-loop-loop-able-104019.wav" id="8_37n41"]
-[ext_resource type="AudioStream" uid="uid://c5dfyyl2a3w5l" path="res://DoorKnock.wav" id="9_8yhh3"]
+[ext_resource type="PackedScene" uid="uid://b3rwv8o57n150" path="res://SCENES/INTERACTABLES/Ending_Computer.tscn" id="7_0d1jn"]
+[ext_resource type="AudioStream" uid="uid://dw2l20imx8sjw" path="res://ASSETS/AUDIO/INTERACTABLE/freesound_community-police-siren-one-loop-loop-able-104019.wav" id="8_37n41"]
+[ext_resource type="AudioStream" uid="uid://c5dfyyl2a3w5l" path="res://ASSETS/AUDIO/INTERACTABLE/DoorKnock.wav" id="9_8yhh3"]
 [ext_resource type="AudioStream" uid="uid://cnyci5kc40f4" path="res://ASSETS/AUDIO/MAINMENU/menu_music.wav" id="9_cfw73"]
-[ext_resource type="PackedScene" uid="uid://8lopylei0vpq" path="res://SCENES/UI_SCREENS/ending_title_screen.tscn" id="11_8yhh3"]
+[ext_resource type="PackedScene" uid="uid://8lopylei0vpq" path="res://SCENES/UI_SCREENS/EndingTitleScreen.tscn" id="11_8yhh3"]
 
 [node name="PanicRoom" type="Node2D" unique_id=65600963]
 script = ExtResource("1_8au8j")
