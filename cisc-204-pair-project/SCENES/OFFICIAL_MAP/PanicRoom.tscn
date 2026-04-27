@@ -34,7 +34,7 @@ npc_animation = "Guard"
 dialogue_lines = Array[String](["You being here means you have retrieved the HARD DRIVES.", "PLUG them into the terminal right in front of you and WIPE them.", "Those bastards wont find a thing."])
 
 [node name="EndingComputer" parent="." unique_id=118944451 instance=ExtResource("7_0d1jn")]
-position = Vector2(16, 125)
+position = Vector2(16, 118)
 dialogue_lines = Array[String](["SYSTEM ALERT: 5/5 Data Drives Detected", "STATUS: Critical Integrity Breach", "WIPING ALL CONFIDENTIAL DATA"])
 is_ending_computer = true
 ending_sounds = Array[AudioStream]([ExtResource("8_37n41"), ExtResource("9_8yhh3"), ExtResource("9_cfw73")])

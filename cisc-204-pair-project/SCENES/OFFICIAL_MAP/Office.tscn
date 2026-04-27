@@ -40,9 +40,6 @@ Backroom KEY should be nearby.
 Do not access observation systems unless necessary."
 dialogue_lines = Array[String](["Two DRIVES here in the OFFICE.", "One out HERE and the other in the SERVER ROOM.", "Key should be close."])
 
-[node name="Note2" parent="." unique_id=1336247270 instance=ExtResource("3_mg8ry")]
-position = Vector2(779, 137)
-
 [node name="Note3" parent="." unique_id=1986664201 instance=ExtResource("3_mg8ry")]
 position = Vector2(1284, -558)
 note_text = "All behavioral archives are mirrored across multiple drives.

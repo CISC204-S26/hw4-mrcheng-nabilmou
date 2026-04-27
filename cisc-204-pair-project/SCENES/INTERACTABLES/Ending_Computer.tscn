@@ -1,23 +1,23 @@
 [gd_scene format=3 uid="uid://b3rwv8o57n150"]
 
 [ext_resource type="Script" uid="uid://dd848bpvpffrx" path="res://SCRIPTS/interactable.gd" id="1_0tqly"]
-[ext_resource type="Texture2D" uid="uid://bbssqt57irexm" path="res://ASSETS/ROOMS/Modern_Office_32x32.png" id="2_ybu6s"]
-[ext_resource type="AudioStream" uid="uid://dw2l20imx8sjw" path="res://freesound_community-police-siren-one-loop-loop-able-104019.wav" id="3_ybu6s"]
+[ext_resource type="AudioStream" uid="uid://dw2l20imx8sjw" path="res://ASSETS/AUDIO/INTERACTABLE/freesound_community-police-siren-one-loop-loop-able-104019.wav" id="3_ybu6s"]
+[ext_resource type="Texture2D" uid="uid://b5f8bs64fsvww" path="res://ASSETS/ROOMS/18_Jail_32x32.png" id="4_gohcm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2hrly"]
 size = Vector2(36, 61)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0tqly"]
-atlas = ExtResource("2_ybu6s")
-region = Rect2(448, 418, 32, 38)
+[sub_resource type="AtlasTexture" id="AtlasTexture_adf3h"]
+atlas = ExtResource("4_gohcm")
+region = Rect2(416, 512, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qsoei"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0tqly")
+"texture": SubResource("AtlasTexture_adf3h")
 }],
-"loop": true,
+"loop": false,
 "name": &"Computer",
 "speed": 5.0
 }]
