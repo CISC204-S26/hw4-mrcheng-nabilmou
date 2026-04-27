@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="CISC204 Pair Project"
-run/main_scene="uid://dehctk4gyuqy7"
+run/main_scene="uid://vgaladm33q8q"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
 [autoload]

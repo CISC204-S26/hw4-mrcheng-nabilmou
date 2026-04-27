@@ -31,13 +31,26 @@ func _ready():
 	add_child(bg_music)
 	bg_music.stream = load("res://ASSETS/AUDIO/BACKGROUND/dark_ambient_drone.wav")
 	bg_music.volume_db = -16
-	bg_music.play()
 	
 	bg_music2 = AudioStreamPlayer.new()
 	add_child(bg_music2)
 	bg_music2.stream = load("res://ASSETS/AUDIO/BACKGROUND/empty_room_ambient.wav")
 	bg_music2.volume_db = -10
-	bg_music2.play()
+
+
+func start_game_bg_music():
+	if bg_music and not bg_music.playing:
+		bg_music.play()
+		
+	if bg_music2 and not bg_music2.playing:
+		bg_music2.play()
+
+func stop_game_bg_music():
+	if bg_music and bg_music.playing:
+		bg_music.stop()
+		
+	if bg_music2 and bg_music2.playing:
+		bg_music.stop()
 
 
 # Final room requirement

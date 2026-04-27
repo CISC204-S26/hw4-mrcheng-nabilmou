@@ -43,6 +43,7 @@ func _ready():
 		
 	_set_door_anim_frame()
 	_set_npc_anim()
+	GameManager.start_game_bg_music()
 
 
 # ------------------------INTERACT INTERACT INTERACT ------------------------------------

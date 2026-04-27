@@ -1,26 +1,145 @@
 [gd_scene format=3 uid="uid://vgaladm33q8q"]
 
 [ext_resource type="Script" uid="uid://42bcw3cgkfh1" path="res://SCRIPTS/menu_controller.gd" id="1_yofoo"]
+[ext_resource type="Texture2D" uid="uid://e7s0i8p0fodb" path="res://ASSETS/UI/MENU_BACKGROUND/Sky.png" id="2_28lcg"]
 [ext_resource type="FontFile" uid="uid://diagsg6itx81q" path="res://ASSETS/UI/FONTS/m6x11plus.ttf" id="2_76ey0"]
+[ext_resource type="Texture2D" uid="uid://dfb1isf87nb8s" path="res://ASSETS/UI/MENU_BACKGROUND/Shade 3.png" id="3_fk17g"]
 [ext_resource type="AudioStream" uid="uid://dnb6dvy78crvb" path="res://ASSETS/AUDIO/MAINMENU/menu_focus.wav" id="3_wovgj"]
 [ext_resource type="AudioStream" uid="uid://ygyjamq6je54" path="res://ASSETS/AUDIO/MAINMENU/menu_select.wav" id="4_3otla"]
+[ext_resource type="Texture2D" uid="uid://bwycdcmwdda0i" path="res://ASSETS/UI/MENU_BACKGROUND/Shade 2.png" id="4_p5n6f"]
 [ext_resource type="AudioStream" uid="uid://cnyci5kc40f4" path="res://ASSETS/AUDIO/MAINMENU/menu_music.wav" id="5_3otla"]
+[ext_resource type="Texture2D" uid="uid://b83m8kfolxf3" path="res://ASSETS/UI/MENU_BACKGROUND/Buildings 4.png" id="5_i1fwa"]
+[ext_resource type="Texture2D" uid="uid://bpvvw32kl3jh5" path="res://ASSETS/UI/MENU_BACKGROUND/Buildings 3.png" id="6_2cjqh"]
+[ext_resource type="Texture2D" uid="uid://w5b0vq4f482q" path="res://ASSETS/UI/MENU_BACKGROUND/Buildings 1.png" id="7_w8dox"]
+[ext_resource type="Texture2D" uid="uid://bc64h6obgkqeg" path="res://ASSETS/UI/MENU_BACKGROUND/Buildings 2.png" id="8_iqr0c"]
 
 [node name="MenuOverlay" type="CanvasLayer" unique_id=317804801]
 script = ExtResource("1_yofoo")
 
-[node name="TitlePanel" type="Panel" parent="." unique_id=430314157]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -238.0
-offset_top = -183.0
-offset_right = 243.0
-offset_bottom = -72.0
+[node name="MenuBackground" type="Control" parent="." unique_id=1337783706]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="BackLayer" type="TextureRect" parent="MenuBackground" unique_id=140684911]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 959.0
+offset_bottom = 542.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_28lcg")
+
+[node name="Building4" type="TextureRect" parent="MenuBackground" unique_id=1112603247]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 355.33
+offset_right = 959.0
+offset_bottom = 413.33
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_i1fwa")
+stretch_mode = 1
+
+[node name="Shade3" type="TextureRect" parent="MenuBackground" unique_id=188793283]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 959.0
+offset_bottom = 542.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_p5n6f")
+
+[node name="Building3" type="TextureRect" parent="MenuBackground" unique_id=90359144]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 319.735
+offset_right = 959.0
+offset_bottom = 463.73468
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_2cjqh")
+stretch_mode = 1
+
+[node name="Shade2" type="TextureRect" parent="MenuBackground" unique_id=1246614249]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 398.0
+offset_right = 959.0
+offset_bottom = 542.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_fk17g")
+
+[node name="Building2" type="TextureRect" parent="MenuBackground" unique_id=351424459]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 345.34
+offset_right = 959.0
+offset_bottom = 493.33978
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_iqr0c")
+stretch_mode = 1
+
+[node name="Shade1" type="TextureRect" parent="MenuBackground" unique_id=1421203061]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 385.0
+offset_right = 959.0
+offset_bottom = 542.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_p5n6f")
+
+[node name="Building1" type="TextureRect" parent="MenuBackground" unique_id=731985078]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 423.675
+offset_right = 959.0
+offset_bottom = 542.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_w8dox")
+stretch_mode = 1
+
+[node name="TITLE" type="Label" parent="." unique_id=1793069567]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -363.0
+offset_top = 96.92
+offset_right = 363.0
+offset_bottom = 210.92001
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_76ey0")
+theme_override_font_sizes/font_size = 113
+text = "Blackout Protocol"
+horizontal_alignment = 1
 
 [node name="MainButtons" type="VBoxContainer" parent="." unique_id=666284229]
 custom_minimum_size = Vector2(150, 200)
@@ -30,9 +149,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -75.0
-offset_top = 20.0
+offset_top = -7.4450073
 offset_right = 75.0
-offset_bottom = 220.0
+offset_bottom = 192.555
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -42,6 +161,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_76ey0")
 theme_override_font_sizes/font_size = 40
 text = "Play"
+flat = true
 
 [node name="SettingsButton" type="Button" parent="MainButtons" unique_id=1650871053]
 custom_minimum_size = Vector2(150, 50)
@@ -49,6 +169,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_76ey0")
 theme_override_font_sizes/font_size = 40
 text = "SETTINGS"
+flat = true
 
 [node name="QuitButton" type="Button" parent="MainButtons" unique_id=1999075332]
 custom_minimum_size = Vector2(150, 50)
@@ -56,6 +177,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_76ey0")
 theme_override_font_sizes/font_size = 40
 text = "QUIT"
+flat = true
 
 [node name="SettingsPanel" type="VBoxContainer" parent="." unique_id=214126869]
 visible = false
@@ -66,9 +188,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -89.0
-offset_top = 2.0
+offset_top = -18.074997
 offset_right = 94.0
-offset_bottom = 202.0
+offset_bottom = 181.92566
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -110,6 +232,8 @@ Interact"
 
 [node name="BackButton" type="Button" parent="SettingsPanel" unique_id=746107744]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_76ey0")
+theme_override_font_sizes/font_size = 30
 text = "Back"
 
 [node name="HoverSound" type="AudioStreamPlayer2D" parent="." unique_id=878398753]
@@ -122,12 +246,12 @@ stream = ExtResource("4_3otla")
 stream = ExtResource("5_3otla")
 
 [connection signal="mouse_entered" from="MainButtons/PlayButton" to="." method="play_hover_sound"]
-[connection signal="pressed" from="MainButtons/PlayButton" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MainButtons/PlayButton" to="." method="play_click_sound"]
+[connection signal="pressed" from="MainButtons/PlayButton" to="." method="_on_play_pressed"]
 [connection signal="mouse_entered" from="MainButtons/SettingsButton" to="." method="play_hover_sound"]
-[connection signal="pressed" from="MainButtons/SettingsButton" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="MainButtons/SettingsButton" to="." method="play_click_sound"]
+[connection signal="pressed" from="MainButtons/SettingsButton" to="." method="_on_settings_pressed"]
 [connection signal="mouse_entered" from="MainButtons/QuitButton" to="." method="play_hover_sound"]
-[connection signal="pressed" from="MainButtons/QuitButton" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="MainButtons/QuitButton" to="." method="play_click_sound"]
+[connection signal="pressed" from="MainButtons/QuitButton" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="SettingsPanel/BackButton" to="." method="_on_back_pressed"]
