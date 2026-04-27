@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dsx84d3v50a1" path="res://SCENES/UI_SCREENS/Dialogue.tscn" id="1_0gy0a"]
 [ext_resource type="Script" uid="uid://cnc3vmith3my0" path="res://SCRIPTS/spawn_controller.gd" id="1_an0pu"]
+[ext_resource type="PackedScene" uid="uid://cdl7ari6gsl1k" path="res://SCENES/UI_SCREENS/PauseMenu.tscn" id="2_an0pu"]
 [ext_resource type="PackedScene" uid="uid://c1l2ylctq4ydm" path="res://SCENES/ROOM_LAYOUTS/StartRoom.tscn" id="2_rw6i8"]
 [ext_resource type="PackedScene" uid="uid://cbi68oekbamj5" path="res://SCENES/INTERACTABLES/Door.tscn" id="3_an0pu"]
 [ext_resource type="PackedScene" uid="uid://48lmgoukpa6t" path="res://SCENES/INTERACTABLES/StartingPhone.tscn" id="4_cvw5k"]
@@ -14,6 +15,9 @@
 
 [node name="Foyer" type="Node2D" unique_id=53470815]
 script = ExtResource("1_an0pu")
+
+[node name="PauseMenu" parent="." unique_id=753689908 instance=ExtResource("2_an0pu")]
+visible = false
 
 [node name="Dialogue" parent="." unique_id=292361673 instance=ExtResource("1_0gy0a")]
 
