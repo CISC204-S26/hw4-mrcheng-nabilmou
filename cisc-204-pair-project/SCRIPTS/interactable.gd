@@ -30,8 +30,10 @@ class_name Interactable extends Area2D
 @onready var note_pickup := $NotePickup if has_node("NotePickup") else null
 
 
+@export var is_ending_computer: bool = false #for ending screen
+@export var ending_sounds: Array[AudioStream] = []  # drag all your sounds in order
+
 func _ready():
-	
 	# If this object was already collected/opened, remove it immediately
 	#print("DOOR READY: ", name, " | unique_id: ", unique_id, " | collected_ids: ", GameManager.collected_ids)
 	if unique_id != "" and unique_id in GameManager.collected_ids:
@@ -43,8 +45,16 @@ func _ready():
 		
 	_set_door_anim_frame()
 	_set_npc_anim()
+<<<<<<< Updated upstream
 	GameManager.start_game_bg_music()
 
+=======
+	
+	# Connect ending computer to dialogue finished signal
+	if is_ending_computer and dialogue_ui:
+		print("CONNECTING ending computer signal")
+		dialogue_ui.dialogue_finished.connect(_ending_dialogue_finished)
+>>>>>>> Stashed changes
 
 # ------------------------INTERACT INTERACT INTERACT ------------------------------------
 func interact():
@@ -281,3 +291,45 @@ func _set_npc_anim():
 		if anim.sprite_frames and anim.sprite_frames.has_animation(npc_animation):
 			anim.animation = npc_animation
 			anim.play()
+
+
+func _ending_dialogue_finished():
+	if not is_ending_computer:
+		return
+	
+	var player = get_tree().get_first_node_in_group("player")
+	if player:
+		player.can_move = false
+	
+	GameManager.bg_music.stop()
+	GameManager.bg_music2.stop()
+	
+	# Sound 1 - plays once
+	var audio1 = AudioStreamPlayer.new()
+	add_child(audio1)
+	audio1.stream = ending_sounds[0]
+	audio1.volume_db = 0.0
+	audio1.play()
+	print("WAITING FOR SOUND 1 TO FINISH")
+	await audio1.finished
+	print("SOUND 1 FINISHED")
+	audio1.queue_free()
+	
+	# Sound 2 - plays once
+	var audio2 = AudioStreamPlayer.new()
+	add_child(audio2)
+	audio2.stream = ending_sounds[1]
+	audio2.volume_db = 0.0
+	audio2.play()
+	print("WAITING FOR SOUND 2 TO FINISH")
+	await audio2.finished
+	print("SOUND 2 FINISHED")
+	audio2.queue_free()
+	
+	# Sound 3 - plays forever
+	var audio3 = AudioStreamPlayer.new()
+	add_child(audio3)
+	audio3.stream = ending_sounds[2]
+	audio3.volume_db = 0.0
+	audio3.play()
+	print("SOUND 3 PLAYING")

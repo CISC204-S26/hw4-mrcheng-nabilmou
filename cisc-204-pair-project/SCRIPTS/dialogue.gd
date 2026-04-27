@@ -1,11 +1,10 @@
 extends CanvasLayer
 
-
+signal dialogue_finished
 @export var text_speed := 0.03
 
 @onready var label := $DialogueBox/DialogueText
 @onready var typing_sound := $"../TypingSound"
-
 
 var lines: Array[String] = []
 var current_line := 0
@@ -67,3 +66,5 @@ func skip_or_close():
 	var player = get_tree().get_first_node_in_group("player")
 	if player:
 		player.can_move = true
+	print("EMITTING dialogue_finished") 
+	dialogue_finished.emit()

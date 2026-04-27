@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://bn67onos3vkvd" path="res://SCENES/PLAYER/Player.tscn" id="4_1hc0o"]
 [ext_resource type="PackedScene" uid="uid://dllation0new5" path="res://SCENES/INTERACTABLES/NPC.tscn" id="6_flacv"]
 [ext_resource type="PackedScene" uid="uid://b3rwv8o57n150" path="res://Ending_Computer.tscn" id="7_0d1jn"]
+[ext_resource type="AudioStream" uid="uid://dw2l20imx8sjw" path="res://freesound_community-police-siren-one-loop-loop-able-104019.wav" id="8_37n41"]
+[ext_resource type="AudioStream" uid="uid://c5dfyyl2a3w5l" path="res://DoorKnock.wav" id="9_8yhh3"]
+[ext_resource type="AudioStream" uid="uid://cnyci5kc40f4" path="res://ASSETS/AUDIO/MAINMENU/menu_music.wav" id="9_cfw73"]
 
 [node name="PanicRoom" type="Node2D" unique_id=65600963]
 script = ExtResource("1_8au8j")
@@ -29,6 +32,8 @@ position = Vector2(80, 22)
 npc_animation = "Guard"
 dialogue_lines = Array[String](["You being here means you have retrieved the HARD DRIVES.", "PLUG them into the terminal right in front of you and WIPE them.", "Those bastards wont find a thing."])
 
-[node name="StartingPhone" parent="." unique_id=118944451 instance=ExtResource("7_0d1jn")]
+[node name="EndingComputer" parent="." unique_id=118944451 instance=ExtResource("7_0d1jn")]
 position = Vector2(16, 125)
 dialogue_lines = Array[String](["SYSTEM ALERT: 5/5 Data Drives Detected", "STATUS: Critical Integrity Breach", "WIPING ALL CONFIDENTIAL DATA"])
+is_ending_computer = true
+ending_sounds = Array[AudioStream]([ExtResource("8_37n41"), ExtResource("9_8yhh3"), ExtResource("9_cfw73")])
