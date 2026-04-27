@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://8lopylei0vpq"]
+
+[ext_resource type="Script" uid="uid://bg5fvy5h3rd28" path="res://SCENES/UI_SCREENS/ending_title_screen.gd" id="1_lv7rb"]
+[ext_resource type="FontFile" uid="uid://diagsg6itx81q" path="res://ASSETS/UI/FONTS/m6x11plus.ttf" id="1_n8tvi"]
+
+[node name="EndingTitleScreen" type="CanvasLayer" unique_id=419263032]
+script = ExtResource("1_lv7rb")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1388929495]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1973885169]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="VBoxContainer" unique_id=1944659324]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_n8tvi")
+theme_override_font_sizes/font_size = 30
+text = "Blackout Protocall
+"
+
+[node name="MainMenu" type="Button" parent="VBoxContainer" unique_id=433688443]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_n8tvi")
+text = "Main Menu"
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=1037821698]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_n8tvi")
+text = "Quit
+"

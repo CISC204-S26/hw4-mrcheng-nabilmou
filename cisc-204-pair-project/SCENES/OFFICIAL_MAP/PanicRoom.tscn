@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://dw2l20imx8sjw" path="res://freesound_community-police-siren-one-loop-loop-able-104019.wav" id="8_37n41"]
 [ext_resource type="AudioStream" uid="uid://c5dfyyl2a3w5l" path="res://DoorKnock.wav" id="9_8yhh3"]
 [ext_resource type="AudioStream" uid="uid://cnyci5kc40f4" path="res://ASSETS/AUDIO/MAINMENU/menu_music.wav" id="9_cfw73"]
+[ext_resource type="PackedScene" uid="uid://8lopylei0vpq" path="res://SCENES/UI_SCREENS/ending_title_screen.tscn" id="11_8yhh3"]
 
 [node name="PanicRoom" type="Node2D" unique_id=65600963]
 script = ExtResource("1_8au8j")
@@ -37,3 +38,4 @@ position = Vector2(16, 125)
 dialogue_lines = Array[String](["SYSTEM ALERT: 5/5 Data Drives Detected", "STATUS: Critical Integrity Breach", "WIPING ALL CONFIDENTIAL DATA"])
 is_ending_computer = true
 ending_sounds = Array[AudioStream]([ExtResource("8_37n41"), ExtResource("9_8yhh3"), ExtResource("9_cfw73")])
+ending_title_screen = ExtResource("11_8yhh3")

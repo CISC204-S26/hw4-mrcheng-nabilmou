@@ -33,6 +33,9 @@ class_name Interactable extends Area2D
 @export var is_ending_computer: bool = false #for ending screen
 @export var ending_sounds: Array[AudioStream] = []  # drag all your sounds in order
 
+
+@export var ending_title_screen: PackedScene
+
 func _ready():
 	# If this object was already collected/opened, remove it immediately
 	#print("DOOR READY: ", name, " | unique_id: ", unique_id, " | collected_ids: ", GameManager.collected_ids)
@@ -309,9 +312,7 @@ func _ending_dialogue_finished():
 	audio1.stream = ending_sounds[0]
 	audio1.volume_db = 0.0
 	audio1.play()
-	#print("WAITING FOR SOUND 1 TO FINISH")
 	await audio1.finished
-	#print("SOUND 1 FINISHED")
 	audio1.queue_free()
 	
 	# Sound 2 - plays once
@@ -320,9 +321,7 @@ func _ending_dialogue_finished():
 	audio2.stream = ending_sounds[1]
 	audio2.volume_db = 0.0
 	audio2.play()
-	#print("WAITING FOR SOUND 2 TO FINISH")
 	await audio2.finished
-	#print("SOUND 2 FINISHED")
 	audio2.queue_free()
 	
 	# Sound 3 - plays forever
@@ -331,4 +330,9 @@ func _ending_dialogue_finished():
 	audio3.stream = ending_sounds[2]
 	audio3.volume_db = 0.0
 	audio3.play()
-	#print("SOUND 3 PLAYING")
+	
+	# Show ending screen
+	await get_tree().create_timer(1.0).timeout
+	var ending = ending_title_screen.instantiate()
+	get_tree().get_root().add_child(ending)
+	SceneChanger.fade_rect.visible = false
