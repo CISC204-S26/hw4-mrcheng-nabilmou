@@ -46,52 +46,78 @@ door_animation = "Lab_Door2"
 required_keycard_level = 1
 
 [node name="Key2" parent="." unique_id=1296366847 instance=ExtResource("8_yrge5")]
-position = Vector2(301, -742)
+position = Vector2(497, -1094)
 
 [node name="Key3" parent="." unique_id=1752260965 instance=ExtResource("8_yrge5")]
 z_index = -1
 position = Vector2(273, -519)
 
 [node name="Keycard" parent="." unique_id=1569729701 instance=ExtResource("9_518ot")]
-position = Vector2(526, -1099)
+position = Vector2(-478, -492)
 keycard_level = 2
 
 [node name="NPC" parent="." unique_id=888581163 instance=ExtResource("5_8f1ok")]
 position = Vector2(720, -424)
 npc_animation = "Doctor1"
-dialogue_lines = Array[String](["Oh you're back!", "You left in hurry, you had forgotten your KEYCARD.", "I gave to Giselle at the DESK."])
+dialogue_lines = Array[String](["All vitals seem to be stable across the board.", "We've had... fewer complications than expected.", "...they adapt quickly.", "Faster than adults."])
 
 [node name="NPC2" parent="." unique_id=1280386913 instance=ExtResource("5_8f1ok")]
 position = Vector2(336, -1064)
 npc_animation = "Rob"
-dialogue_lines = Array[String](["Do I see sheets of plastic in your future?", "Sorry, I'm only kidding...", "I appreciate you recreating my setup for me.", "Though you wouldn't happen to have any more trash bags would you?"])
+dialogue_lines = Array[String](["Do I see sheets of plastic in your future?", "Sorry, I'm only kidding...", "Still, I appreciate you recreating my setup for me."])
 
 [node name="NPC3" parent="." unique_id=612645279 instance=ExtResource("5_8f1ok")]
 position = Vector2(-144, -678)
 npc_animation = "Doctor2"
-dialogue_lines = Array[String](["I've already put the children to sleep.", "Though I seem to have misplaced my key.", "I must have thrown it away by accident."])
+dialogue_lines = Array[String](["I've already put the children to sleep.", "Though I seem to have misplaced my KEY.", "I think I threw it out by accident.", "...check the TRASH near the ENTRANCE"])
 
 [node name="Player" parent="." unique_id=220904025 instance=ExtResource("3_mwb88")]
-position = Vector2(16, 56)
+position = Vector2(-368, -488)
 
 [node name="NPC4" parent="." unique_id=1350594285 instance=ExtResource("5_8f1ok")]
 position = Vector2(-2, -233)
 npc_animation = "Adam"
-dialogue_lines = Array[String](["Back again so soon?", "You're last experiment ran so long.", "No rest for the wicked I guess."])
+dialogue_lines = Array[String](["You weren't scheduled to come in today.", "...they didn't tell us anything about an audit.", "We were told to keep subjects stable.", "...no transfers."])
 
 [node name="NPC5" parent="." unique_id=121008959 instance=ExtResource("5_8f1ok")]
 position = Vector2(368, -746)
 npc_animation = "Amelia"
-dialogue_lines = Array[String](["Heya it's Giselle", "Pete gave me your KEYCARD. He said you had forgotten it.", "Don't worry though, I left it on the side for you."])
+dialogue_lines = Array[String](["You really shouldn't be down here sir.", "Some of the feeds stopped working.", "...but the system says everything is fine.", "I'm afraid they might be watching...", "I would be careful sir."])
 
 [node name="Note" parent="." unique_id=1528998479 instance=ExtResource("11_fckv4")]
-position = Vector2(696, -599)
+position = Vector2(614, -646)
+note_text = "Subject growth remains within expected parameters.
+
+External stimuli continues to accelerate behavioral adaptation.
+
+Note: early-stage subjects respond more consistently to isolation conditioning.
+
+Recommend continued separation protocols."
+dialogue_lines = Array[String](["First I'm hearing of this experiment."])
 
 [node name="Note2" parent="." unique_id=1539668666 instance=ExtResource("11_fckv4")]
 position = Vector2(-61, -614)
+note_text = "Behavioral Conditioning Guidelines
+
+Subject environments should encourage trust and dependency.
+
+Positive reinforcement is preferred over force.
+
+Removal of familiar stimuli should be gradual.
+
+Subjects should not associate staff with distress events."
+dialogue_lines = Array[String](["Not only was this research.", "...this was training."])
 
 [node name="Note3" parent="." unique_id=1361333737 instance=ExtResource("11_fckv4")]
-position = Vector2(-474, -717)
+position = Vector2(-472, -713)
+note_text = "Termination Log
+
+Subjects that fail integration are to be processed immediately.
+
+No records are to be retained beyond final observation.
+
+Disposal must remain undocumented."
+dialogue_lines = Array[String](["...we dispose of them.", "...just as easy as I'll dispose of these hard drives."])
 
 [node name="HardDrive" parent="." unique_id=764411796 instance=ExtResource("12_qnv42")]
 position = Vector2(563, -529)
@@ -100,4 +126,24 @@ position = Vector2(563, -529)
 position = Vector2(400, -759)
 
 [node name="HardDrive3" parent="." unique_id=47838787 instance=ExtResource("12_qnv42")]
-position = Vector2(-306, -529)
+position = Vector2(-306, -524)
+
+[node name="Note4" parent="." unique_id=1513159677 instance=ExtResource("11_fckv4")]
+position = Vector2(294, -732)
+note_text = "External Compliance Arrangement
+
+Certain external contractors have been granted controlled access to disposal resources.
+
+All interactions must remain off-record.
+
+Do not interfere with independent correction operations."
+dialogue_lines = Array[String](["...we don't only run experiments.", "...we manage outcomes."])
+
+[node name="Note5" parent="." unique_id=797941331 instance=ExtResource("11_fckv4")]
+position = Vector2(519, -1085)
+note_text = "My Dark Passenger is quiet now. The balance is restored. He was a perfect fit for the Code, predatory, unrepentant, hidden in plain sight, just like me.  He though he was the one pulling the strings, but in the end, he was just a loose end that needed snipping
+
+ One more slide to add to the collection. The current in the Harbor is strong tonight, it'll carry the weight of his sins far out into sea. 
+
+Neat. Tidy. Gone."
+dialogue_lines = Array[String](["Just make sure the current actually take it this time.", "We wouldn't want another public showing of the Butchers work."])

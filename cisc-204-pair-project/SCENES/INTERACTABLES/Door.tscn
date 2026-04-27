@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dcju5nf0prmhn" path="res://ASSETS/ANIMATEDSTUFF/animated_door_vertical_left_1_32x32.png" id="3_e0pcw"]
 [ext_resource type="Texture2D" uid="uid://g6t84m05vnb8" path="res://ASSETS/ANIMATEDSTUFF/animated_door_vertical_right_1_32x32.png" id="4_4coe6"]
 [ext_resource type="AudioStream" uid="uid://brqsmoqkmk7wn" path="res://ASSETS/AUDIO/INTERACTABLE/door_locked.wav" id="5_e0pcw"]
-[ext_resource type="AudioStream" uid="uid://cd2rparxtw87t" path="res://ASSETS/AUDIO/INTERACTABLE/door_unlock.wav" id="6_4coe6"]
+[ext_resource type="AudioStream" uid="uid://drli1dq05pwcx" path="res://ASSETS/AUDIO/INTERACTABLE/door_unlock.wav" id="6_4coe6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ussyc"]
 size = Vector2(32, 67)
@@ -161,5 +161,6 @@ animation = &"H_Door"
 [node name="DoorLocked" type="AudioStreamPlayer2D" parent="." unique_id=616381816]
 stream = ExtResource("5_e0pcw")
 
-[node name="DoorUnlocked" type="AudioStreamPlayer2D" parent="." unique_id=736371481]
+[node name="DoorUnlock" type="AudioStreamPlayer2D" parent="." unique_id=736371481]
 stream = ExtResource("6_4coe6")
+volume_db = -5.0

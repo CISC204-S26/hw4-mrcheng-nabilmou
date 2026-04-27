@@ -26,7 +26,7 @@ class_name Interactable extends Area2D
 @onready var keycard_denied := $KeycardDenied if has_node("KeycardDenied") else null
 @onready var keycard_accepted := $KeycardAccepted if has_node("KeycardAccepted") else null
 @onready var door_locked := $DoorLocked if has_node("DoorLocked") else null
-@onready var door_unlocked := $DoorUnlocked if has_node("DoorUnlocked") else null
+@onready var door_unlock := $DoorUnlock if has_node("DoorUnlock") else null
 @onready var note_pickup := $NotePickup if has_node("NotePickup") else null
 
 
@@ -163,7 +163,7 @@ func try_open_door():
 			show_message("Locked: Need " + str(required_keys) + " key(s)")
 			return
 		show_message("The DOOR opened!")
-		door_unlocked.play()
+		door_unlock.play()
 		open_door()
 	
 	

@@ -33,23 +33,46 @@ note_text = "Office Records are still intact.
 
 Two DRIVES are still stored here.
 
-One is entrusted to general staff. The other is secured in the SERVER ROOM.
+One is entrusted to Head of Staff. The other is secured in the SERVER ROOM.
 
 Backroom KEY should be nearby. 
 
 Do not access observation systems unless necessary."
+dialogue_lines = Array[String](["Two DRIVES here in the OFFICE.", "One out HERE and the other in the SERVER ROOM.", "Key should be close."])
 
 [node name="Note2" parent="." unique_id=1336247270 instance=ExtResource("3_mg8ry")]
-position = Vector2(553, 116)
+position = Vector2(779, 137)
 
 [node name="Note3" parent="." unique_id=1986664201 instance=ExtResource("3_mg8ry")]
-position = Vector2(940, -431)
+position = Vector2(1284, -558)
+note_text = "All behavioral archives are mirrored across multiple drives.
+
+Partial recovery may reconstruct identity profiles.
+
+If full wipe is required, it must be completed without interruption.
+
+Failure to do so may expose all participants."
 
 [node name="Note4" parent="." unique_id=1943175646 instance=ExtResource("3_mg8ry")]
-position = Vector2(877, -234)
+position = Vector2(965, -431)
+note_text = "All sessions are to be monitored continuously.
+
+Do not interfere with subject behavior unless escalation criteria are met.
+
+Emotional distress is not considered grounds for interruption.
+
+Data integrity takes priority."
+dialogue_lines = Array[String](["Science is nothing withouts its risks."])
 
 [node name="Note5" parent="." unique_id=1500581837 instance=ExtResource("3_mg8ry")]
 position = Vector2(458, 244)
+note_text = "Behavioral Log Summary
+
+Subject responses remain consistent across sessions
+
+Isolation periods continue to improve compliance rates
+
+Recommend extending duration for younger groups."
 
 [node name="Key" parent="." unique_id=655332623 instance=ExtResource("4_ik3c6")]
 position = Vector2(208, -208)
@@ -57,24 +80,34 @@ position = Vector2(208, -208)
 [node name="Door" parent="." unique_id=1158038630 instance=ExtResource("5_le2wk")]
 position = Vector2(720, 66)
 door_animation = "H_Door"
-required_keys = 2
+required_keys = 1
 unique_id = "door"
 
 [node name="Keycard" parent="." unique_id=1569729701 instance=ExtResource("7_kwjhx")]
-position = Vector2(843, -439)
+position = Vector2(893, -308)
 keycard_level = 1
 
 [node name="HardDrive" parent="." unique_id=764411796 instance=ExtResource("8_qbh4q")]
 position = Vector2(1235, -567)
 
 [node name="HardDrive2" parent="." unique_id=1169782019 instance=ExtResource("8_qbh4q")]
-position = Vector2(629, 235)
+position = Vector2(629, 236)
 
 [node name="NPC" parent="." unique_id=888581163 instance=ExtResource("11_arjom")]
 z_index = 0
-position = Vector2(784, 314)
+position = Vector2(784, 315)
 npc_animation = "Adam"
-dialogue_lines = Array[String](["", "", ""])
+dialogue_lines = Array[String](["Oh... m-morning. ", "...didn't think you'd be in this early sir.", "They told us to keep everything running as usual.", ""])
 
 [node name="Player" parent="." unique_id=220904025 instance=ExtResource("10_4vjgk")]
 position = Vector2(-144, 153)
+
+[node name="NPC2" parent="." unique_id=1163884017 instance=ExtResource("11_arjom")]
+position = Vector2(1264, -308)
+npc_animation = "Doctor1"
+dialogue_lines = Array[String](["...somethings off today.", "The feeds were looping earlier.", "Same footage repeating over and over.", "I tried flagging it.", "...the system flagged it as 'expected behavior.'"])
+
+[node name="NPC3" parent="." unique_id=503982804 instance=ExtResource("11_arjom")]
+position = Vector2(784, -372)
+npc_animation = "Doctor2"
+dialogue_lines = Array[String](["The other DRIVES?", "They should be in the LAB if I'm not mistaken."])

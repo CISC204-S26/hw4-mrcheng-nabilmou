@@ -12,6 +12,7 @@ region = Rect2(416.502, 30.097698, 30.655212, 24.9043)
 
 [node name="HardDrive" type="Area2D" unique_id=764411796]
 script = ExtResource("1_js8aw")
+interaction_type = "harddrive"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=695265599]
 shape = SubResource("CircleShape2D_jnmn0")
