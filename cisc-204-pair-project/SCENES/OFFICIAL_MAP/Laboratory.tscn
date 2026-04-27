@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cnc3vmith3my0" path="res://SCRIPTS/spawn_controller.gd" id="1_ech24"]
 [ext_resource type="PackedScene" uid="uid://cdns3eu3ubyc2" path="res://SCENES/ROOM_LAYOUTS/LabRoom.tscn" id="1_f8tem"]
 [ext_resource type="PackedScene" uid="uid://dsx84d3v50a1" path="res://SCENES/UI_SCREENS/Dialogue.tscn" id="2_518ot"]
+[ext_resource type="PackedScene" uid="uid://cdl7ari6gsl1k" path="res://SCENES/UI_SCREENS/PauseMenu.tscn" id="2_j8khn"]
 [ext_resource type="PackedScene" uid="uid://chnltqg4pb04r" path="res://SCENES/INTERACTABLES/HallSceneChanger.tscn" id="2_jk24a"]
 [ext_resource type="PackedScene" uid="uid://bn67onos3vkvd" path="res://SCENES/PLAYER/Player.tscn" id="3_mwb88"]
 [ext_resource type="PackedScene" uid="uid://dllation0new5" path="res://SCENES/INTERACTABLES/NPC.tscn" id="5_8f1ok"]
@@ -15,6 +16,9 @@
 
 [node name="Laboratory" type="Node2D" unique_id=1344493545]
 script = ExtResource("1_ech24")
+
+[node name="PauseMenu" parent="." unique_id=753689908 instance=ExtResource("2_j8khn")]
+visible = false
 
 [node name="Dialogue" parent="." unique_id=292361673 instance=ExtResource("2_518ot")]
 

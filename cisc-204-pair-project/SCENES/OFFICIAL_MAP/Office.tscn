@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cnc3vmith3my0" path="res://SCRIPTS/spawn_controller.gd" id="1_arjom"]
 [ext_resource type="PackedScene" uid="uid://dsx84d3v50a1" path="res://SCENES/UI_SCREENS/Dialogue.tscn" id="1_gpjrv"]
 [ext_resource type="PackedScene" uid="uid://c3cmaqjf63taa" path="res://SCENES/ROOM_LAYOUTS/OfficeRoom.tscn" id="2_arjom"]
+[ext_resource type="PackedScene" uid="uid://cdl7ari6gsl1k" path="res://SCENES/UI_SCREENS/PauseMenu.tscn" id="2_mg8ry"]
 [ext_resource type="PackedScene" uid="uid://op6b3eew8oca" path="res://SCENES/INTERACTABLES/Note.tscn" id="3_mg8ry"]
 [ext_resource type="PackedScene" uid="uid://bk8qbs7k6m5te" path="res://SCENES/INTERACTABLES/Key.tscn" id="4_ik3c6"]
 [ext_resource type="PackedScene" uid="uid://cbi68oekbamj5" path="res://SCENES/INTERACTABLES/Door.tscn" id="5_le2wk"]
@@ -14,6 +15,9 @@
 
 [node name="Office" type="Node2D" unique_id=1522631063]
 script = ExtResource("1_arjom")
+
+[node name="PauseMenu" parent="." unique_id=753689908 instance=ExtResource("2_mg8ry")]
+visible = false
 
 [node name="Dialogue" parent="." unique_id=292361673 instance=ExtResource("1_gpjrv")]
 
