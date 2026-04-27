@@ -94,7 +94,7 @@ position = Vector2(629, 236)
 z_index = 0
 position = Vector2(784, 315)
 npc_animation = "Adam"
-dialogue_lines = Array[String](["Oh... m-morning. ", "...didn't think you'd be in this early sir.", "They told us to keep everything running as usual.", ""])
+dialogue_lines = Array[String](["Oh... m-morning. ", "...didn't think you'd be in this early sir.", "They told us to keep everything running as usual."])
 
 [node name="NPC2" parent="." unique_id=1163884017 instance=ExtResource("11_arjom")]
 position = Vector2(1264, -308)
