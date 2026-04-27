@@ -34,7 +34,6 @@ class_name Interactable extends Area2D
 @export var ending_sounds: Array[AudioStream] = []  # drag all your sounds in order
 
 func _ready():
-	
 	# If this object was already collected/opened, remove it immediately
 	#print("DOOR READY: ", name, " | unique_id: ", unique_id, " | collected_ids: ", GameManager.collected_ids)
 	if unique_id != "" and unique_id in GameManager.collected_ids:
@@ -46,10 +45,16 @@ func _ready():
 		
 	_set_door_anim_frame()
 	_set_npc_anim()
+<<<<<<< Updated upstream
 	GameManager.start_game_bg_music()
 
+=======
 	
 	# Connect ending computer to dialogue finished signal
+	if is_ending_computer and dialogue_ui:
+		print("CONNECTING ending computer signal")
+		dialogue_ui.dialogue_finished.connect(_ending_dialogue_finished)
+>>>>>>> Stashed changes
 
 # ------------------------INTERACT INTERACT INTERACT ------------------------------------
 func interact():
