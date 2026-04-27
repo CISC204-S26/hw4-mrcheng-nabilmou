@@ -45,16 +45,12 @@ func _ready():
 		
 	_set_door_anim_frame()
 	_set_npc_anim()
-<<<<<<< Updated upstream
 	GameManager.start_game_bg_music()
-
-=======
 	
 	# Connect ending computer to dialogue finished signal
 	if is_ending_computer and dialogue_ui:
 		print("CONNECTING ending computer signal")
 		dialogue_ui.dialogue_finished.connect(_ending_dialogue_finished)
->>>>>>> Stashed changes
 
 # ------------------------INTERACT INTERACT INTERACT ------------------------------------
 func interact():
@@ -292,7 +288,7 @@ func _set_npc_anim():
 			anim.animation = npc_animation
 			anim.play()
 
-
+# ---------------------ENDING + AUDIO----------------------------------------
 func _ending_dialogue_finished():
 	if not is_ending_computer:
 		return
@@ -304,15 +300,17 @@ func _ending_dialogue_finished():
 	GameManager.bg_music.stop()
 	GameManager.bg_music2.stop()
 	
+	await SceneChanger.fade_out()
+	
 	# Sound 1 - plays once
 	var audio1 = AudioStreamPlayer.new()
 	add_child(audio1)
 	audio1.stream = ending_sounds[0]
 	audio1.volume_db = 0.0
 	audio1.play()
-	print("WAITING FOR SOUND 1 TO FINISH")
+	#print("WAITING FOR SOUND 1 TO FINISH")
 	await audio1.finished
-	print("SOUND 1 FINISHED")
+	#print("SOUND 1 FINISHED")
 	audio1.queue_free()
 	
 	# Sound 2 - plays once
@@ -321,9 +319,9 @@ func _ending_dialogue_finished():
 	audio2.stream = ending_sounds[1]
 	audio2.volume_db = 0.0
 	audio2.play()
-	print("WAITING FOR SOUND 2 TO FINISH")
+	#print("WAITING FOR SOUND 2 TO FINISH")
 	await audio2.finished
-	print("SOUND 2 FINISHED")
+	#print("SOUND 2 FINISHED")
 	audio2.queue_free()
 	
 	# Sound 3 - plays forever
@@ -332,4 +330,4 @@ func _ending_dialogue_finished():
 	audio3.stream = ending_sounds[2]
 	audio3.volume_db = 0.0
 	audio3.play()
-	print("SOUND 3 PLAYING")
+	#print("SOUND 3 PLAYING")
