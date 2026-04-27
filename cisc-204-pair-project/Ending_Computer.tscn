@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dd848bpvpffrx" path="res://SCRIPTS/interactable.gd" id="1_0tqly"]
 [ext_resource type="Texture2D" uid="uid://bbssqt57irexm" path="res://ASSETS/ROOMS/Modern_Office_32x32.png" id="2_ybu6s"]
+[ext_resource type="AudioStream" uid="uid://dw2l20imx8sjw" path="res://freesound_community-police-siren-one-loop-loop-able-104019.wav" id="3_ybu6s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2hrly"]
 size = Vector2(36, 61)
@@ -21,9 +22,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="StartingPhone" type="Area2D" unique_id=118944451]
+[node name="EndingComputer" type="Area2D" unique_id=118944451]
 script = ExtResource("1_0tqly")
 interaction_type = "NPC"
+ending_sounds = Array[AudioStream]([ExtResource("3_ybu6s")])
 metadata/_custom_type_script = "uid://dd848bpvpffrx"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=122306324]
@@ -34,6 +36,3 @@ shape = SubResource("RectangleShape2D_2hrly")
 position = Vector2(0, -6)
 sprite_frames = SubResource("SpriteFrames_qsoei")
 animation = &"Computer"
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=48400213]
-position = Vector2(0, 20.5)
