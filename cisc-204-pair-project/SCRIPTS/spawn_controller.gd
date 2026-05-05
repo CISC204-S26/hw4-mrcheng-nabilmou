@@ -1,6 +1,8 @@
 extends Node2D # GOES ON ROOT NODE OF COMPLETE ROOM SCENE, WONT WORK IF AUTOLOADED
 
+
 @onready var player = $Player
+
 
 func _ready():
 	# If the string is empty, player stays where you put them in editor

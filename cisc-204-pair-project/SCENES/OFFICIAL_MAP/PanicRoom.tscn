@@ -16,6 +16,9 @@
 [node name="PanicRoom" type="Node2D" unique_id=65600963]
 script = ExtResource("1_8au8j")
 
+[node name="PauseMenu" parent="." unique_id=753689908 instance=ExtResource("12_k53bc")]
+visible = false
+
 [node name="Dialogue" parent="." unique_id=292361673 instance=ExtResource("2_1hc0o")]
 
 [node name="FinalRoom" parent="." unique_id=778532095 instance=ExtResource("2_285on")]
@@ -40,6 +43,3 @@ dialogue_lines = Array[String](["SYSTEM ALERT: 5/5 Data Drives Detected", "STATU
 is_ending_computer = true
 ending_sounds = Array[AudioStream]([ExtResource("8_37n41"), ExtResource("9_8yhh3"), ExtResource("9_cfw73")])
 ending_title_screen = ExtResource("11_8yhh3")
-
-[node name="PauseMenu" parent="." unique_id=753689908 instance=ExtResource("12_k53bc")]
-visible = false

@@ -1,10 +1,13 @@
 extends CanvasLayer
 
+
 signal dialogue_finished
 @export var text_speed := 0.03
 
+
 @onready var label := $DialogueBox/DialogueText
 @onready var typing_sound := $"../TypingSound"
+
 
 var lines: Array[String] = []
 var current_line := 0

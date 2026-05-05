@@ -8,7 +8,6 @@ var has_keycard2: bool = false
 var num_keys: int = 0 
 var num_harddrive: int = 0
 var door_unlocked: bool = false
-
 var collected_ids: Array = []
 var pickup_item: AudioStreamPlayer
 var bg_music: AudioStreamPlayer

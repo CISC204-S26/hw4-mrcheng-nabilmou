@@ -1,10 +1,13 @@
 extends Area2D
 
+
 @export var target_scene_path: String
 @export var target_spawn_marker: String 
 
+
 # This variable is ONLY true when the player is allowed to use the hallway
 var is_ready_to_trigger: bool = false
+
 
 func _ready():
 	# collision starts disabled

@@ -32,9 +32,9 @@ class_name Interactable extends Area2D
 
 @export var is_ending_computer: bool = false #for ending screen
 @export var ending_sounds: Array[AudioStream] = []  # drag all your sounds in order
-
-
 @export var ending_title_screen: PackedScene
+var is_actively_interacting: bool = false
+
 
 func _ready():
 	# If this object was already collected/opened, remove it immediately
@@ -58,6 +58,8 @@ func _ready():
 
 # ------------------------INTERACT INTERACT INTERACT ------------------------------------
 func interact():
+	is_actively_interacting = true
+	
 	# This cleans the string so "Door" becomes "door"
 	var clean_type = interaction_type.strip_edges().to_lower()
 	match clean_type:
@@ -292,9 +294,17 @@ func _set_npc_anim():
 			anim.animation = npc_animation
 			anim.play()
 
+
 # ---------------------ENDING + AUDIO----------------------------------------
 func _ending_dialogue_finished():
 	if not is_ending_computer:
+		return
+	
+	if not is_actively_interacting:
+		return
+	
+	if required_harddrives > 0 and GameManager.num_harddrive < required_harddrives:
+		is_actively_interacting = false
 		return
 	
 	var player = get_tree().get_first_node_in_group("player")
